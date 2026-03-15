@@ -932,22 +932,29 @@ async function handleSubmit(){
   btn.disabled = true;
   btn.style.opacity='.7';
 
-  const body = new FormData();
-  body.append('_to','info@foxside.com');
-  body.append('_subject',`Demo Request — ${product||'Foxside'} from ${company}`);
-  body.append('_template','box');
-  body.append('_captcha','false');
-  body.append('Name', `${fname} ${lname}`);
-  body.append('Email', email);
-  body.append('Company', company);
-  body.append('Product Interest', product||'Not specified');
-  body.append('Team Size', size||'Not specified');
-  body.append('Message', message||'No message provided');
+  // ── Replace 8621ea29-acb7-42b8-8ee5-6e9fc40cb8b6 with your key from web3forms.com ──
+  const WEB3FORMS_KEY = '8621ea29-acb7-42b8-8ee5-6e9fc40cb8b6';
+
+  const payload = {
+    access_key: WEB3FORMS_KEY,
+    subject: `Demo Request — ${product||'Foxside'} from ${company}`,
+    from_name: 'Foxside Website',
+    name: `${fname} ${lname}`,
+    email: email,
+    company: company,
+    product_interest: product||'Not specified',
+    team_size: size||'Not specified',
+    message: message||'No message provided'
+  };
 
   try {
-    const res = await fetch('https://formsubmit.co/ajax/info@foxside.com', {method:'POST',body,headers:{'Accept':'application/json'}});
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify(payload)
+    });
     const json = await res.json();
-    if(json.success==='true'||json.success===true){
+    if(json.success){
       document.getElementById('contact-form-fields').style.display='none';
       btn.style.display='none';
       document.querySelector('[style*="1 business day"]').style.display='none';
@@ -957,7 +964,7 @@ async function handleSubmit(){
       success.innerHTML=`<div style="font-size:3rem;margin-bottom:20px">✅</div><h3 style="font-family:Raleway,sans-serif;font-weight:800;font-size:1.4rem;margin-bottom:12px">Request Received!</h3><p style="font-size:.95rem;color:var(--text-muted);line-height:1.7">Thanks, ${fname}. We'll be in touch within one business day to schedule your <strong>${product||'Foxside'}</strong> demo.<br><br>Keep an eye on <strong>${email}</strong>.</p>`;
       wrap.appendChild(success);
     } else {
-      throw new Error('FormSubmit returned failure');
+      throw new Error(json.message||'Submission failed');
     }
   } catch(e){
     btn.textContent = 'Request Demo →';
