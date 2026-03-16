@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Foxside — The Enterprise AI Suite</title>
+<title>Foxside, The Enterprise AI Suite</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap">
@@ -575,6 +575,29 @@ textarea.f-input{resize:vertical;min-height:130px}
 .fcs-footer{display:flex;align-items:center;justify-content:space-between;padding-top:18px;border-top:1px solid var(--border);margin-top:auto}
 .fcs-client{font-size:.75rem;color:var(--text-muted)}
 .fcs-link{font-size:.78rem;font-weight:700;color:var(--p-color,var(--accent))}
+
+/* ── HOW IT WORKS ── */
+.hiw-section{padding:110px 0;background:var(--bg);overflow:hidden}
+.hiw-track{display:flex;align-items:flex-start;gap:0;margin-top:64px;position:relative}
+.hiw-track::before{content:'';position:absolute;top:38px;left:calc(12.5%);right:calc(12.5%);height:1px;background:linear-gradient(90deg,transparent,var(--border) 10%,var(--border) 90%,transparent);z-index:0}
+.hiw-step{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 20px;position:relative;z-index:1}
+.hiw-node{width:76px;height:76px;border-radius:50%;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;transition:all .4s var(--ease);margin-bottom:22px}
+.hiw-step:hover .hiw-node{border-color:var(--p-color,var(--accent));background:color-mix(in srgb,var(--p-color,var(--accent)) 8%,var(--surface));box-shadow:0 0 0 6px color-mix(in srgb,var(--p-color,var(--accent)) 8%,transparent),0 12px 36px rgba(0,0,0,.3)}
+.hiw-node-num{font-family:'Raleway',sans-serif;font-weight:900;font-size:1.3rem;color:var(--text-dim);transition:color .4s}
+.hiw-step:hover .hiw-node-num{color:var(--p-color,var(--accent))}
+.hiw-emoji{font-size:1.5rem;position:absolute;bottom:-8px;right:-8px;background:var(--bg2);border:1px solid var(--border);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+.hiw-connector{width:40px;height:1px;flex-shrink:0;align-self:center;margin-top:-54px}
+.hiw-title{font-family:'Raleway',sans-serif;font-weight:800;font-size:1rem;margin-bottom:10px;color:var(--text)}
+.hiw-desc{font-size:.84rem;color:var(--text-muted);line-height:1.65;max-width:200px}
+.hiw-badge{display:inline-flex;align-items:center;gap:5px;background:color-mix(in srgb,var(--p-color,var(--accent)) 10%,transparent);border:1px solid color-mix(in srgb,var(--p-color,var(--accent)) 25%,transparent);color:var(--p-color,var(--accent));font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:100px;margin-bottom:12px}
+@media(max-width:768px){
+  .hiw-track{flex-direction:row;overflow-x:auto;gap:0;padding-bottom:16px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .hiw-track::-webkit-scrollbar{display:none}
+  .hiw-track::before{top:38px;left:40px;right:40px}
+  .hiw-step{min-width:200px;flex-shrink:0;padding:0 12px}
+  .hiw-section .section-header{padding:0 20px}
+}
+
 @media(max-width:1100px){.featured-cs-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:768px){.featured-cs-grid{grid-template-columns:1fr}}
 
@@ -725,7 +748,7 @@ const PRODUCTS = [
     id:'lexai', name:'LexAI', tagline:'Legal Intelligence Platform',
     audience:'Law Firms & Attorneys',
     shortDesc:'AI-powered contract analysis, case research, and compliance management for modern law practices.',
-    heroDesc:'Transform how your firm handles legal research, contract review, and matter management — powered by AI trained on millions of legal documents.',
+    heroDesc:'Transform how your firm handles legal research, contract review, and matter management, powered by AI trained on millions of legal documents.',
     price:3999, color:'#4C8EFF', icon:'⚖️',
     features:[
       {icon:'📋',title:'Intelligent Contract Analysis',desc:'Automatically review, redline, and flag risks in contracts using advanced NLP trained on millions of legal documents across all practice areas.'},
@@ -750,11 +773,11 @@ const PRODUCTS = [
     heroDesc:'Close more deals, faster. PropIQ gives every agent access to AI-driven insights, automated client follow-ups, and predictive market intelligence.',
     price:3499, color:'#00D49A', icon:'🏢',
     features:[
-      {icon:'🏠',title:'AI Property Valuation',desc:'Generate instant, data-backed AVMs using 50+ market signals — comps, neighborhood trends, school districts, and macroeconomic indicators.'},
+      {icon:'🏠',title:'AI Property Valuation',desc:'Generate instant, data-backed AVMs using 50+ market signals, comps, neighborhood trends, school districts, and macroeconomic indicators.'},
       {icon:'📊',title:'Predictive Market Analytics',desc:'Forecast price movements, days-on-market, and seller motivation with AI models trained on years of local transaction data.'},
       {icon:'🎯',title:'Lead Scoring Engine',desc:"Rank every lead by conversion probability. PropIQ analyzes browsing behavior, inquiry patterns, and demographics to prioritize your pipeline."},
       {icon:'📱',title:'Automated Client Nurturing',desc:'AI-generated personalized drip campaigns, property alerts, and check-ins that keep clients engaged without manual effort.'},
-      {icon:'🗺️',title:'Hyperlocal Market Reports',desc:'Auto-generate stunning PDF market reports for any zip code, neighborhood, or custom polygon — shareable with clients in one click.'},
+      {icon:'🗺️',title:'Hyperlocal Market Reports',desc:'Auto-generate stunning PDF market reports for any zip code, neighborhood, or custom polygon, shareable with clients in one click.'},
       {icon:'🤝',title:'Transaction Coordination AI',desc:'Intelligent checklists, deadline tracking, and document routing that guide every deal from offer to close without anything slipping.'}
     ],
     forList:[
@@ -769,15 +792,15 @@ const PRODUCTS = [
     id:'learnforge', name:'LearnForge', tagline:'AI-Powered Learning Management',
     audience:'Educational Institutions & L&D Teams',
     shortDesc:'Intelligent LMS with adaptive learning paths, AI content generation, and deep learner analytics.',
-    heroDesc:'Build, deliver, and optimize learning experiences at scale. LearnForge\'s AI adapts every course to every learner — automatically.',
+    heroDesc:'Build, deliver, and optimize learning experiences at scale. LearnForge\'s AI adapts every course to every learner, automatically.',
     price:2999, color:'#FFC857', icon:'🎓',
     features:[
       {icon:'🧠',title:'Adaptive Learning Paths',desc:'AI continuously maps each learner\'s progress and adjusts content delivery, pacing, and difficulty to maximize knowledge retention.'},
       {icon:'✏️',title:'AI Course Builder',desc:'Generate full structured courses from a topic prompt or existing documents. LearnForge creates modules, quizzes, and SCORM packages automatically.'},
       {icon:'📈',title:'Learner Analytics Dashboard',desc:'Real-time completion rates, engagement scores, and knowledge gap analysis at individual, cohort, and organizational levels.'},
-      {icon:'🎮',title:'Gamification Engine',desc:'Badges, leaderboards, streaks, and micro-rewards built into every course — proven to increase completion rates by 40%.'},
+      {icon:'🎮',title:'Gamification Engine',desc:'Badges, leaderboards, streaks, and micro-rewards built into every course, proven to increase completion rates by 40%.'},
       {icon:'💬',title:'AI Tutoring Companion',desc:'A 24/7 conversational AI tutor that answers questions, explains concepts, and provides feedback on assignments within each course.'},
-      {icon:'📜',title:'Certification & Compliance Tracking',desc:'Automated certificate generation, renewal tracking, and compliance reporting for regulated industries — HIPAA, OSHA, financial certifications.'}
+      {icon:'📜',title:'Certification & Compliance Tracking',desc:'Automated certificate generation, renewal tracking, and compliance reporting for regulated industries, HIPAA, OSHA, financial certifications.'}
     ],
     forList:[
       {title:'Corporate L&D Teams',desc:'Onboard and upskill employees faster with adaptive training.'},
@@ -794,12 +817,12 @@ const PRODUCTS = [
     heroDesc:'Stop managing data. Start closing deals. NexusCRM\'s AI works in the background to surface opportunities, predict churn, and write follow-ups for you.',
     price:3499, color:'#FF5C9E', icon:'🔗',
     features:[
-      {icon:'🎯',title:'Predictive Lead Scoring',desc:'AI analyzes thousands of signals — firmographics, behavior, intent data — to rank every lead by likelihood to close, so reps focus where it matters.'},
+      {icon:'🎯',title:'Predictive Lead Scoring',desc:'AI analyzes thousands of signals, firmographics, behavior, intent data, to rank every lead by likelihood to close, so reps focus where it matters.'},
       {icon:'🤖',title:'AI Sales Co-Pilot',desc:'Real-time suggestions during calls and emails: what to say, when to follow up, which objections to expect, and which deals are at risk.'},
       {icon:'📉',title:'Churn Prediction Engine',desc:'Identify at-risk accounts before they churn. NexusCRM monitors engagement drops, support ticket patterns, and usage signals proactively.'},
       {icon:'✉️',title:'Automated Outreach Sequences',desc:'Hyper-personalized email and LinkedIn sequences generated by AI, based on each prospect\'s industry, role, and recent activity.'},
       {icon:'📊',title:'Pipeline Intelligence',desc:'AI-powered forecast accuracy with scenario modeling, deal health scores, and automatic CRM field population from calls and emails.'},
-      {icon:'🔌',title:'Universal Integration Hub',desc:'Connect natively to 200+ tools — Salesforce, HubSpot, Outreach, Gong, Slack, and more — with no-code workflow automation.'}
+      {icon:'🔌',title:'Universal Integration Hub',desc:'Connect natively to 200+ tools, Salesforce, HubSpot, Outreach, Gong, Slack, and more, with no-code workflow automation.'}
     ],
     forList:[
       {title:'Enterprise Sales Teams',desc:'AI that makes every rep perform like your top rep.'},
@@ -816,12 +839,12 @@ const PRODUCTS = [
     heroDesc:'Reduce administrative burden, improve patient outcomes, and run leaner operations with AI built to the highest standards of healthcare compliance.',
     price:3999, color:'#22DDFF', icon:'🏥',
     features:[
-      {icon:'📋',title:'Ambient Clinical Documentation',desc:'AI listens to patient encounters and generates structured clinical notes, SOAP formats, and ICD-10 codes automatically — letting doctors be doctors.'},
+      {icon:'📋',title:'Ambient Clinical Documentation',desc:'AI listens to patient encounters and generates structured clinical notes, SOAP formats, and ICD-10 codes automatically, letting doctors be doctors.'},
       {icon:'🗓️',title:'Intelligent Scheduling AI',desc:'Optimize appointment slots using predicted no-shows, acuity levels, and provider availability to reduce wait times and maximize throughput.'},
       {icon:'💊',title:'Medication & Interaction Alerts',desc:'Real-time clinical decision support that flags drug interactions, contraindications, and dosing anomalies before prescriptions are issued.'},
       {icon:'📊',title:'Patient Outcomes Analytics',desc:'Track readmission risk, chronic disease management KPIs, and population health metrics with automated regulatory reporting (CMS, HEDIS).'},
-      {icon:'🔐',title:'HIPAA-Grade Security Layer',desc:'End-to-end encryption, audit logs, role-based access, and BAA-ready infrastructure — fully compliant with HIPAA, HITECH, and SOC 2 Type II.'},
-      {icon:'💬',title:'Patient Communication Suite',desc:'Automated appointment reminders, post-visit follow-ups, and care plan messaging via SMS, email, and patient portal — all HIPAA-compliant.'}
+      {icon:'🔐',title:'HIPAA-Grade Security Layer',desc:'End-to-end encryption, audit logs, role-based access, and BAA-ready infrastructure, fully compliant with HIPAA, HITECH, and SOC 2 Type II.'},
+      {icon:'💬',title:'Patient Communication Suite',desc:'Automated appointment reminders, post-visit follow-ups, and care plan messaging via SMS, email, and patient portal, all HIPAA-compliant.'}
     ],
     forList:[
       {title:'Hospital Systems',desc:'Reduce documentation burden across large clinical teams.'},
@@ -839,11 +862,11 @@ const PRODUCTS = [
     price:3999, color:'#9B71FF', icon:'📊',
     features:[
       {icon:'📈',title:'Portfolio Intelligence Engine',desc:'AI-driven portfolio analysis, risk attribution, stress testing, and rebalancing recommendations across multi-asset, multi-currency portfolios.'},
-      {icon:'🤖',title:'Robo-Advisory Integration',desc:'Launch a branded robo-advisory channel on top of FinPilot\'s AI — automated onboarding, goal-based planning, and continuous rebalancing.'},
+      {icon:'🤖',title:'Robo-Advisory Integration',desc:'Launch a branded robo-advisory channel on top of FinPilot\'s AI, automated onboarding, goal-based planning, and continuous rebalancing.'},
       {icon:'📋',title:'Compliance Automation',desc:'Generate suitability assessments, fiduciary documentation, and regulatory reports (Form ADV, FINRA, SEC) with AI-assisted compliance workflows.'},
-      {icon:'💼',title:'Client Reporting Suite',desc:'Stunning, data-rich client reports generated on-demand or scheduled — customizable with your branding and accessible via client portal.'},
+      {icon:'💼',title:'Client Reporting Suite',desc:'Stunning, data-rich client reports generated on-demand or scheduled, customizable with your branding and accessible via client portal.'},
       {icon:'🔮',title:'Market Scenario Modeling',desc:'Run Monte Carlo simulations, tax-loss harvesting analysis, and retirement projection models with institutional-grade accuracy in seconds.'},
-      {icon:'🔔',title:'Intelligent Alerts & Watchlists',desc:'AI monitors portfolios 24/7 for drift, risk spikes, earnings surprises, and tax-loss opportunities — alerting advisors the moment action is needed.'}
+      {icon:'🔔',title:'Intelligent Alerts & Watchlists',desc:'AI monitors portfolios 24/7 for drift, risk spikes, earnings surprises, and tax-loss opportunities, alerting advisors the moment action is needed.'}
     ],
     forList:[
       {title:'RIAs & Wealth Managers',desc:'Serve more clients at a higher standard with AI leverage.'},
@@ -860,12 +883,12 @@ const PRODUCTS = [
     heroDesc:'Hire faster, smarter, and fairer. TalentFlow\'s AI sources candidates, scores applications, and prepares your team to make better hiring decisions.',
     price:3499, color:'#FF7142', icon:'👥',
     features:[
-      {icon:'🔍',title:'AI Candidate Sourcing',desc:'Proactively search 500M+ profiles across LinkedIn, GitHub, Behance, and niche job boards — AI-ranked by fit score before you look.'},
+      {icon:'🔍',title:'AI Candidate Sourcing',desc:'Proactively search 500M+ profiles across LinkedIn, GitHub, Behance, and niche job boards, AI-ranked by fit score before you look.'},
       {icon:'📝',title:'Resume Intelligence Engine',desc:'Go beyond keyword matching. TalentFlow understands experience depth, career trajectory, and cultural signals to surface truly qualified candidates.'},
       {icon:'🎙️',title:'Automated Video Screening',desc:'AI-analyzed asynchronous video interviews with emotion-neutral scoring on communication, clarity, and role-specific competencies.'},
       {icon:'📊',title:'DEI Analytics Suite',desc:'Track diversity metrics across your hiring funnel, identify bias hotspots, and get AI recommendations to improve equitable hiring outcomes.'},
       {icon:'🤝',title:'Offer Intelligence',desc:'Benchmark compensation against real-time market data, model offer acceptance probability, and generate offer letters with one click.'},
-      {icon:'📈',title:'Workforce Planning AI',desc:'Predict attrition, model headcount scenarios, and build succession pipelines — turning HR from reactive to proactive.'}
+      {icon:'📈',title:'Workforce Planning AI',desc:'Predict attrition, model headcount scenarios, and build succession pipelines, turning HR from reactive to proactive.'}
     ],
     forList:[
       {title:'In-House Talent Teams',desc:'Source and screen 10x more candidates with the same team.'},
@@ -879,15 +902,15 @@ const PRODUCTS = [
     id:'constructiq', name:'ConstructIQ', tagline:'Construction Project Intelligence',
     audience:'Construction Firms & Project Managers',
     shortDesc:'AI-powered project scheduling, cost forecasting, and site safety management for the construction industry.',
-    heroDesc:'Build on time and on budget. ConstructIQ\'s AI monitors every variable on your project — schedule, cost, risk, and safety — in real time.',
+    heroDesc:'Build on time and on budget. ConstructIQ\'s AI monitors every variable on your project, schedule, cost, risk, and safety, in real time.',
     price:2999, color:'#FF4D6D', icon:'🏗️',
     features:[
       {icon:'🗓️',title:'AI Schedule Optimization',desc:'Automatically generate and continuously optimize project schedules using AI that accounts for dependencies, resource constraints, and weather risk.'},
       {icon:'💰',title:'Predictive Cost Forecasting',desc:'AI models trained on thousands of projects provide real-time cost-to-complete forecasts with variance analysis and earned value metrics.'},
-      {icon:'⚠️',title:'Site Safety AI',desc:'Computer vision integration flags safety violations from site cameras in real time — PPE compliance, unauthorized access, and hazard detection.'},
+      {icon:'⚠️',title:'Site Safety AI',desc:'Computer vision integration flags safety violations from site cameras in real time, PPE compliance, unauthorized access, and hazard detection.'},
       {icon:'📦',title:'Procurement & Supply Chain AI',desc:'Predict material delivery delays, optimize ordering schedules, and get AI-recommended substitute materials when supply chains are disrupted.'},
       {icon:'📋',title:'RFI & Submittal Automation',desc:'AI routes RFIs and submittals to the right reviewer, generates response drafts, and tracks resolution timelines automatically.'},
-      {icon:'🏆',title:'Subcontractor Performance Scoring',desc:'Score every subcontractor on safety, schedule adherence, quality, and responsiveness — surfacing the best partners for each project type.'}
+      {icon:'🏆',title:'Subcontractor Performance Scoring',desc:'Score every subcontractor on safety, schedule adherence, quality, and responsiveness, surfacing the best partners for each project type.'}
     ],
     forList:[
       {title:'General Contractors',desc:'Manage complex multi-trade schedules with AI oversight.'},
@@ -969,7 +992,7 @@ function buildFeaturedCS(){
     var r0=c.results[0], r1=c.results[1];
     // Shorten headline for card
     var short = c.headline.length > 90 ? c.headline.substring(0,87)+'…' : c.headline;
-    // Short quote — first sentence only
+    // Short quote, first sentence only
     var q = c.quote.replace(/^"/,'').replace(/"$/,'');
     var qs = q.split('.')[0].trim();
     if(qs.length > 110) qs = qs.substring(0,107)+'…';
@@ -1022,7 +1045,7 @@ function renderHome(){
   <span class="htb-label">Notice</span>
   <span class="htb-msg">Replace Your <span class="hl">Redundant Team</span> With <span class="hl">AI</span></span>
   <span class="htb-sep"></span>
-  <span class="htb-sub">Foxside Enterprise AI Suite — 8 platforms, zero redundancy</span>
+  <span class="htb-sub">Foxside Enterprise AI Suite, 8 platforms, zero redundancy</span>
 </div>
 
 <!-- HERO -->
@@ -1040,7 +1063,7 @@ function renderHome(){
         Built for<br>
         <span class="hero-h1-line2"><span id="hero-type" class="hero-rotating-wrap"></span><span style="color:var(--accent);opacity:.4">|</span></span>
       </h1>
-      <p class="hero-sub">Foxside deploys enterprise-grade AI across eight industries — legal, real estate, education, healthcare, finance, sales, HR, and construction. One company. Eight transformative platforms.</p>
+      <p class="hero-sub">Foxside deploys enterprise-grade AI across eight industries, legal, real estate, education, healthcare, finance, sales, HR, and construction. One company. Eight transformative platforms.</p>
       <div class="hero-actions">
         <a class="btn btn-lime btn-lg" href="#suite" onclick="document.getElementById('suite').scrollIntoView({behavior:'scroll'})">Explore the Suite →</a>
         <a class="btn btn-outline btn-lg" href="#contact" onclick="nav('contact')">Book a Demo</a>
@@ -1069,9 +1092,70 @@ function renderHome(){
     <div class="section-header reveal">
       <div class="s-label">The Foxside Suite</div>
       <h2>Eight platforms.<br>Infinite possibilities.</h2>
-      <p>Every product is purpose-built for its industry — not a generic tool forced to fit. Enterprise power, day-one deployment.</p>
+      <p>Every product is purpose-built for its industry, not a generic tool forced to fit. Enterprise power, day-one deployment.</p>
     </div>
     <div class="products-grid reveal delay-1">${productCardsHTML}</div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="hiw-section">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="s-label">How It Works</div>
+      <h2>Up and running in four steps</h2>
+      <p>From the moment you order to the moment your team goes AI-ready, our process is fast, hands-on, and fully guided.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="hiw-track reveal delay-1">
+
+      <div class="hiw-step" style="--p-color:#C8FF3C">
+        <div class="hiw-node">
+          <span class="hiw-node-num">01</span>
+          <span class="hiw-emoji">🛒</span>
+        </div>
+        <span class="hiw-badge">Step 1</span>
+        <div class="hiw-title">You Place Your Order</div>
+        <div class="hiw-desc">Choose the Foxside platform that fits your industry and team. Annual plan, all features included, no hidden setup fees.</div>
+      </div>
+
+      <div class="hiw-step" style="--p-color:#4C8EFF">
+        <div class="hiw-node">
+          <span class="hiw-node-num">02</span>
+          <span class="hiw-emoji">📋</span>
+        </div>
+        <span class="hiw-badge" style="--p-color:#4C8EFF">Step 2</span>
+        <div class="hiw-title">We Send Your Custom Form</div>
+        <div class="hiw-desc">Your dedicated onboarding manager sends a tailored intake form, capturing your workflows, data sources, team structure, and preferences.</div>
+      </div>
+
+      <div class="hiw-step" style="--p-color:#00D49A">
+        <div class="hiw-node">
+          <span class="hiw-node-num">03</span>
+          <span class="hiw-emoji">🧑‍💻</span>
+        </div>
+        <span class="hiw-badge" style="--p-color:#00D49A">Step 3</span>
+        <div class="hiw-title">We Onboard Your Data</div>
+        <div class="hiw-desc">A Foxside specialist imports your data, configures your AI models to your industry context, and integrates with your existing tools.</div>
+      </div>
+
+      <div class="hiw-step" style="--p-color:#C8FF3C">
+        <div class="hiw-node">
+          <span class="hiw-node-num">04</span>
+          <span class="hiw-emoji">🚀</span>
+        </div>
+        <span class="hiw-badge">Step 4</span>
+        <div class="hiw-title">You're AI-Ready</div>
+        <div class="hiw-desc">Your team is live. Full training included. Most clients are fully operational within 14 days of placing their order.</div>
+      </div>
+
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:52px" class="reveal delay-2">
+    <div style="display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:100px;padding:10px 22px;font-size:.84rem;color:var(--text-muted)">
+      ⏱️ <strong style="color:var(--text)">Average time to fully operational: 14 days.</strong>&nbsp;Most teams see measurable impact within the first month.
+    </div>
   </div>
 </section>
 
@@ -1092,7 +1176,7 @@ function renderHome(){
       </div>
     </div>
     <div class="why-features reveal delay-2">
-      <div class="wf-card"><div class="wf-icon">🧠</div><div><h4>Domain-Trained AI</h4><p>Each platform's AI is fine-tuned on millions of industry-specific documents, cases, and transactions — not generic web data.</p></div></div>
+      <div class="wf-card"><div class="wf-icon">🧠</div><div><h4>Domain-Trained AI</h4><p>Each platform's AI is fine-tuned on millions of industry-specific documents, cases, and transactions, not generic web data.</p></div></div>
       <div class="wf-card"><div class="wf-icon">🔐</div><div><h4>Enterprise Security</h4><p>End-to-end encryption, zero-trust architecture, role-based access, and full audit trails meet the highest compliance requirements.</p></div></div>
       <div class="wf-card"><div class="wf-icon">🚀</div><div><h4>Rapid Deployment</h4><p>White-glove onboarding gets your team live in under 14 days. Dedicated implementation managers guide every step.</p></div></div>
       <div class="wf-card"><div class="wf-icon">📞</div><div><h4>24/7 Human Support</h4><p>Every enterprise plan includes a dedicated success manager, not just a ticket queue. Real people who know your platform deeply.</p></div></div>
@@ -1131,7 +1215,7 @@ function renderHome(){
     <div class="section-header reveal">
       <div class="s-label">Proven Results</div>
       <h2>From the field, not the pitch deck</h2>
-      <p>Real clients, real workflows, real numbers — with the context, constraints, and timelines attached.</p>
+      <p>Real clients, real workflows, real numbers, with the context, constraints, and timelines attached.</p>
     </div>
     <div class="featured-cs-grid reveal delay-1" id="featured-cs-grid"></div>
     <div style="text-align:center;margin-top:44px" class="reveal delay-2">
@@ -1147,7 +1231,7 @@ function renderHome(){
     <div class="reveal">
       <div class="s-label" style="justify-content:center">Get Started Today</div>
       <h2>Ready to deploy AI<br>in your enterprise?</h2>
-      <p>Book a personalized demo and see your Foxside platform in action — live, with your own data and workflows.</p>
+      <p>Book a personalized demo and see your Foxside platform in action, live, with your own data and workflows.</p>
       <div class="cta-actions">
         <a class="btn btn-lime btn-lg" href="#contact" onclick="nav('contact')">Book a Free Demo →</a>
         <a class="btn btn-outline btn-lg" href="#suite" onclick="document.getElementById('suite').scrollIntoView({behavior:'smooth'})">Browse All Platforms</a>
@@ -1166,14 +1250,14 @@ function renderAbout(){
   <div class="page-hero-inner">
     <div class="s-label reveal">Our Story</div>
     <h1 class="reveal delay-1">Built by practitioners,<br>for practitioners.</h1>
-    <p class="reveal delay-2">Foxside was founded in 2013 by a team of domain experts who believed enterprise software was broken — built by generalists who'd never practiced law, brokered a deal, or diagnosed a patient. A decade later, we rebuilt everything around AI.</p>
+    <p class="reveal delay-2">Foxside was founded in 2013 by a team of domain experts who believed enterprise software was broken, built by generalists who'd never practiced law, brokered a deal, or diagnosed a patient. A decade later, we rebuilt everything around AI.</p>
   </div>
 </section>
 
 <section class="mission-section">
   <div class="wrap">
     <div class="s-label reveal">Our Mission</div>
-    <p class="mission-text reveal delay-1">We exist to give every professional the leverage of <em>a hundred experts at their side</em> — so lawyers can practice law, doctors can practice medicine, and educators can teach. <em>AI handles the rest.</em> Twelve years in, that mission has never been more achievable.</p>
+    <p class="mission-text reveal delay-1">We exist to give every professional the leverage of <em>a hundred experts at their side</em>, so lawyers can practice law, doctors can practice medicine, and educators can teach. <em>AI handles the rest.</em> Twelve years in, that mission has never been more achievable.</p>
   </div>
 </section>
 
@@ -1185,11 +1269,11 @@ function renderAbout(){
     <h2 style="font-size:clamp(2rem,3.5vw,3rem);font-weight:800;letter-spacing:-.02em" class="reveal delay-1">What drives every decision</h2>
     <div class="values-grid">
       <div class="val-card reveal delay-1"><div class="val-num">01</div><h3>Domain First, AI Second</h3><p>We hire domain experts before AI engineers. Our teams include practicing lawyers, physicians, financial advisors, and construction managers. AI is the tool; deep expertise is the foundation.</p></div>
-      <div class="val-card reveal delay-2"><div class="val-num">02</div><h3>Earned Trust</h3><p>Enterprise clients trust us with their most sensitive data. We treat that as a sacred obligation — investing disproportionately in security, compliance, and transparency that others treat as afterthoughts.</p></div>
-      <div class="val-card reveal delay-3"><div class="val-num">03</div><h3>Outcomes Over Features</h3><p>We don't compete on feature checklists. We compete on outcomes — hours saved, deals closed, errors caught, costs reduced. Every roadmap decision traces back to a measurable client result.</p></div>
-      <div class="val-card reveal delay-1"><div class="val-num">04</div><h3>Long-Term Relationships</h3><p>Our average client tenure is 4.2 years. We build platforms designed to grow with organizations — not to lock them in, but because staying means we're genuinely delivering value.</p></div>
+      <div class="val-card reveal delay-2"><div class="val-num">02</div><h3>Earned Trust</h3><p>Enterprise clients trust us with their most sensitive data. We treat that as a sacred obligation, investing disproportionately in security, compliance, and transparency that others treat as afterthoughts.</p></div>
+      <div class="val-card reveal delay-3"><div class="val-num">03</div><h3>Outcomes Over Features</h3><p>We don't compete on feature checklists. We compete on outcomes, hours saved, deals closed, errors caught, costs reduced. Every roadmap decision traces back to a measurable client result.</p></div>
+      <div class="val-card reveal delay-1"><div class="val-num">04</div><h3>Long-Term Relationships</h3><p>Our average client tenure is 4.2 years. We build platforms designed to grow with organizations, not to lock them in, but because staying means we're genuinely delivering value.</p></div>
       <div class="val-card reveal delay-2"><div class="val-num">05</div><h3>Responsible AI</h3><p>We publish model cards for every platform, maintain human-in-the-loop controls for high-stakes decisions, and conduct ongoing bias audits. AI power without accountability is just a liability.</p></div>
-      <div class="val-card reveal delay-3"><div class="val-num">06</div><h3>Radical Transparency</h3><p>Clients always know how our AI reached a conclusion. We don't build black boxes. Every recommendation is explainable, traceable, and auditable — because your professional liability demands nothing less.</p></div>
+      <div class="val-card reveal delay-3"><div class="val-num">06</div><h3>Radical Transparency</h3><p>Clients always know how our AI reached a conclusion. We don't build black boxes. Every recommendation is explainable, traceable, and auditable, because your professional liability demands nothing less.</p></div>
     </div>
   </div>
 </section>
@@ -1218,7 +1302,7 @@ function renderContact(){
   <div class="page-hero-inner">
     <div class="s-label reveal">Let's Talk</div>
     <h1 class="reveal delay-1">Start your AI<br>transformation today.</h1>
-    <p class="reveal delay-2">Book a personalized demo with a product specialist for the platform that matches your industry. No generic sales pitches — just a focused conversation about your specific challenges.</p>
+    <p class="reveal delay-2">Book a personalized demo with a product specialist for the platform that matches your industry. No generic sales pitches, just a focused conversation about your specific challenges.</p>
   </div>
 </section>
 
@@ -1226,7 +1310,7 @@ function renderContact(){
   <div class="contact-grid">
     <div class="reveal">
       <h3 style="font-family:'Raleway',sans-serif;font-weight:800;font-size:1.4rem;margin-bottom:18px">Get in touch</h3>
-      <p class="ci-intro">Whether you're evaluating Foxside for your organization, need a custom enterprise agreement, or just have questions — our team responds within one business day.</p>
+      <p class="ci-intro">Whether you're evaluating Foxside for your organization, need a custom enterprise agreement, or just have questions, our team responds within one business day.</p>
       <div class="c-detail"><div class="cd-icon">📧</div><div><div class="cd-label">Email</div><div class="cd-value">info@foxside.com</div></div></div>
       <div class="c-detail"><div class="cd-icon">📞</div><div><div class="cd-label">Phone</div><div class="cd-value">+44 75034 66380</div></div></div>
       <div class="c-detail"><div class="cd-icon">🏢</div><div><div class="cd-label">Headquarters</div><div class="cd-value">71 Shelton St<br>London WC2H 9JQ, UK</div></div></div>
@@ -1246,7 +1330,7 @@ function renderContact(){
         <div class="f-group full"><label class="f-label">Product Interest</label>
           <select class="f-input" id="cf-product">
             <option value="">Select a Foxside platform...</option>
-            ${PRODUCTS.map(p=>`<option value="${p.name}">${p.name} — ${p.tagline}</option>`).join('')}
+            ${PRODUCTS.map(p=>`<option value="${p.name}">${p.name}, ${p.tagline}</option>`).join('')}
             <option value="Multiple platforms">Multiple platforms</option>
           </select>
         </div>
@@ -1296,7 +1380,7 @@ async function handleSubmit(){
 
   const payload = {
     access_key: WEB3FORMS_KEY,
-    subject: `Demo Request — ${product||'Foxside'} from ${company}`,
+    subject: `Demo Request, ${product||'Foxside'} from ${company}`,
     from_name: 'Foxside Website',
     name: `${fname} ${lname}`,
     email: email,
@@ -1426,7 +1510,7 @@ function renderProduct(p){
     <div class="reveal">
       <div class="s-label">Who It's For</div>
       <h2 style="font-size:clamp(1.8rem,3vw,2.8rem);font-weight:800;letter-spacing:-.022em;margin-bottom:16px">Built for<br>your team's reality</h2>
-      <p style="font-size:1rem;color:var(--text-muted);line-height:1.72">${p.name} was designed from the ground up with ${p.audience} in mind — not retrofitted from a generic platform. Every workflow, every data model, every AI model reflects the nuances of your industry.</p>
+      <p style="font-size:1rem;color:var(--text-muted);line-height:1.72">${p.name} was designed from the ground up with ${p.audience} in mind, not retrofitted from a generic platform. Every workflow, every data model, every AI model reflects the nuances of your industry.</p>
     </div>
     <div class="reveal delay-2">
       <div class="for-list">${forHTML}</div>
@@ -1442,7 +1526,7 @@ function renderProduct(p){
     </div>
     <div class="pricing-card" style="--p-color:${p.color}">
       <div class="pricing-label">Enterprise Annual Plan</div>
-      <div class="pricing-name">${p.name} — ${p.tagline}</div>
+      <div class="pricing-name">${p.name}, ${p.tagline}</div>
       <div class="pricing-amount"><sup>$</sup>${p.price.toLocaleString()}</div>
       <div class="pricing-cycle">per year · billed annually · all features included</div>
       <div class="pricing-divider"></div>
@@ -1458,7 +1542,7 @@ function renderProduct(p){
   <div class="wrap" style="position:relative;z-index:1">
     <div class="reveal">
       <h2 style="font-size:clamp(1.8rem,3.5vw,3rem)">See ${p.name} live in your environment</h2>
-      <p>A 30-minute demo with a ${p.audience.toLowerCase()} specialist. No slides — just your workflows, transformed.</p>
+      <p>A 30-minute demo with a ${p.audience.toLowerCase()} specialist. No slides, just your workflows, transformed.</p>
       <div class="cta-actions">
         <a class="btn btn-lime btn-lg" href="#contact" onclick="nav('contact')">Book Your Demo →</a>
         <a class="btn btn-outline btn-lg" href="#home" onclick="nav('home')">← Back to All Products</a>
@@ -1493,7 +1577,7 @@ function renderPrivacy(){
 <p>We collect the following categories of personal data:</p>
 <ul>
 <li><strong>Contact & Identity Data:</strong> First name, last name, job title, company name, and work email address provided when you submit a demo request, contact form, or sign up for communications.</li>
-<li><strong>Usage Data:</strong> Browser type, IP address, pages visited, time on site, and referral source — collected automatically via cookies and analytics tools.</li>
+<li><strong>Usage Data:</strong> Browser type, IP address, pages visited, time on site, and referral source, collected automatically via cookies and analytics tools.</li>
 <li><strong>Communications Data:</strong> The content of emails, chat messages, or support tickets you send to us.</li>
 <li><strong>Transaction Data:</strong> Billing details and purchase history for enterprise subscriptions, processed securely by our payment processor.</li>
 </ul>
@@ -1525,7 +1609,7 @@ function renderPrivacy(){
 
 <div class="legal-section">
 <h3>5. International Data Transfers</h3>
-<p>Foxside is headquartered in the United Kingdom. Some of our service providers operate in countries outside the UK and EEA. Where data is transferred internationally, we ensure appropriate safeguards are in place — including Standard Contractual Clauses (SCCs) approved by the ICO — in accordance with UK GDPR and Chapter V of the EU GDPR.</p>
+<p>Foxside is headquartered in the United Kingdom. Some of our service providers operate in countries outside the UK and EEA. Where data is transferred internationally, we ensure appropriate safeguards are in place, including Standard Contractual Clauses (SCCs) approved by the ICO, in accordance with UK GDPR and Chapter V of the EU GDPR.</p>
 </div>
 
 <div class="legal-section">
@@ -1547,7 +1631,7 @@ function renderPrivacy(){
 <li><strong>Rectify</strong> inaccurate or incomplete data.</li>
 <li><strong>Erasure</strong> ("right to be forgotten") in certain circumstances.</li>
 <li><strong>Restriction</strong> of processing in certain circumstances.</li>
-<li><strong>Data portability</strong> — receive your data in a structured, machine-readable format.</li>
+<li><strong>Data portability</strong>, receive your data in a structured, machine-readable format.</li>
 <li><strong>Object</strong> to processing based on legitimate interests or for direct marketing.</li>
 <li><strong>Withdraw consent</strong> at any time where processing is based on consent.</li>
 </ul>
@@ -1650,7 +1734,7 @@ function renderRefund(){
 <h3>8. How to Request a Refund</h3>
 <p>All refund requests must be submitted in writing to:</p>
 <p><strong>Email:</strong> info@foxside.com<br>
-<strong>Subject line:</strong> Refund Request — [Your Company Name]<br>
+<strong>Subject line:</strong> Refund Request, [Your Company Name]<br>
 <strong>Include:</strong> Account name, registered email, subscription start date, and reason for request.</p>
 <p>We will acknowledge your request within 2 business days and aim to resolve all refund requests within 10 business days of acknowledgement.</p>
 </div>
@@ -1711,7 +1795,7 @@ function demoBanner(p) {
   return '<div class="demo-banner" style="--p-color:' + p.color + '">'
     + '<div class="demo-banner-left">'
     + '<span class="demo-tag">⚡ Demo Mode</span>'
-    + '<span style="color:var(--text-muted)">Interactive demo with simulated data — <strong style="color:var(--text)">no active API or real data</strong> is connected.</span>'
+    + '<span style="color:var(--text-muted)">Interactive demo with simulated data, <strong style="color:var(--text)">no active API or real data</strong> is connected.</span>'
     + '</div>'
     + '<div class="demo-banner-right">'
     + '<a class="btn btn-outline btn-sm" href="#product/' + p.id + '" onclick="nav(\'product/' + p.id + '\')">← Back to ' + p.name + '</a>'
@@ -1786,7 +1870,7 @@ function kpiCard(label,value,delta,deltaClass,highlight) {
 function actItem(icon,title,desc,time) {
   return '<div class="activity-item">'
     +'<div style="font-size:.95rem;width:20px;flex-shrink:0">'+icon+'</div>'
-    +'<div class="act-text"><strong>'+title+'</strong> — '+desc
+    +'<div class="act-text"><strong>'+title+'</strong>, '+desc
     +'<div class="act-time">'+time+'</div></div></div>';
 }
 
@@ -1807,7 +1891,7 @@ function emptyPanel(icon, title, msg) {
     +'<div style="font-size:3rem;margin-bottom:16px">'+icon+'</div>'
     +'<h3 style="font-family:Raleway,sans-serif;font-weight:800;font-size:1.2rem;margin-bottom:10px">'+title+'</h3>'
     +'<p style="font-size:.88rem;color:var(--text-muted);max-width:360px;margin:0 auto;line-height:1.7">'+msg+'</p>'
-    +'<div style="margin-top:24px;display:inline-flex;align-items:center;gap:8px;background:var(--accent-dim);border:1px solid rgba(200,255,60,0.18);padding:8px 18px;border-radius:8px;font-size:.8rem;color:var(--accent)">⚡ Demo Mode — connect your real data to see live content</div>'
+    +'<div style="margin-top:24px;display:inline-flex;align-items:center;gap:8px;background:var(--accent-dim);border:1px solid rgba(200,255,60,0.18);padding:8px 18px;border-radius:8px;font-size:.8rem;color:var(--accent)">⚡ Demo Mode, connect your real data to see live content</div>'
     +'</div>';
 }
 
@@ -1876,7 +1960,7 @@ function demoLexAI(p) {
       ['<strong style="color:var(--text)">Nexus Corp Acquisition</strong>','Nexus Corp Ltd','J. Mitchell',tag('In Review','p'),'Apr 18',tag('High','red')],
       ['<strong style="color:var(--text)">SaaS Licence Agreement</strong>','TechVentures PLC','S. Okafor',tag('Completed','green'),'Mar 30',tag('Low','green')],
       ['<strong style="color:var(--text)">Employment Contract Review</strong>','Meridian HR','P. Walsh',tag('Pending','yellow'),'Apr 22',tag('Medium','yellow')],
-      ['<strong style="color:var(--text)">IP Assignment — Series B</strong>','FounderLab Ltd','J. Mitchell',tag('In Review','p'),'Apr 25',tag('Medium','yellow')],
+      ['<strong style="color:var(--text)">IP Assignment, Series B</strong>','FounderLab Ltd','J. Mitchell',tag('In Review','p'),'Apr 25',tag('Medium','yellow')],
       ['<strong style="color:var(--text)">Commercial Lease Renewal</strong>','PropGroup UK','A. Chen',tag('Draft','blue'),'May 3',tag('Low','green')]
     ])+'</div>';
 
@@ -1897,11 +1981,11 @@ function demoLexAI(p) {
     +kpiCard('Completed Today','8','↑ 3 vs yesterday','up')
     +'</div>'
     +tablePanel(['Contract','Counterparty','Type','Risk Score','AI Status','Assigned To'],[
-      ['<strong style="color:var(--text)">MSA — Nexus Corp</strong>','Nexus Corp Ltd','Master Services',tag('High','red'),tag('Flagged','red'),'J. Mitchell'],
-      ['<strong style="color:var(--text)">NDA — BlueSky Ltd</strong>','BlueSky Ltd','Non-Disclosure',tag('Low','green'),tag('Approved','green'),'S. Okafor'],
+      ['<strong style="color:var(--text)">MSA, Nexus Corp</strong>','Nexus Corp Ltd','Master Services',tag('High','red'),tag('Flagged','red'),'J. Mitchell'],
+      ['<strong style="color:var(--text)">NDA, BlueSky Ltd</strong>','BlueSky Ltd','Non-Disclosure',tag('Low','green'),tag('Approved','green'),'S. Okafor'],
       ['<strong style="color:var(--text)">SaaS Subscription Agreement</strong>','CloudBase Inc','Technology',tag('Medium','yellow'),tag('In Review','p'),'P. Walsh'],
       ['<strong style="color:var(--text)">Supply Chain Agreement</strong>','LogiPro Ltd','Supply Chain',tag('Medium','yellow'),tag('Pending','yellow'),'A. Chen'],
-      ['<strong style="color:var(--text)">Lease — 12 Fleet St</strong>','Greystone Props','Real Estate',tag('Low','green'),tag('Approved','green'),'J. Mitchell']
+      ['<strong style="color:var(--text)">Lease, 12 Fleet St</strong>','Greystone Props','Real Estate',tag('Low','green'),tag('Approved','green'),'J. Mitchell']
     ]);
 
   var researchPanel =
@@ -1909,33 +1993,33 @@ function demoLexAI(p) {
     +'<div class="d-panel-body">'
     +actItem('🔍','Force Majeure Precedents','17 relevant cases found across UK Commercial Court 2019–2026','2 hr ago')
     +actItem('🔍','IP Ownership in Employment Contracts','AI surfaced 9 landmark cases; 3 flagged as directly relevant','Yesterday')
-    +actItem('🔍','Directors Duty of Care — Section 172','Full summary with 12 citations generated','2 days ago')
-    +actItem('🔍','GDPR Compliance — Data Processor Contracts','Regulatory guidance + 5 ICO enforcement decisions','3 days ago')
+    +actItem('🔍','Directors Duty of Care, Section 172','Full summary with 12 citations generated','2 days ago')
+    +actItem('🔍','GDPR Compliance, Data Processor Contracts','Regulatory guidance + 5 ICO enforcement decisions','3 days ago')
     +'</div></div>'
     +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Saved Research</span></div>'
     +tablePanel(['Query','Cases Found','Saved By','Date'],[
       ['Force Majeure COVID-19 Impact','17',tag('J. Mitchell','p'),'Apr 12'],
-      ['IP Assignment — Employee Inventions','9',tag('P. Walsh','p'),'Apr 10'],
+      ['IP Assignment, Employee Inventions','9',tag('P. Walsh','p'),'Apr 10'],
       ['Minority Shareholder Protections','14',tag('S. Okafor','p'),'Apr 8'],
       ['Commercial Lease Break Clauses','7',tag('A. Chen','p'),'Apr 5']
     ])+'</div>';
 
   var calendarPanel =
-    '<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Upcoming Deadlines — April 2026</span></div>'
+    '<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Upcoming Deadlines, April 2026</span></div>'
     +'<div class="d-panel-body">'
-    +actItem('🔴','Apr 18','Nexus Corp Acquisition — Contract review final deadline','5 days')
-    +actItem('🟡','Apr 22','Employment Contract Review — Client feedback due','9 days')
-    +actItem('🟡','Apr 25','IP Assignment (FounderLab) — Filing deadline','12 days')
-    +actItem('🟢','May 3','Commercial Lease Renewal — Negotiation kick-off','20 days')
-    +actItem('🟢','May 10','TechVentures Annual Review — Scheduled','27 days')
+    +actItem('🔴','Apr 18','Nexus Corp Acquisition, Contract review final deadline','5 days')
+    +actItem('🟡','Apr 22','Employment Contract Review, Client feedback due','9 days')
+    +actItem('🟡','Apr 25','IP Assignment (FounderLab), Filing deadline','12 days')
+    +actItem('🟢','May 3','Commercial Lease Renewal, Negotiation kick-off','20 days')
+    +actItem('🟢','May 10','TechVentures Annual Review, Scheduled','27 days')
     +'</div></div>';
 
   var risksPanel = tablePanel(['Contract','Risk Type','Severity','AI Recommendation','Status'],[
     ['Nexus Corp MSA','Uncapped Liability',tag('High','red'),'Negotiate liability cap at 2× contract value',tag('Open','red')],
-    ['CloudBase SaaS Agreement','IP Ownership Ambiguity',tag('High','red'),'Clarify ownership clause — Section 8.2',tag('Open','red')],
+    ['CloudBase SaaS Agreement','IP Ownership Ambiguity',tag('High','red'),'Clarify ownership clause, Section 8.2',tag('Open','red')],
     ['LogiPro Supply Chain','Automatic Renewal',tag('Medium','yellow'),'Add 30-day notice period for non-renewal',tag('Open','red')],
     ['12 Fleet St Lease','Break Clause Missing',tag('Medium','yellow'),'Insert mutual break right at 18 months',tag('Resolved','green')],
-    ['NDA — BlueSky Ltd','Jurisdiction Mismatch',tag('Low','green'),'Consider English law clause for consistency',tag('Resolved','green')]
+    ['NDA, BlueSky Ltd','Jurisdiction Mismatch',tag('Low','green'),'Consider English law clause for consistency',tag('Resolved','green')]
   ]);
 
   var clientsPanel = tablePanel(['Client','Type','Active Matters','Total Billed','Since','Relationship Manager'],[
@@ -1967,7 +2051,7 @@ function demoLexAI(p) {
     dashboard: dashPanel, matters: mattersPanel, contracts: contractsPanel,
     research: researchPanel, calendar: calendarPanel, risks: risksPanel,
     clients: clientsPanel, billing: billingPanel, settings: settingsPanel
-  }, 'Dashboard — Q1 2026',
+  }, 'Dashboard, Q1 2026',
   '<button class="dt-btn">This Quarter ▾</button><button class="dt-btn primary">+ New Matter</button>');
 }
 
@@ -2012,7 +2096,7 @@ function demoPropIQ(p) {
       return '<div class="bc-col"><div class="bc-bar'+(i===11?' highlight':'')+'" style="height:'+(v/0.62)+'%"></div>'
         +'<div class="bc-label">'+'JFMAMJJASOND'[i]+'</div></div>';
     }).join('')+'</div></div></div>'
-    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Top Agents — This Quarter</span></div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Top Agents, This Quarter</span></div>'
     +'<div class="d-panel-body">'
     +actItem('🏅','Sarah Okafor','£1.8M · 12 deals','#1 agent')
     +actItem('🥈','James Trent','£1.2M · 9 deals','#2 agent')
@@ -2026,7 +2110,7 @@ function demoPropIQ(p) {
       ['<strong style="color:var(--text)">Apt 3B Canary Wharf</strong>','E14','£625,000','£638,500',tag('Offer In','yellow'),'14','J. Trent'],
       ['<strong style="color:var(--text)">22 Elm Street</strong>','Notting Hill, W11','£2,100,000','£2,088,000',tag('Under Offer','green'),'21','P. Mehta'],
       ['<strong style="color:var(--text)">The Granary</strong>','Bermondsey, SE1','£850,000','£842,000',tag('Active','p'),'5','L. Barnes'],
-      ['<strong style="color:var(--text)">8 Mayfair Close</strong>','Mayfair, W1K','£3,200,000','£3,150,000',tag('Prep','blue'),'—','S. Okafor']
+      ['<strong style="color:var(--text)">8 Mayfair Close</strong>','Mayfair, W1K','£3,200,000','£3,150,000',tag('Prep','blue'),'-','S. Okafor']
     ])+'</div>';
 
   var listingsPanel = tablePanel(['Ref','Address','Bedrooms','List Price','AVM Est.','Type','Status','Agent'],[
@@ -2048,14 +2132,14 @@ function demoPropIQ(p) {
   ]);
 
   var marketPanel =
-    '<div class="d-panel" style="margin-bottom:14px"><div class="d-panel-head"><span class="d-panel-title">Market Trends — Prime London Q1 2026</span></div>'
+    '<div class="d-panel" style="margin-bottom:14px"><div class="d-panel-head"><span class="d-panel-title">Market Trends, Prime London Q1 2026</span></div>'
     +'<div class="d-panel-body">'
     +'<div class="line-chart-wrap">'+lineSVG([820,835,828,842,858,851,866,874,869,882,891,904],p.color)+'</div>'
     +'<div style="display:flex;justify-content:space-between;margin-top:6px">'
     +['Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar'].map(function(m){
       return '<span style="font-size:.58rem;color:var(--text-dim)">'+m+'</span>';
     }).join('')+'</div>'
-    +'<div style="margin-top:14px;font-size:.76rem;color:var(--text-muted)">Average £ per sq ft — Prime London postcodes</div>'
+    +'<div style="margin-top:14px;font-size:.76rem;color:var(--text-muted)">Average £ per sq ft, Prime London postcodes</div>'
     +'</div></div>'
     +tablePanel(['Postcode','Avg Price','Vol (Q1)','YoY Change','Days on Market'],[
       ['SW10 Chelsea','£1,420/sqft','48 sales','<span style="color:#00D49A">+4.2%</span>','18 days'],
@@ -2066,7 +2150,7 @@ function demoPropIQ(p) {
     ]);
 
   var pipelinePanel =
-    '<div class="d-panel" style="margin-bottom:14px"><div class="d-panel-head"><span class="d-panel-title">Sales Pipeline — April 2026</span></div>'
+    '<div class="d-panel" style="margin-bottom:14px"><div class="d-panel-head"><span class="d-panel-title">Sales Pipeline, April 2026</span></div>'
     +'<div class="d-panel-body">'
     +'<div class="pipeline-stages" style="--p-color:'+p.color+'">'+[['New Leads','38'],['Viewing Booked','24'],['Offer Made','9'],['Under Offer','5'],['Exchanged','3']].map(function(s){
       return '<div class="ps-stage"><div class="ps-num">'+s[1]+'</div><div class="ps-label">'+s[0]+'</div></div>';
@@ -2138,7 +2222,7 @@ function demoLearnForge(p) {
     +progRow('Engineering','88%')+progRow('Sales','72%')+progRow('Customer Success','81%')
     +progRow('Finance','65%')+progRow('HR & People','79%')+progRow('Operations','70%')
     +'</div></div>'
-    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">🏆 Leaderboard — This Month</span></div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">🏆 Leaderboard, This Month</span></div>'
     +'<div class="d-panel-body">'
     +actItem('🥇','Tom Bradley','Engineering · 9 courses','3,840 pts')
     +actItem('🥈','Priya Nair','Sales · 8 courses','3,410 pts')
@@ -2205,12 +2289,12 @@ function demoLearnForge(p) {
     +'</div>'
     +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Active Challenges</span></div>'
     +'<div class="d-panel-body">'
-    +actItem('⚔️','April Sprint','Complete 3 courses this month — 284 participants','Ends Apr 30')
-    +actItem('🧠','AI Mastery Path','Finish AI Fundamentals + Advanced Python — 98 participants','Ends May 15')
-    +actItem('🏃','Daily Habit Streak','Log in 10 days in a row — 512 participants','Ongoing')
+    +actItem('⚔️','April Sprint','Complete 3 courses this month, 284 participants','Ends Apr 30')
+    +actItem('🧠','AI Mastery Path','Finish AI Fundamentals + Advanced Python, 98 participants','Ends May 15')
+    +actItem('🏃','Daily Habit Streak','Log in 10 days in a row, 512 participants','Ongoing')
     +'</div></div>';
 
-  var aiBuilderPanel = emptyPanel('🤖','AI Course Builder','Enter a topic, paste a PDF, or describe your training goals — LearnForge AI generates a full structured course with modules, quizzes, and SCORM-ready content in minutes.');
+  var aiBuilderPanel = emptyPanel('🤖','AI Course Builder','Enter a topic, paste a PDF, or describe your training goals, LearnForge AI generates a full structured course with modules, quizzes, and SCORM-ready content in minutes.');
   var compliancePanel = tablePanel(['Regulation','Required Courses','Enrolled','Compliant','Last Audit','Status'],[
     ['GDPR','GDPR & Data Compliance','1,204','94%','Apr 1',tag('Compliant','green')],
     ['Health & Safety','H&S Essentials','1,847','88%','Mar 15',tag('Compliant','green')],
@@ -2277,7 +2361,7 @@ function demoNexusCRM(p) {
       ['<strong style="color:var(--text)">BlueStar Finance</strong>','CRM Platform','$180,000',tag('Proposal','yellow'),'May 10','<span style="color:#FFC857;font-weight:700">74%</span>','M. Torres'],
       ['<strong style="color:var(--text)">Vertex Health</strong>','Annual Licence','$95,000',tag('Closing','green'),'Apr 22','<span style="color:#00D49A;font-weight:700">88%</span>','R. Kim'],
       ['<strong style="color:var(--text)">ClearPath Legal</strong>','3-Year Contract','$315,000',tag('Qualified','blue'),'Jun 15','<span style="color:#4C8EFF;font-weight:700">61%</span>','S. Park'],
-      ['<strong style="color:var(--text)">Nova Logistics</strong>','Starter Plan','$48,000',tag('Stalled','red'),'—','<span style="color:#FF5C9E;font-weight:700">22%</span>','M. Torres']
+      ['<strong style="color:var(--text)">Nova Logistics</strong>','Starter Plan','$48,000',tag('Stalled','red'),'-','<span style="color:#FF5C9E;font-weight:700">22%</span>','M. Torres']
     ])+'</div>';
 
   var dealsPanel = tablePanel(['Company','Contact','Value','Stage','Created','Last Activity','Owner','AI Score'],[
@@ -2300,7 +2384,7 @@ function demoNexusCRM(p) {
   var sequencesPanel = tablePanel(['Sequence Name','Contacts','Step','Opened','Replied','Meetings Booked','Status'],[
     ['Q2 Enterprise Outbound','142','Step 3/6','48%','12%','18',tag('Active','green')],
     ['Legal Sector Campaign','88','Step 2/5','52%','9%','11',tag('Active','green')],
-    ['Re-engagement — Stalled Deals','34','Step 1/4','61%','18%','6',tag('Active','green')],
+    ['Re-engagement, Stalled Deals','34','Step 1/4','61%','18%','6',tag('Active','green')],
     ['Finance Sector Nurture','214','Step 4/7','39%','7%','22',tag('Active','green')],
     ['Churned Account Win-Back','51','Step 2/4','44%','14%','8',tag('Paused','yellow')]
   ]);
@@ -2334,14 +2418,14 @@ function demoNexusCRM(p) {
       return '<span style="font-size:.62rem;color:var(--text-dim)">'+m+'</span>';
     }).join('')+'</div></div></div>';
 
-  var copilotPanel = emptyPanel('🤖','AI Sales Co-Pilot','The AI Co-Pilot listens to your calls, reads emails, and surfaces real-time recommendations — what to say next, objections to expect, and which deals need attention today.');
+  var copilotPanel = emptyPanel('🤖','AI Sales Co-Pilot','The AI Co-Pilot listens to your calls, reads emails, and surfaces real-time recommendations, what to say next, objections to expect, and which deals need attention today.');
   var integrationsPanel = tablePanel(['Integration','Type','Status','Last Sync'],[
     ['Salesforce','CRM Sync',tag('Connected','green'),'2 min ago'],
     ['HubSpot','Marketing Sync',tag('Connected','green'),'15 min ago'],
     ['Gong','Call Intelligence',tag('Connected','green'),'1 hr ago'],
     ['Slack','Notifications',tag('Connected','green'),'Live'],
     ['LinkedIn Sales Nav','Prospecting',tag('Connected','green'),'4 hr ago'],
-    ['Outreach','Sequences',tag('Pending','yellow'),'—']
+    ['Outreach','Sequences',tag('Pending','yellow'),'-']
   ]);
   var settingsPanel = emptyPanel('⚙️','Settings','Manage team seats, pipeline stages, field customisation, and notification preferences for NexusCRM.');
 
@@ -2391,11 +2475,11 @@ function demoMediSync(p) {
     }).join('')+'</div>'
     +'<div style="margin-top:14px">'+progRow('In-Person','68%')+progRow('Telehealth','32%')+'</div>'
     +'</div></div>'
-    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">AI Alerts — Today</span></div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">AI Alerts, Today</span></div>'
     +'<div class="d-panel-body">'
     +actItem('⚠️','Drug Interaction','J. Morris: Warfarin + Ibuprofen flag','2 min ago')
-    +actItem('✅','Note Ready','AI note for Sarah Blake — ready to review','8 min ago')
-    +actItem('📅','No-Show Risk','M. Trent (12:30) — 72% risk','15 min ago')
+    +actItem('✅','Note Ready','AI note for Sarah Blake, ready to review','8 min ago')
+    +actItem('📅','No-Show Risk','M. Trent (12:30), 72% risk','15 min ago')
     +actItem('💊','Refill Due','A. Chen: Metformin overdue 3 days','1 hr ago')
     +'</div></div></div>'
     +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Today\'s Schedule</span></div>'
@@ -2413,7 +2497,7 @@ function demoMediSync(p) {
     ['10:30','Leila Rashid','5 Nov 1990','Telehealth','20 min','Dr. Nair','Virtual',tag('In Progress','yellow')],
     ['11:15','Tom Hargreaves','18 Feb 1958','Cardiology','30 min','Dr. Shah','Room 6',tag('Upcoming','blue')],
     ['12:30','Michael Trent','30 Oct 1975','Diabetes Check','20 min','Dr. Nair','Room 4',tag('At Risk','red')],
-    ['13:30','—','—','Lunch Break','—','—','—','<span style="color:var(--text-dim)">Break</span>'],
+    ['13:30','-','-','Lunch Break','-','-','-','<span style="color:var(--text-dim)">Break</span>'],
     ['14:00','Anna Chen','12 Jun 1988','Routine Check','20 min','Dr. Nair','Room 4',tag('Upcoming','blue')],
     ['14:30','Robert Walsh','8 Sep 1945','Geriatric Review','40 min','Dr. Patel','Room 2',tag('Upcoming','blue')]
   ]);
@@ -2435,12 +2519,12 @@ function demoMediSync(p) {
   ]);
 
   var medsPanel = tablePanel(['Patient','Medication','Dose','Frequency','Prescribed By','Refill Due','Flag'],[
-    ['James Morris','Amlodipine 5mg','5mg','Once daily','Dr. Nair','Jun 1','—'],
+    ['James Morris','Amlodipine 5mg','5mg','Once daily','Dr. Nair','Jun 1','-'],
     ['James Morris','Warfarin 3mg','3mg','Once daily','Dr. Nair','May 15',tag('⚠️ Interaction','red')],
     ['Michael Trent','Metformin 500mg','500mg','Twice daily','Dr. Nair','<span style="color:#FF5C9E">3 days ago</span>',tag('Overdue','red')],
-    ['Robert Walsh','Atorvastatin 20mg','20mg','Once daily','Dr. Patel','May 30','—'],
-    ['Robert Walsh','Aspirin 75mg','75mg','Once daily','Dr. Patel','May 30','—'],
-    ['Anna Chen','Levothyroxine 50mcg','50mcg','Once daily','Dr. Nair','Jul 10','—']
+    ['Robert Walsh','Atorvastatin 20mg','20mg','Once daily','Dr. Patel','May 30','-'],
+    ['Robert Walsh','Aspirin 75mg','75mg','Once daily','Dr. Patel','May 30','-'],
+    ['Anna Chen','Levothyroxine 50mcg','50mcg','Once daily','Dr. Nair','Jul 10','-']
   ]);
 
   var analyticsPanel =
@@ -2462,7 +2546,7 @@ function demoMediSync(p) {
     ['2026-04-15 09:48','Dr. Nair','Edit Note','James Morris (P-0883)','192.168.1.20',tag('Allowed','green')],
     ['2026-04-15 10:12','Dr. Shah','View Record','Tom Hargreaves (P-0724)','192.168.1.34',tag('Allowed','green')],
     ['2026-04-14 16:30','Admin','Export Report','Aggregate Data','192.168.1.5',tag('Allowed','green')],
-    ['2026-04-14 11:20','Unknown','Login Attempt','—','84.22.141.9',tag('Blocked','red')]
+    ['2026-04-14 11:20','Unknown','Login Attempt','-','84.22.141.9',tag('Blocked','red')]
   ]);
 
   var reportsPanel = emptyPanel('📜','Clinical Reports','Generate HEDIS, CMS, and population health reports. Export as PDF or submit directly to your regulatory authority. All reports are HIPAA-compliant and audit-ready.');
@@ -2472,7 +2556,7 @@ function demoMediSync(p) {
     dashboard:dashPanel, schedule:schedulePanel, patients:patientsPanel,
     notes:notesPanel, meds:medsPanel, analytics:analyticsPanel,
     hipaa:hipaaPanel, reports:reportsPanel, settings:settingsPanel
-  }, 'Clinical Dashboard — Tue Apr 15',
+  }, 'Clinical Dashboard, Tue Apr 15',
   '<button class="dt-btn">Dr. P. Nair ▾</button><button class="dt-btn primary">+ Appointment</button>');
 }
 
@@ -2547,8 +2631,8 @@ function demoFinPilot(p) {
   var compliancePanel = tablePanel(['Requirement','Client','Due Date','Filed By','Status'],[
     ['Form ADV Annual Update','All Clients','Mar 31, 2026','D. Walsh',tag('Filed','green')],
     ['13F Quarterly Filing','Institutional Accounts','May 15, 2026','Compliance Team',tag('Pending','yellow')],
-    ['Suitability Review — Chen','Chen Endowment','Apr 30, 2026','S. Patel',tag('Overdue','red')],
-    ['KYC Renewal — Harrington','Harrington Family','Jun 30, 2026','D. Walsh',tag('On Track','green')],
+    ['Suitability Review, Chen','Chen Endowment','Apr 30, 2026','S. Patel',tag('Overdue','red')],
+    ['KYC Renewal, Harrington','Harrington Family','Jun 30, 2026','D. Walsh',tag('On Track','green')],
     ['FATCA Reporting','All Clients','Jun 30, 2026','Compliance Team',tag('On Track','green')]
   ]);
 
@@ -2557,10 +2641,10 @@ function demoFinPilot(p) {
   var alertsPanel =
     '<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Active Alerts</span></div>'
     +'<div class="d-panel-body">'
-    +actItem('🔴','Suitability Risk — Chen Endowment','Portfolio drift exceeds aggressive mandate by 8%. Review required within 30 days.','2 days ago')
-    +actItem('🟡','Rebalancing Due — Harrington','Equity allocation now 61% vs 54% target. AI recommends trimming tech positions.','Today')
-    +actItem('🟡','Compliance Deadline Approaching','Chen Endowment suitability review due Apr 30 — 15 days remaining.','Ongoing')
-    +actItem('🟢','Tax Loss Opportunity — Nova','3 positions showing -8%+ loss. AI flagged for potential tax-loss harvesting.','Yesterday')
+    +actItem('🔴','Suitability Risk, Chen Endowment','Portfolio drift exceeds aggressive mandate by 8%. Review required within 30 days.','2 days ago')
+    +actItem('🟡','Rebalancing Due, Harrington','Equity allocation now 61% vs 54% target. AI recommends trimming tech positions.','Today')
+    +actItem('🟡','Compliance Deadline Approaching','Chen Endowment suitability review due Apr 30, 15 days remaining.','Ongoing')
+    +actItem('🟢','Tax Loss Opportunity, Nova','3 positions showing -8%+ loss. AI flagged for potential tax-loss harvesting.','Yesterday')
     +'</div></div>';
 
   var scenariosPanel = emptyPanel('🔮','Scenario Modelling','Run Monte Carlo simulations, stress tests, and retirement projections. Model rate hike scenarios, market crashes, and inflation impacts across any client portfolio.');
@@ -2628,7 +2712,7 @@ function demoTalentFlow(p) {
       ['<strong style="color:var(--text)">Product Manager</strong>','Product','72','12','6',tag('Urgent','red'),tag('Active','p')],
       ['<strong style="color:var(--text)">Account Executive</strong>','Sales','91','14','8',tag('High','yellow'),tag('Active','p')],
       ['<strong style="color:var(--text)">Data Analyst</strong>','Analytics','36','6','3',tag('Normal','blue'),tag('Active','p')],
-      ['<strong style="color:var(--text)">UX Designer</strong>','Design','—','—','—',tag('Normal','blue'),tag('Drafting','yellow')]
+      ['<strong style="color:var(--text)">UX Designer</strong>','Design','-','-','-',tag('Normal','blue'),tag('Drafting','yellow')]
     ])+'</div>';
 
   var rolesPanel = tablePanel(['Role','Department','Level','Location','Salary Range','Applicants','Posted','Status'],[
@@ -2636,8 +2720,8 @@ function demoTalentFlow(p) {
     ['<strong style="color:var(--text)">Product Manager</strong>','Product','Mid','London','£65–80K','72','Apr 1',tag('Active','p')],
     ['<strong style="color:var(--text)">Account Executive</strong>','Sales','Mid','London','£45–60K + OTE','91','Mar 28',tag('Active','p')],
     ['<strong style="color:var(--text)">Data Analyst</strong>','Analytics','Junior','London / Hybrid','£35–45K','36','Apr 5',tag('Active','p')],
-    ['<strong style="color:var(--text)">UX Designer</strong>','Design','Mid','Remote','£55–70K','—','—',tag('Drafting','yellow')],
-    ['<strong style="color:var(--text)">DevOps Engineer</strong>','Engineering','Senior','London','£75–90K','—','—',tag('Approval','yellow')],
+    ['<strong style="color:var(--text)">UX Designer</strong>','Design','Mid','Remote','£55–70K','-','-',tag('Drafting','yellow')],
+    ['<strong style="color:var(--text)">DevOps Engineer</strong>','Engineering','Senior','London','£75–90K','-','-',tag('Approval','yellow')],
     ['<strong style="color:var(--text)">Customer Success Mgr</strong>','CS','Mid','London','£40–55K','24','Apr 8',tag('Active','p')]
   ]);
 
@@ -2650,12 +2734,12 @@ function demoTalentFlow(p) {
   ]);
 
   var interviewsPanel = tablePanel(['Candidate','Role','Interview Type','Interviewer','Date & Time','Status','AI Note'],[
-    ['Rahul Sharma','Backend Eng.','Final — Technical','CTO + VP Eng','Apr 16, 14:00',tag('Confirmed','green'),'Prep sent'],
-    ['Mei Lin','Product Manager','Final — Culture','CEO + Head of Product','Apr 17, 10:00',tag('Confirmed','green'),'Prep sent'],
-    ['Daniel Osei','Account Executive','Round 2 — Skills','VP Sales','Apr 18, 11:30',tag('Pending','yellow'),'—'],
-    ['Sophie Turner','Data Analyst','Round 1 — Screening','People Team','Apr 19, 15:00',tag('Confirmed','green'),'—'],
-    ['James Okoye','Backend Eng.','Round 1 — Technical','Eng Lead','Apr 22, 09:00',tag('Tentative','yellow'),'—'],
-    ['Amara Diallo','Account Executive','Round 1 — Screening','People Team','Apr 23, 14:00',tag('Confirmed','green'),'—']
+    ['Rahul Sharma','Backend Eng.','Final, Technical','CTO + VP Eng','Apr 16, 14:00',tag('Confirmed','green'),'Prep sent'],
+    ['Mei Lin','Product Manager','Final, Culture','CEO + Head of Product','Apr 17, 10:00',tag('Confirmed','green'),'Prep sent'],
+    ['Daniel Osei','Account Executive','Round 2, Skills','VP Sales','Apr 18, 11:30',tag('Pending','yellow'),'-'],
+    ['Sophie Turner','Data Analyst','Round 1, Screening','People Team','Apr 19, 15:00',tag('Confirmed','green'),'-'],
+    ['James Okoye','Backend Eng.','Round 1, Technical','Eng Lead','Apr 22, 09:00',tag('Tentative','yellow'),'-'],
+    ['Amara Diallo','Account Executive','Round 1, Screening','People Team','Apr 23, 14:00',tag('Confirmed','green'),'-']
   ]);
 
   var deiPanel =
@@ -2668,9 +2752,9 @@ function demoTalentFlow(p) {
     +'<div class="demo-grid demo-grid-2">'
     +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Funnel by Gender</span></div>'
     +'<div class="d-panel-body">'
-    +progRow('Applied — Female','41%')+progRow('Screened — Female','44%')
-    +progRow('Interviewed — Female','46%')+progRow('Offers — Female','48%')
-    +progRow('Accepted — Female','51%')
+    +progRow('Applied, Female','41%')+progRow('Screened, Female','44%')
+    +progRow('Interviewed, Female','46%')+progRow('Offers, Female','48%')
+    +progRow('Accepted, Female','51%')
     +'</div></div>'
     +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Funnel by Ethnicity</span></div>'
     +'<div class="d-panel-body">'
@@ -2686,7 +2770,7 @@ function demoTalentFlow(p) {
     ['Tom Bradley','Data Analyst','£41,000','£40,500','+1.2%','<span style="color:#FFC857;font-weight:700">68%</span>',tag('Drafting','blue')]
   ]);
 
-  var sourcingPanel = emptyPanel('🔍','AI Candidate Sourcing','Enter a job description or paste a role spec — TalentFlow AI searches 500M+ profiles across LinkedIn, GitHub, Behance, and 40+ job boards to build a ranked shortlist in minutes.');
+  var sourcingPanel = emptyPanel('🔍','AI Candidate Sourcing','Enter a job description or paste a role spec, TalentFlow AI searches 500M+ profiles across LinkedIn, GitHub, Behance, and 40+ job boards to build a ranked shortlist in minutes.');
   var workforcePanel = emptyPanel('📈','Workforce Planning','Model headcount scenarios, predict attrition risk, and build succession pipelines across your organisation. Connect your HRIS for live workforce intelligence.');
   var settingsPanel = emptyPanel('⚙️','Settings','Configure ATS integrations (Greenhouse, Lever, Workday), job board syndication, interview scheduling tools, and DEI data collection settings.');
 
@@ -2726,7 +2810,7 @@ function demoConstructIQ(p) {
     +kpiCard('Budget Variance','−2.1%','Under budget','up')
     +kpiCard('Safety Score','96/100','2 open flags','down')
     +'</div>'
-    +'<div class="d-panel" style="margin-bottom:14px"><div class="d-panel-head"><span class="d-panel-title">Project Timeline</span><span class="d-panel-sub">Gantt — Q1/Q2 2026</span></div>'
+    +'<div class="d-panel" style="margin-bottom:14px"><div class="d-panel-head"><span class="d-panel-title">Project Timeline</span><span class="d-panel-sub">Gantt, Q1/Q2 2026</span></div>'
     +'<div class="d-panel-body">'
     +'<div style="display:flex;justify-content:space-between;margin-bottom:8px;padding-left:128px">'
     +['Jan','Feb','Mar','Apr','May','Jun'].map(function(m){
@@ -2750,10 +2834,10 @@ function demoConstructIQ(p) {
     }).join('')+'</div></div>'
     +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">⚠️ Safety Alerts</span></div>'
     +'<div class="d-panel-body">'
-    +actItem('🔴','PPE Violation','Canary Wharf Zone 3 — hard hat not detected','12 min ago')
-    +actItem('🟡','Access Alert','M25 Bridge — unauthorised vehicle detected','1 hr ago')
-    +actItem('✅','Inspection Passed','SE1 Residential — daily check complete','3 hrs ago')
-    +actItem('✅','Induction Done','Heathrow T3 — 12 new workers inducted','5 hrs ago')
+    +actItem('🔴','PPE Violation','Canary Wharf Zone 3, hard hat not detected','12 min ago')
+    +actItem('🟡','Access Alert','M25 Bridge, unauthorised vehicle detected','1 hr ago')
+    +actItem('✅','Inspection Passed','SE1 Residential, daily check complete','3 hrs ago')
+    +actItem('✅','Induction Done','Heathrow T3, 12 new workers inducted','5 hrs ago')
     +'</div></div></div>';
 
   var projectsPanel = tablePanel(['Project','Client','Value','Start','End','PM','On Schedule','Budget Used','Status'],[
@@ -2766,13 +2850,13 @@ function demoConstructIQ(p) {
   ]);
 
   var schedulePanel =
-    '<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Schedule Overview — Week 15</span></div>'
+    '<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Schedule Overview, Week 15</span></div>'
     +'<div class="d-panel-body">'
     +tablePanel(['Task','Project','Assigned To','Start','Finish','Duration','Status'],[
-      ['Foundation pour — Sector B','Canary Wharf Tower','M. Peterson','Apr 14','Apr 18','5 days',tag('In Progress','yellow')],
+      ['Foundation pour, Sector B','Canary Wharf Tower','M. Peterson','Apr 14','Apr 18','5 days',tag('In Progress','yellow')],
       ['Steelwork Level 4','Canary Wharf Tower','Steelco Ltd','Apr 16','Apr 25','10 days',tag('Scheduled','blue')],
-      ['Waterproofing — Phase 2','SE1 Residential','BuildRight','Apr 15','Apr 20','6 days',tag('In Progress','yellow')],
-      ['Asphalt Resurfacing — Km 12–18','M25 Bridge','RoadFix Ltd','Apr 17','May 2','16 days',tag('Delayed','red')],
+      ['Waterproofing, Phase 2','SE1 Residential','BuildRight','Apr 15','Apr 20','6 days',tag('In Progress','yellow')],
+      ['Asphalt Resurfacing, Km 12–18','M25 Bridge','RoadFix Ltd','Apr 17','May 2','16 days',tag('Delayed','red')],
       ['Terminal Ceiling Installation','Heathrow T3','InteriorPro','Apr 16','Apr 22','7 days',tag('In Progress','yellow')],
       ['Ground Works','Kings Cross Dev.','GeoTech Ltd','Apr 14','Apr 28','15 days',tag('In Progress','yellow')]
     ])+'</div></div>';
@@ -2803,15 +2887,15 @@ function demoConstructIQ(p) {
     +tablePanel(['Date','Project','Type','Severity','Description','Raised By','Status'],[
       ['Apr 15, 09:12','Canary Wharf Tower','PPE Violation',tag('High','red'),'Hard hat not detected on Camera 4 Zone 3','AI Camera','<span style="color:#FF5C9E">Open</span>'],
       ['Apr 15, 11:40','M25 Bridge Repair','Access Breach',tag('Medium','yellow'),'Unauthorised vehicle in restricted zone','AI Camera','<span style="color:#FF5C9E">Open</span>'],
-      ['Apr 14','SE1 Residential','Daily Inspection',tag('Low','green'),'All areas clear — full compliance','A. Nguyen','<span style="color:#00D49A">Closed</span>'],
+      ['Apr 14','SE1 Residential','Daily Inspection',tag('Low','green'),'All areas clear, full compliance','A. Nguyen','<span style="color:#00D49A">Closed</span>'],
       ['Apr 14','Heathrow T3 Reno','Worker Induction',tag('Low','green'),'12 new workers inducted and briefed','C. Walsh','<span style="color:#00D49A">Closed</span>'],
       ['Apr 13','Canary Wharf Tower','Near Miss',tag('Medium','yellow'),'Unsecured materials on Level 6 scaffold','M. Peterson','<span style="color:#00D49A">Closed</span>']
     ]);
 
   var procurementPanel = tablePanel(['Item','Project','Supplier','Qty','Unit Cost','Total','Order Date','ETA','Status'],[
-    ['Structural Steel — Grade S355','Canary Wharf','Steelco Ltd','240T','£820/T','£196,800','Apr 1','Apr 18',tag('In Transit','yellow')],
+    ['Structural Steel, Grade S355','Canary Wharf','Steelco Ltd','240T','£820/T','£196,800','Apr 1','Apr 18',tag('In Transit','yellow')],
     ['Concrete Mix C40','M25 Bridge','Readymix UK','180m³','£92/m³','£16,560','Apr 8','Apr 16',tag('Delayed','red')],
-    ['Ceiling Tiles — T-Grid','Heathrow T3','InteriorPro','4,200 m²','£22/m²','£92,400','Mar 28','Apr 14',tag('Delivered','green')],
+    ['Ceiling Tiles, T-Grid','Heathrow T3','InteriorPro','4,200 m²','£22/m²','£92,400','Mar 28','Apr 14',tag('Delivered','green')],
     ['Waterproof Membrane','SE1 Residential','BuildRight','820 m²','£18/m²','£14,760','Apr 5','Apr 17',tag('In Transit','yellow')],
     ['Groundwork Plant Hire','Kings Cross Dev.','GeoTech Ltd','3 units','£480/day','£21,600','Apr 12','Apr 14',tag('Active','p')]
   ]);
@@ -2825,8 +2909,8 @@ function demoConstructIQ(p) {
   ]);
 
   var rfisPanel = tablePanel(['RFI Ref','Project','Subject','Submitted By','Submitted','Assigned To','Due','Status'],[
-    ['RFI-1042','Canary Wharf Tower','Rebar spacing — Level 7 slab','Steelco Ltd','Apr 14','M. Peterson','Apr 17',tag('Open','red')],
-    ['RFI-1041','M25 Bridge Repair','Drainage spec change — Km 15','RoadFix Ltd','Apr 13','C. Walsh','Apr 16',tag('Overdue','red')],
+    ['RFI-1042','Canary Wharf Tower','Rebar spacing, Level 7 slab','Steelco Ltd','Apr 14','M. Peterson','Apr 17',tag('Open','red')],
+    ['RFI-1041','M25 Bridge Repair','Drainage spec change, Km 15','RoadFix Ltd','Apr 13','C. Walsh','Apr 16',tag('Overdue','red')],
     ['RFI-1040','Heathrow T3 Reno','Fire door certification','InteriorPro','Apr 12','C. Walsh','Apr 19',tag('In Review','yellow')],
     ['RFI-1039','SE1 Residential','Structural slab load revision','BuildRight','Apr 10','A. Nguyen','Apr 17',tag('Closed','green')],
     ['RFI-1038','Battersea Retrofit','Heritage facade retention spec','Southwark Council','Apr 8','M. Peterson','Apr 15',tag('Closed','green')]
@@ -2860,7 +2944,7 @@ var CASE_STUDIES = [
   id:'lex-1', product:'lexai', productName:'LexAI', color:'#4C8EFF', icon:'⚖️',
   headline:'How a 22-Lawyer Commercial Firm Reduced First-Pass Contract Review Time by 58% in 90 Days',
   client:{type:'Commercial Law Firm',size:'22 attorneys',region:'London, UK',setup:'Single-office, mixed practice covering commercial contracts, employment, and property'},
-  challenge:'The firm was handling roughly 140 commercial contracts per month — NDAs, supply agreements, service contracts, and lease reviews. First-pass review was entirely manual, averaging 4.8 hours per contract for a junior associate. Partners were regularly pulled in to re-review work that should have been triaged at intake. The backlog was growing, and the firm was losing time they could not bill.',
+  challenge:'The firm was handling roughly 140 commercial contracts per month, NDAs, supply agreements, service contracts, and lease reviews. First-pass review was entirely manual, averaging 4.8 hours per contract for a junior associate. Partners were regularly pulled in to re-review work that should have been triaged at intake. The backlog was growing, and the firm was losing time they could not bill.',
   whyFoxside:'The firm evaluated two other legal AI tools but found they were trained primarily on US caselaw. LexAI\'s UK-specific contract training and the ability to configure custom risk flags for their practice areas made the difference. The SOC 2 compliance and client data isolation also resolved the data governance concerns raised by their practice manager.',
   implementation:'The pilot started with 4 junior associates and 1 operations manager over 6 weeks. They connected LexAI to their existing document management system and configured 12 custom risk flag categories. In week 3 they added NDA-specific templates. Full firm rollout happened at week 8.',
   before:'Associates received contracts by email, read through the full document manually, and produced a summary memo in a separate document. Partners then reviewed both. High variability in quality meant some memos needed to be rewritten.',
@@ -2871,7 +2955,7 @@ var CASE_STUDIES = [
     {metric:'Contract volume handled','before':'140/month','after':'178/month','change':'27% more without new headcount',timeframe:'Month 3 vs month 1'},
     {metric:'Partner re-review rate','before':'~34% of memos','after':'~11% of memos','change':'68% fewer re-reviews',timeframe:'Measured over 60 days post-rollout'}
   ],
-  quote:'"It did not replace legal review — and we were clear with clients about that. But it removed a significant amount of repetitive first-pass work that was consuming associate time without adding much value. The quality of what we hand to partners is noticeably more consistent now."',
+  quote:'"It did not replace legal review, and we were clear with clients about that. But it removed a significant amount of repetitive first-pass work that was consuming associate time without adding much value. The quality of what we hand to partners is noticeably more consistent now."',
   quoteAuthor:'Head of Operations, 22-lawyer commercial firm, London',
   nuance:'The first month required template calibration for property-specific clauses. The team also kept a human-only workflow for matters flagged as high-stakes litigation risk.',
   whatsNext:'The firm is piloting LexAI\'s research module for case law queries and evaluating whether to extend to their two partner-level fee earners for high-volume matters.'
@@ -2902,7 +2986,7 @@ var CASE_STUDIES = [
   client:{type:'M&A Advisory Firm',size:'18 lawyers and analysts',region:'Sydney, Australia',setup:'Boutique M&A practice specialising in mid-market transactions between A$15M and A$200M'},
   challenge:'The firm was winning more mandates but struggling to scale due diligence. A typical document room contained 800–2,400 documents. Teams were manually triaging which documents needed full review, which meant juniors were spending 2–3 days just categorising a data room before substantive work began. This was slowing deal timelines and limiting the number of live mandates the firm could handle.',
   whyFoxside:'The partners were specifically looking for a due diligence workflow tool, not a general contract reader. LexAI\'s document room ingestion and automatic categorisation by document type aligned with how their teams already thought about due diligence. The risk summary output also matched the firm\'s existing reporting format.',
-  implementation:'The team started with a single live transaction — a manufacturing acquisition with a 1,100-document data room. Two associates ran the initial data room through LexAI alongside their manual process to compare outputs. By the second transaction, they had retired the manual triage entirely. Five transactions were processed in the first 8 weeks.',
+  implementation:'The team started with a single live transaction, a manufacturing acquisition with a 1,100-document data room. Two associates ran the initial data room through LexAI alongside their manual process to compare outputs. By the second transaction, they had retired the manual triage entirely. Five transactions were processed in the first 8 weeks.',
   before:'2–3 days of manual document triage per transaction. Associates read every document, logged it in a spreadsheet by category, and flagged items for senior review. The process was inconsistent between team members.',
   after:'LexAI ingests and categorises the full data room within hours. Associates receive a prioritised review queue with risk-scored documents at the top. The firm\'s issue list is auto-populated as a starting point for senior lawyers.',
   results:[
@@ -2911,7 +2995,7 @@ var CASE_STUDIES = [
     {metric:'Issue identification rate','before':'Baseline (manual)','after':'23% more issues flagged per transaction on average','change':'\'Improved coverage',timeframe:'Compared across 10 transactions'},
     {metric:'Associate hours per deal on review','before':'~80 hours per transaction','after':'~52 hours per transaction','change':'\'35% reduction',timeframe:'Average across 5 transactions'}
   ],
-  quote:'"The triage stage used to be almost invisible work — juniors spent days doing it and we never really measured it. LexAI made us realise how much time we were losing before we even started reviewing. Now we get to the issues faster and we have been able to take on more work."',
+  quote:'"The triage stage used to be almost invisible work, juniors spent days doing it and we never really measured it. LexAI made us realise how much time we were losing before we even started reviewing. Now we get to the issues faster and we have been able to take on more work."',
   quoteAuthor:'Partner, M&A advisory practice',
   nuance:'The firm still requires senior lawyer sign-off on all issue summaries before client delivery. The AI output is a starting point, not a finished work product.',
   whatsNext:'The firm is evaluating LexAI\'s research module for UK corporate law precedent searches and exploring integration with their deal management platform.'
@@ -2933,7 +3017,7 @@ var CASE_STUDIES = [
     {metric:'AVM usage (external tool replaced)','before':'Paid separately, ~$340/month','after':'Included in PropIQ','change':'\'Cost eliminated',timeframe:'From month 1'},
     {metric:'Viewing conversion rate','before':'31% of leads booked a viewing','after':'41% of leads booked a viewing','change':'\'10 point improvement',timeframe:'Q1 2026'}
   ],
-  quote:'"We always knew fast follow-up mattered. PropIQ just made it automatic. The scoring is not perfect — we still use our judgement — but it stops us from accidentally ignoring a hot lead because the inbox was busy."',
+  quote:'"We always knew fast follow-up mattered. PropIQ just made it automatic. The scoring is not perfect, we still use our judgement, but it stops us from accidentally ignoring a hot lead because the inbox was busy."',
   quoteAuthor:'Sales Manager, Austin, Texas estate agency',
   nuance:'The team notes that the AI score occasionally underweights walk-in and referral leads relative to portal leads. They apply a manual override for referrals from known solicitors.',
   whatsNext:'The agency is implementing PropIQ\'s automated nurture sequences for leads that do not book immediately, targeting the 60% of enquiries that currently go cold within 14 days.'
@@ -2942,7 +3026,7 @@ var CASE_STUDIES = [
   id:'prop-2', product:'propiq', productName:'PropIQ', color:'#00D49A', icon:'🏢',
   headline:'How a Regional Lettings Agency Cut Market Report Preparation Time From 3 Days to 4 Hours',
   client:{type:'Residential Lettings Agency',size:'8 staff',region:'Greater Manchester',setup:'Lettings-focused agency managing 340 properties across Didsbury, Chorlton, and Salford'},
-  challenge:'The agency produced quarterly market reports for their landlord clients — a service that was genuinely appreciated but extremely time-consuming. A single report took one member of staff 2.5–3 days to compile: pulling comparable data from portals, formatting it, writing commentary, and chasing statistics. With 28 landlord clients requesting individual reports, the quarterly cycle was becoming unsustainable.',
+  challenge:'The agency produced quarterly market reports for their landlord clients, a service that was genuinely appreciated but extremely time-consuming. A single report took one member of staff 2.5–3 days to compile: pulling comparable data from portals, formatting it, writing commentary, and chasing statistics. With 28 landlord clients requesting individual reports, the quarterly cycle was becoming unsustainable.',
   whyFoxside:'The lettings director specifically wanted a tool that could generate market reports for named postcodes with comparable rental data, average void periods, and yield estimates. PropIQ was the first product they evaluated that could generate a formatted client-ready report from postcode input rather than requiring manual data assembly.',
   implementation:'PropIQ was configured with their 28 active landlord postcodes in week 1. The team spent 2 days customising the report template to match their brand. They ran a parallel test where one staff member produced reports the old way and another used PropIQ, then shared both with 4 landlords to gather feedback. All 4 preferred the PropIQ version on presentation quality.',
   before:'One staff member spent 2.5–3 days per quarter per landlord compiling reports from multiple data sources in a Word template. Errors from manual data entry were common.',
@@ -2955,7 +3039,7 @@ var CASE_STUDIES = [
   ],
   quote:'"The reports look better than ours ever did manually, and they take almost no time now. One landlord asked if we had hired a research analyst. We hadn\'t."',
   quoteAuthor:'Lettings Director, Greater Manchester residential agency',
-  nuance:'The AI-generated commentary on market conditions requires a human check — occasionally it uses data phrasing that does not match the agency\'s tone or includes a caveat the team prefers not to use with landlords.',
+  nuance:'The AI-generated commentary on market conditions requires a human check, occasionally it uses data phrasing that does not match the agency\'s tone or includes a caveat the team prefers not to use with landlords.',
   whatsNext:'The agency is rolling out PropIQ\'s lead scoring to their acquisitions team, which currently has no structured prioritisation for landlord acquisition leads.'
 },
 {
@@ -2973,7 +3057,7 @@ var CASE_STUDIES = [
     {metric:'Pipeline visibility','before':'Director required weekly broker calls for status','after':'Real-time dashboard replaces most status calls','change':'\'~4 hours/week returned to director',timeframe:'From week 6 onwards'},
     {metric:'Follow-up compliance','before':'No tracking, estimated 50–60%','after':'84% of follow-up prompts actioned within 24 hours','change':'\'Significant improvement in discipline',timeframe:'Weeks 6–12'}
   ],
-  quote:'"Commercial deals move slowly and people can disappear for weeks without realising. PropIQ does not speed up the market — it just stops us being the reason a deal slips."',
+  quote:'"Commercial deals move slowly and people can disappear for weeks without realising. PropIQ does not speed up the market, it just stops us being the reason a deal slips."',
   quoteAuthor:'Director, Dubai commercial property brokerage',
   nuance:'Brokers initially pushed back on the activity prompts feeling like micromanagement. The team resolved this by framing them as client service alerts rather than performance tracking.',
   whatsNext:'The brokerage is piloting PropIQ\'s AI valuation module for industrial properties in the outer London market.'
@@ -2984,9 +3068,9 @@ var CASE_STUDIES = [
   id:'lf-1', product:'learnforge', productName:'LearnForge', color:'#FFC857', icon:'🎓',
   headline:'How a Financial Services Firm Completed a Firm-Wide Compliance Training Rollout in 11 Days Instead of 8 Weeks',
   client:{type:'Financial Services Firm',size:'380 employees across 4 offices',region:'New York, USA',setup:'Investment advisory and wealth management firm under SEC and FINRA regulation'},
-  challenge:'The firm needed to complete mandatory SEC and FINRA-required training for all 380 staff before a regulatory deadline. Previously this meant booking rooms, coordinating schedules, and running 14 separate in-person sessions over 8 weeks — a process that had failed to achieve 100% completion in two previous cycles. They needed a way to reach all staff, including remote workers, with proof of completion they could present to auditors.',
+  challenge:'The firm needed to complete mandatory SEC and FINRA-required training for all 380 staff before a regulatory deadline. Previously this meant booking rooms, coordinating schedules, and running 14 separate in-person sessions over 8 weeks, a process that had failed to achieve 100% completion in two previous cycles. They needed a way to reach all staff, including remote workers, with proof of completion they could present to auditors.',
   whyFoxside:'The L&D manager needed a platform that could generate a SCORM-compatible course from existing compliance content, track completion at the individual level, and produce a report formatted for FINRA audit submission. LearnForge met all three requirements and was the only platform evaluated that offered AI-assisted course generation from their existing PDF materials.',
-  implementation:'The L&D team uploaded their existing FCA training materials — 4 PDFs and 2 slide decks — into LearnForge\'s AI course builder. The system generated a structured 8-module course in under an hour. The team spent 2 days reviewing and adjusting. The course went live to all 380 staff on day 4. A reminder sequence was configured for non-completers.',
+  implementation:'The L&D team uploaded their existing FCA training materials, 4 PDFs and 2 slide decks, into LearnForge\'s AI course builder. The system generated a structured 8-module course in under an hour. The team spent 2 days reviewing and adjusting. The course went live to all 380 staff on day 4. A reminder sequence was configured for non-completers.',
   before:'In-person sessions over 8 weeks. 14 scheduled sessions needed. Completion rate in previous cycles: 88% and 91%. Manual attendance logs submitted to compliance officer.',
   after:'Single digital course available across all devices. Automated reminders to non-completers at day 3, day 7, and day 10. Completion reports auto-generated and exportable.',
   results:[
@@ -2997,7 +3081,7 @@ var CASE_STUDIES = [
   ],
   quote:'"We had a hard regulatory deadline and a workforce spread across 4 offices. Doing this the old way would have been very stressful. LearnForge meant we finished with days to spare and had cleaner records than we have ever submitted to an audit."',
   quoteAuthor:'Head of L&D, New York financial services firm',
-  nuance:'3% of staff did not complete by day 11. These were followed up individually by their line managers as per the firm\'s existing policy — the platform flagged them automatically but completion was a human responsibility.',
+  nuance:'3% of staff did not complete by day 11. These were followed up individually by their line managers as per the firm\'s existing policy, the platform flagged them automatically but completion was a human responsibility.',
   whatsNext:'The firm is building out a broader compliance curriculum covering 6 additional mandatory modules, and has given LearnForge\'s AI builder to two senior compliance staff to generate content independently.'
 },
 {
@@ -3024,7 +3108,7 @@ var CASE_STUDIES = [
   id:'lf-3', product:'learnforge', productName:'LearnForge', color:'#FFC857', icon:'🎓',
   headline:'How a SaaS Company Cut New Hire Time-to-Productivity From 11 Weeks to 7 Weeks',
   client:{type:'B2B SaaS Company',size:'210 employees',region:'London & remote',setup:'Product-led B2B software company; hiring 4–8 new employees per month'},
-  challenge:'The company was growing quickly but onboarding was poorly structured. New hires completed paperwork and attended a few ad hoc sessions, but there was no formal learning path. Managers reported that new employees were not fully productive for 10–12 weeks. The People team was also finding it difficult to keep onboarding content current — the product changed fast and training materials were frequently out of date.',
+  challenge:'The company was growing quickly but onboarding was poorly structured. New hires completed paperwork and attended a few ad hoc sessions, but there was no formal learning path. Managers reported that new employees were not fully productive for 10–12 weeks. The People team was also finding it difficult to keep onboarding content current, the product changed fast and training materials were frequently out of date.',
   whyFoxside:'The Head of People specifically needed a platform where managers and subject-matter experts could update course content quickly without going through a central L&D bottleneck. LearnForge\'s AI builder and course management tools allowed non-L&D staff to own and refresh their modules independently.',
   implementation:'The People team mapped out an 8-week structured onboarding path across 5 tracks: company culture, product knowledge, role-specific technical skills, customer communication, and compliance. LearnForge\'s AI builder was used to generate initial module structures from existing documentation. SMEs from each team took ownership of their modules. The full path was live within 3 weeks.',
   before:'Ad hoc onboarding. No structured learning path. Materials spread across Notion, Google Drive, and slide decks. Managers reported 10–12 weeks before new hires were fully independent.',
@@ -3046,7 +3130,7 @@ var CASE_STUDIES = [
   id:'crm-1', product:'nexuscrm', productName:'NexusCRM', color:'#FF5C9E', icon:'🔗',
   headline:'How a 14-Rep B2B Sales Team Improved Follow-Up Consistency and Booked 31% More Meetings Per Quarter',
   client:{type:'B2B SaaS Company',size:'14 account executives, 2 SDRs',region:'Toronto, Canada',setup:'Mid-market B2B software company targeting North American financial services and fintech clients'},
-  challenge:'The team was generating enough pipeline but converting it poorly. A post-quarter analysis found that 41% of leads that came inbound had not received a follow-up within 24 hours, and 28% had received only one outreach attempt before being marked cold. The VP of Sales described the core problem as a discipline issue, not a talent issue — reps were capable but the system was not holding them to a consistent process.',
+  challenge:'The team was generating enough pipeline but converting it poorly. A post-quarter analysis found that 41% of leads that came inbound had not received a follow-up within 24 hours, and 28% had received only one outreach attempt before being marked cold. The VP of Sales described the core problem as a discipline issue, not a talent issue, reps were capable but the system was not holding them to a consistent process.',
   whyFoxside:'The team had previously used Salesforce but found the manual data entry requirement was causing CRM hygiene to deteriorate. NexusCRM\'s automatic activity capture from email and calendar, combined with the AI co-pilot for follow-up suggestions, addressed the two root causes: inconsistent follow-up and dirty data.',
   implementation:'NexusCRM replaced Salesforce for the outbound team in a 3-week migration. Email and calendar were connected in week 1. The AI co-pilot was enabled for all reps in week 2. The VP Sales spent 2 hours per week in the first month reviewing the AI\'s suggested follow-ups against actual outcomes to calibrate the model for their buyer profile.',
   before:'Manual CRM entry after every interaction. Follow-up cadence inconsistent across reps. No visibility into which leads had been contacted and when without running Salesforce reports.',
@@ -3057,7 +3141,7 @@ var CASE_STUDIES = [
     {metric:'Manual CRM entry time','before':'Estimated 45 min/day per rep','after':'~12 min/day','change':'\'~73% reduction',timeframe:'Measured over 4 weeks'},
     {metric:'Multi-touch outreach rate','before':'72% of leads received only 1 contact attempt','after':'91% received 3+ attempts','change':'\'More consistent follow-up depth',timeframe:'Q1 2026'}
   ],
-  quote:'"Reps didn\'t suddenly become stars. They just stopped missing obvious follow-ups. The co-pilot doesn\'t do the selling — it stops the gaps in the process that were costing us conversions."',
+  quote:'"Reps didn\'t suddenly become stars. They just stopped missing obvious follow-ups. The co-pilot doesn\'t do the selling, it stops the gaps in the process that were costing us conversions."',
   quoteAuthor:'VP Sales, Toronto B2B SaaS company',
   nuance:'The 31% meetings increase reflects both improved process and a strong Q1 market. The team attributes roughly half to NexusCRM and half to seasonal pipeline. They are watching Q2 results to separate the effect.',
   whatsNext:'The company is rolling NexusCRM out to its 4-person customer success team for expansion and renewal tracking.'
@@ -3086,7 +3170,7 @@ var CASE_STUDIES = [
   id:'crm-3', product:'nexuscrm', productName:'NexusCRM', color:'#FF5C9E', icon:'🔗',
   headline:'How a Recruitment Firm Increased Outreach Sequence Performance and Cut Sequence Build Time by 60%',
   client:{type:'Executive Recruitment Firm',size:'18 consultants',region:'London, UK',setup:'Executive search firm placing senior finance, legal, and HR leaders across UK and European companies'},
-  challenge:'The firm relied on email sequences to reach passive candidates and prospective client companies. Consultants were spending 3–4 hours per week building, customising, and managing outreach sequences manually — time they could have been spending in conversations. Sequence quality also varied widely between consultants, with the top performers generating 3× the response rate of the bottom performers. The Managing Director wanted to raise the floor, not just reward the ceiling.',
+  challenge:'The firm relied on email sequences to reach passive candidates and prospective client companies. Consultants were spending 3–4 hours per week building, customising, and managing outreach sequences manually, time they could have been spending in conversations. Sequence quality also varied widely between consultants, with the top performers generating 3× the response rate of the bottom performers. The Managing Director wanted to raise the floor, not just reward the ceiling.',
   whyFoxside:'The team evaluated NexusCRM specifically for its AI-written sequence capability. The ability to generate a personalised multi-step sequence from a job brief or candidate profile, rather than starting from a blank template, was the specific workflow improvement they were looking for.',
   implementation:'NexusCRM was deployed to 12 consultants as a pilot in the first 5 weeks. AI sequence generation was enabled from week 2. Consultants were given a 90-minute training session on how to review and edit AI-generated sequences. The remaining 6 consultants joined in week 6.',
   before:'Consultants built sequences manually from templates stored in a shared Google Doc. Top consultants spent significant time customising. Others sent near-identical sequences to every contact. Open and reply rates tracked in a spreadsheet.',
@@ -3097,7 +3181,7 @@ var CASE_STUDIES = [
     {metric:'Variance between top/bottom consultants (reply rate)','before':'3.2× difference','after':'1.8× difference','change':'\'Floor raised significantly',timeframe:'Post-launch 6 weeks'},
     {metric:'Sequences active simultaneously per consultant','before':'2–3 on average','after':'5–6 on average','change':'\'More outreach coverage',timeframe:'Week 8'}
   ],
-  quote:'"The best consultants here are good because they put thought into personalisation. AI didn\'t replace that — it gave everyone else a more personalised starting point than they were creating on their own."',
+  quote:'"The best consultants here are good because they put thought into personalisation. AI didn\'t replace that, it gave everyone else a more personalised starting point than they were creating on their own."',
   quoteAuthor:'Managing Director, London executive recruitment firm',
   nuance:'Response rates improved but the team notes that final meeting conversion still depends heavily on the quality of the consultants\' phone calls. NexusCRM gets people to the phone; it does not close searches.',
   whatsNext:'The firm is integrating NexusCRM with their ATS (Vincere) to synchronise candidate pipeline data and reduce manual record duplication between systems.'
@@ -3139,7 +3223,7 @@ var CASE_STUDIES = [
     {metric:'Coordinator time on reminders','before':'90–120 min/day','after':'~10 min/day (exception review only)','change':'\'~85–90% time reduction',timeframe:'From week 4 onwards'},
     {metric:'High-risk patient show rate','before':'Not tracked','after':'74% show rate for patients flagged as high-risk','change':'\'Intervention measurably effective',timeframe:'60 days'}
   ],
-  quote:'"An 11-point drop in no-shows in 60 days was beyond what we hoped for. We knew reminders helped — we just hadn\'t had the infrastructure to do them properly. MediSync made it systematic."',
+  quote:'"An 11-point drop in no-shows in 60 days was beyond what we hoped for. We knew reminders helped, we just hadn\'t had the infrastructure to do them properly. MediSync made it systematic."',
   quoteAuthor:'Operations Director, US telehealth provider',
   nuance:'Some clinician-specific slots have higher no-show rates regardless of reminders, likely due to appointment type rather than patient behaviour. The ops team is now analysing slot-level data to address this separately.',
   whatsNext:'The provider is implementing MediSync\'s post-consultation follow-up messaging for their mental health pathway, where consistent patient contact between sessions is clinically important.'
@@ -3150,7 +3234,7 @@ var CASE_STUDIES = [
   client:{type:'Private Specialist Dermatology Practice',size:'8 consultants, 10 administrative staff across 3 sites',region:'Kyiv, Ukraine',setup:'Private dermatology consultations, skin cancer screening, and minor procedures across 3 Kyiv clinics'},
   challenge:'The practice was running below capacity despite high demand. Scheduling was complex: different consultants had different procedure capabilities, appointment types required specific room types, and scheduling staff were manually matching patients to the right consultant-room combination. The result was frequent booking errors, frequent rescheduling, and administrative staff spending significant time resolving issues that should not have occurred at the initial booking stage.',
   whyFoxside:'The practice manager had evaluated general scheduling tools and found they could not model the specific consultant-procedure-room dependencies that made their scheduling complex. MediSync\'s healthcare-specific scheduling engine, which could be configured with these constraints, was the deciding factor.',
-  implementation:'The practice manager spent 3 days configuring MediSync with all consultant capability profiles, room assignments, appointment type rules, and procedure durations. The system went live for new bookings from week 3. Existing bookings were not migrated — the system built up from new appointments over 6 weeks until it became the primary scheduling view.',
+  implementation:'The practice manager spent 3 days configuring MediSync with all consultant capability profiles, room assignments, appointment type rules, and procedure durations. The system went live for new bookings from week 3. Existing bookings were not migrated, the system built up from new appointments over 6 weeks until it became the primary scheduling view.',
   before:'Scheduling done by 3 dedicated admin staff in a combination of their practice management system and a separate spreadsheet for room allocation. Booking errors identified at day-of-appointment review in approximately 12% of cases.',
   after:'Scheduling staff use MediSync\'s constraint-aware booking interface. The system automatically matches patient to available consultant with the required capability and appropriate room. Day-of-review errors have almost eliminated.',
   results:[
@@ -3183,7 +3267,7 @@ var CASE_STUDIES = [
   ],
   quote:'"Three days to 4 hours is the number I keep coming back to. The reports look better, they go out earlier, and we have not had a data error since we moved. The second-checker step just doesn\'t exist anymore."',
   quoteAuthor:'Operations Director, Boston RIA',
-  nuance:'Advisers still review and approve every report before client delivery. The time saving is at the data preparation and formatting stage — the professional judgement review is preserved.',
+  nuance:'Advisers still review and approve every report before client delivery. The time saving is at the data preparation and formatting stage, the professional judgement review is preserved.',
   whatsNext:'The firm is implementing FinPilot\'s portfolio rebalancing alerts and stress-testing tools, which will allow advisers to be more proactive with clients when market conditions shift.'
 },
 {
@@ -3201,7 +3285,7 @@ var CASE_STUDIES = [
     {metric:'Compliance team time on documentation','before':'~70% of team time on manual documentation creation and tracking','after':'~35% of team time','change':'\'35 percentage point reduction',timeframe:'First full quarter on FinPilot'},
     {metric:'Investment professional review compliance','before':'Reviews completed late in ~40% of cases','after':'Reviews completed on time in ~96% of cases','change':'\'Scheduling and prompt system effective',timeframe:'Q1 2026'}
   ],
-  quote:'"Two letters from the FCA in two years were a serious signal. FinPilot did not change how we think about compliance — we were always taking it seriously. It changed how we proved it. The documentation is consistent, timely, and easy to produce when someone asks for it."',
+  quote:'"Two letters from the FCA in two years were a serious signal. FinPilot did not change how we think about compliance, we were always taking it seriously. It changed how we proved it. The documentation is consistent, timely, and easy to produce when someone asks for it."',
   quoteAuthor:'Chief Compliance Officer, London single family office',
   nuance:'The investment team initially found the compliance prompts disruptive to their workflow. Over 6 weeks they adjusted their scheduling to accommodate the review cycle. The compliance manager considers the initial friction worth it.',
   whatsNext:'The family office is rolling out FinPilot\'s scenario modelling and stress-testing capabilities to support more structured investment committee presentations.'
@@ -3210,7 +3294,7 @@ var CASE_STUDIES = [
   id:'fin-3', product:'finpilot', productName:'FinPilot', color:'#9B71FF', icon:'📊',
   headline:'How a Wealth Management Team Recovered 6 Hours Per Week From Portfolio Monitoring and Rebalancing Prep',
   client:{type:'Wealth Management Practice (within a larger IFA firm)',size:'5 advisers, 2 paraplanners',region:'Brisbane, Australia',setup:'Discretionary wealth management service for 88 high-net-worth clients, AUM approximately A$125M'},
-  challenge:'The 2 paraplanners were spending 2–3 days per week monitoring portfolios for drift, generating rebalancing proposals, and preparing investment committee notes. The process was manual: pulling reports from their platform, running custom Excel models to identify drift, writing up recommendations, and sending them to advisers. Market volatility periods were particularly difficult — during high-movement months, the team fell behind.',
+  challenge:'The 2 paraplanners were spending 2–3 days per week monitoring portfolios for drift, generating rebalancing proposals, and preparing investment committee notes. The process was manual: pulling reports from their platform, running custom Excel models to identify drift, writing up recommendations, and sending them to advisers. Market volatility periods were particularly difficult, during high-movement months, the team fell behind.',
   whyFoxside:'The practice director was specifically looking for a tool that could automate drift monitoring and generate rebalancing proposals in a format the advisers could review and approve in minutes rather than hours. FinPilot\'s portfolio monitoring alerts and rebalancing recommendation engine matched this workflow closely.',
   implementation:'FinPilot was connected to their HUB24 platform for live AUM data in week 2. Drift thresholds were configured per client risk profile. Rebalancing proposal templates were built over 3 days. The first automated drift scan and proposal batch ran in week 4. Paraplanners spent week 4 reviewing AI proposals alongside their manual versions to calibrate their trust in the output.',
   before:'Manual portfolio monitoring: 2–3 days per week. Excel drift models updated weekly. Rebalancing proposals written from scratch per client. Investment committee notes compiled manually.',
@@ -3221,7 +3305,7 @@ var CASE_STUDIES = [
     {metric:'Rebalancing proposal time','before':'3–4 hours per client proposal','after':'30–45 minutes per client (review and approval)','change':'\'~85% faster',timeframe:'Across 14 proposals in first 8 weeks'},
     {metric:'Investment committee note preparation','before':'Half a day per meeting','after':'~1.5 hours','change':'\'~75% faster',timeframe:'3 committee meetings in post-launch period'}
   ],
-  quote:'"The paraplanners were good at their jobs but they were doing a lot of repetitive checking work. FinPilot handles the monitoring and the first draft of the proposal — they handle the judgement and client context. That split works well."',
+  quote:'"The paraplanners were good at their jobs but they were doing a lot of repetitive checking work. FinPilot handles the monitoring and the first draft of the proposal, they handle the judgement and client context. That split works well."',
   quoteAuthor:'Practice Director, Brisbane wealth management practice',
   nuance:'Advisers still make the final decision on every rebalancing action. The AI proposals are reviewed critically, not rubber-stamped. In roughly 20% of proposals, advisers override or modify the AI recommendation based on client-specific context.',
   whatsNext:'The practice is building customised risk-tolerance questionnaires in FinPilot to streamline the annual client review process.'
@@ -3243,7 +3327,7 @@ var CASE_STUDIES = [
     {metric:'Hiring manager satisfaction with shortlists','before':'3.6/5 average (internal survey)','after':'4.2/5','change':'\'0.6 point improvement',timeframe:'Post-launch recruiter survey'},
     {metric:'Qualified candidate rejection rate','before':'Not measured','after':'Audit: <3% of rejected candidates flagged as potentially qualified in spot checks','change':'\'Low missed-candidate rate',timeframe:'Spot check of 80 rejections post-launch'}
   ],
-  quote:'"We were not missing good candidates on purpose — we just ran out of time to look properly. TalentFlow did not replace recruiter judgement on screening. It made sure we were spending that judgement on the right people."',
+  quote:'"We were not missing good candidates on purpose, we just ran out of time to look properly. TalentFlow did not replace recruiter judgement on screening. It made sure we were spending that judgement on the right people."',
   quoteAuthor:'Head of Talent, London Series B technology company',
   nuance:'The team maintains a policy that no candidate is rejected without human review of the AI decision. The AI shortlist surfaces the top candidates; it does not auto-reject anyone.',
   whatsNext:'The talent team is piloting TalentFlow\'s DEI analytics module to identify where in the funnel underrepresented candidates are dropping, following a commitment to improve diversity in technical hires.'
@@ -3263,7 +3347,7 @@ var CASE_STUDIES = [
     {metric:'Offer acceptance rate','before':'71%','after':'82%','change':'\'11 point improvement',timeframe:'Q1 2026 vs Q4 2025'},
     {metric:'Recruiter time per hire on coordination','before':'~6 hours per hire on scheduling and prep','after':'~2.5 hours','change':'\'~58% reduction',timeframe:'Average across Q1 2026 hires'}
   ],
-  quote:'"We always knew the process was too slow. The problem was it was slow in the gaps — between stages — not within them. TalentFlow compressed the scheduling and coordination time that no one was really measuring."',
+  quote:'"We always knew the process was too slow. The problem was it was slow in the gaps, between stages, not within them. TalentFlow compressed the scheduling and coordination time that no one was really measuring."',
   quoteAuthor:'Head of HR, Vancouver management consultancy',
   nuance:'The 24-day improvement is primarily from scheduling and coordination compression. The firm acknowledges that the number of interview stages (4 rounds) was reviewed separately and reduced to 3 in the same period, which contributed to the improvement.',
   whatsNext:'The firm is implementing TalentFlow\'s offer intelligence module to benchmark compensation packages against live market data ahead of offer stage.'
@@ -3279,7 +3363,7 @@ var CASE_STUDIES = [
   after:'AI screening runs as applications arrive. Candidates receive automated status emails. Store managers have live view of their candidate pool. Recruitment team manages exceptions and phone screens.',
   results:[
     {metric:'Screening cycle duration','before':'3–4 weeks','after':'5 working days for full initial screen','change':'\'~75% faster initial screening',timeframe:'Christmas 2025 intake (400 applications)'},
-    {metric:'Candidate communication gap','before':'Some candidates waiting 3+ weeks without contact','after':'Automated status email every 5 days — no candidate goes uncontacted','change':'\'Communication gap eliminated',timeframe:'400-application intake'},
+    {metric:'Candidate communication gap','before':'Some candidates waiting 3+ weeks without contact','after':'Automated status email every 5 days, no candidate goes uncontacted','change':'\'Communication gap eliminated',timeframe:'400-application intake'},
     {metric:'Recruiter agency cost','before':'$18,000–$22,000 per seasonal intake (previous 2 years)','after':'Managed in-house without agency','change':'\'Agency cost avoided',timeframe:'Christmas 2025 intake'},
     {metric:'Store manager time on candidate chasing','before':'Store managers estimated 3–4 hrs/week chasing HR during intake','after':'Self-serve dashboard; ~30 min/week','change':'\'~80–90% reduction',timeframe:'4-week intake period'}
   ],
@@ -3294,18 +3378,18 @@ var CASE_STUDIES = [
   id:'con-1', product:'constructiq', productName:'ConstructIQ', color:'#FF4D6D', icon:'🏗️',
   headline:'How a General Contractor Reduced Average RFI Response Time From 9 Days to 2 Days Across 4 Live Projects',
   client:{type:'General Contractor',size:'280 employees, 4 project management teams',region:'London and South-East England',setup:'Commercial and mixed-use construction contractor handling projects from £3M to £25M'},
-  challenge:'Slow RFI responses were regularly appearing in project delay reports. The average response time across the firm was 9 working days — well above the 3–5 day SLA in most of their contracts. RFIs were arriving by email, being assigned to the relevant design consultant manually, and then being tracked in a shared spreadsheet that was frequently out of date. When disputes arose over delays, the firm had difficulty proving when RFIs had been submitted and when responses were outstanding.',
+  challenge:'Slow RFI responses were regularly appearing in project delay reports. The average response time across the firm was 9 working days, well above the 3–5 day SLA in most of their contracts. RFIs were arriving by email, being assigned to the relevant design consultant manually, and then being tracked in a shared spreadsheet that was frequently out of date. When disputes arose over delays, the firm had difficulty proving when RFIs had been submitted and when responses were outstanding.',
   whyFoxside:'The Head of Projects had evaluated two construction management platforms and found they handled scheduling well but not RFI workflow specifically. ConstructIQ\'s RFI routing, automated consultant assignment, response tracking, and audit trail met the requirements. The ability to generate AI-drafted response starters for standard RFI types was also a differentiator.',
   implementation:'ConstructIQ was deployed to 4 project management teams across 4 live projects. All open RFIs were migrated from the spreadsheet tracker into the platform in week 1. Consultant contact details and assignment rules were configured. Automated escalation emails went live from week 2: a reminder at 3 days, an escalation to the project director at 7 days.',
   before:'RFIs received by email, logged in shared spreadsheet, manually forwarded to consultants. Average 9-day response time. No consistent escalation process. Audit trail fragmented across email chains.',
   after:'RFIs logged in ConstructIQ on receipt, routed to the correct consultant automatically. Automated reminders at 3 days. Escalation at 7 days. Full audit trail per RFI.',
   results:[
     {metric:'Average RFI response time','before':'9 working days','after':'2 working days','change':'\'78% faster',timeframe:'Across 4 projects, 8 weeks post-launch, 84 RFIs'},
-    {metric:'RFIs escalated to director','before':'No formal escalation — issues surfaced ad hoc','after':'12% of RFIs triggered 7-day escalation; all resolved within 1 additional day','change':'\'Formal escalation process established',timeframe:'8-week period'},
-    {metric:'RFI audit trail completeness','before':'Email chains and spreadsheet — fragmented','after':'Full timestamped record per RFI in platform','change':'\'Audit trail available for all RFIs',timeframe:'From go-live'},
+    {metric:'RFIs escalated to director','before':'No formal escalation, issues surfaced ad hoc','after':'12% of RFIs triggered 7-day escalation; all resolved within 1 additional day','change':'\'Formal escalation process established',timeframe:'8-week period'},
+    {metric:'RFI audit trail completeness','before':'Email chains and spreadsheet, fragmented','after':'Full timestamped record per RFI in platform','change':'\'Audit trail available for all RFIs',timeframe:'From go-live'},
     {metric:'Admin time on RFI tracking','before':'Estimated 4–6 hrs/week per PM on spreadsheet management','after':'~45 min/week per PM','change':'\'~85% reduction',timeframe:'Per project manager, weeks 4–8'}
   ],
-  quote:'"Nine days was embarrassing and we knew it. The problem was not that people were ignoring RFIs — it was that the process was invisible. ConstructIQ made it visible and put an automatic reminder in place so things didn\'t get lost."',
+  quote:'"Nine days was embarrassing and we knew it. The problem was not that people were ignoring RFIs, it was that the process was invisible. ConstructIQ made it visible and put an automatic reminder in place so things didn\'t get lost."',
   quoteAuthor:'Head of Projects, London general contractor',
   nuance:'AI-drafted response starters are used for standard RFI types but all responses are reviewed and approved by the relevant consultant before sending. The AI saves time on the first draft, not on the professional decision.',
   whatsNext:'The firm is implementing ConstructIQ\'s subcontractor performance scoring module, with the goal of using structured data in supplier selection for future projects.'
@@ -3321,33 +3405,33 @@ var CASE_STUDIES = [
   after:'Weekly schedule submissions from all contractors. Live cross-portfolio dashboard. Automatic health score per project. Director flags issues at weekly review before they compound.',
   results:[
     {metric:'Schedule issue detection lag','before':'3–5 weeks from occurrence to director awareness','after':'4–6 working days average','change':'\'~75% faster detection',timeframe:'6-week measurement period post-launch'},
-    {metric:'Schedule-related director intervention points','before':'Reactive — issues identified at monthly report','after':'12 proactive interventions in 6 weeks, all before issue escalated','change':'\'Moved from reactive to proactive',timeframe:'6 weeks post-launch'},
+    {metric:'Schedule-related director intervention points','before':'Reactive, issues identified at monthly report','after':'12 proactive interventions in 6 weeks, all before issue escalated','change':'\'Moved from reactive to proactive',timeframe:'6 weeks post-launch'},
     {metric:'Contractor schedule submission compliance','before':'Not formally tracked','after':'94% of weekly submissions received on time','change':'\'Formal tracking established',timeframe:'6-week period'},
     {metric:'Cross-portfolio visibility','before':'Director required individual calls or meetings for each project','after':'Single dashboard review; calls reserved for flagged items','change':'\'~3 hrs/week returned to director',timeframe:'From week 3 onwards'}
   ],
   quote:'"I used to feel like I was always catching up. Now I look at the dashboard on Monday morning and I know what\'s real before I talk to anyone. The surprises haven\'t disappeared, but the late surprises almost have."',
   quoteAuthor:'Development Director, Lviv property developer',
-  nuance:'Weekly schedule submission from contractors required a culture change — two contractor teams initially submitted inconsistently. The developer addressed this by making it a contract requirement for all new project contracts from Q1 2026.',
+  nuance:'Weekly schedule submission from contractors required a culture change, two contractor teams initially submitted inconsistently. The developer addressed this by making it a contract requirement for all new project contracts from Q1 2026.',
   whatsNext:'The developer is rolling out ConstructIQ\'s cost tracking module to align schedule and budget views in a single portfolio dashboard, replacing the separate Excel cost trackers currently used.'
 },
 {
   id:'con-3', product:'constructiq', productName:'ConstructIQ', color:'#FF4D6D', icon:'🏗️',
   headline:'How a Civil Engineering Firm Used Subcontractor Scoring to Improve Project Delivery Performance by 24%',
   client:{type:'Civil Engineering Subcontractor Specialist',size:'32 project staff',region:'Texas, USA',setup:'Civil engineering firm managing highways, drainage, and groundworks projects primarily for Texas Department of Transportation and county clients'},
-  challenge:'The firm was winning work at a healthy rate but subcontractor performance was inconsistent. The same underperforming subcontractors were being used on repeat because the selection process was based on familiarity and price, not structured performance data. Three projects in the previous 18 months had experienced subcontractor-related delays — two involving the same groundworks firm. The contracts director had been trying to make performance-based selection decisions but had no data system to support it.',
-  whyFoxside:'The contracts director specifically needed a tool that would allow project managers to log subcontractor performance data in a structured way across multiple performance dimensions — safety, quality, schedule adherence, and communication — and surface that data at bid stage. ConstructIQ\'s subcontractor performance scoring module matched this requirement precisely.',
+  challenge:'The firm was winning work at a healthy rate but subcontractor performance was inconsistent. The same underperforming subcontractors were being used on repeat because the selection process was based on familiarity and price, not structured performance data. Three projects in the previous 18 months had experienced subcontractor-related delays, two involving the same groundworks firm. The contracts director had been trying to make performance-based selection decisions but had no data system to support it.',
+  whyFoxside:'The contracts director specifically needed a tool that would allow project managers to log subcontractor performance data in a structured way across multiple performance dimensions, safety, quality, schedule adherence, and communication, and surface that data at bid stage. ConstructIQ\'s subcontractor performance scoring module matched this requirement precisely.',
   implementation:'ConstructIQ was deployed to 8 project managers across 6 live projects. Subcontractor performance scoring was enabled for all active subcontractors. Project managers received a 2-hour training session on consistent scoring. Scores were logged at milestone completion and project handover. By week 8, the firm had performance data on 22 subcontractors across 6 dimensions.',
   before:'Subcontractor selection based on price and personal knowledge of the PM. No structured performance records. Same firms reused despite known issues.',
   after:'All subcontractors scored at milestone and handover. Scores accessible at bid stage. Contracts director can require project managers to justify using a subcontractor with a below-threshold score.',
   results:[
     {metric:'Subcontractor-related delay events','before':'Avg 3.2 per quarter across active projects','after':'2.1 per quarter in Q1 2026','change':'\'34% fewer delay events',timeframe:'Q1 2026 vs Q3/Q4 2025 average'},
-    {metric:'Project delivery performance (milestone adherence)','before':'Baseline 2025: 71% of milestones hit on time','after':'88% in Q1 2026','change':'\'24% improvement — partly attributable to better sub selection','change':'17 point improvement',timeframe:'Q1 2026'},
-    {metric:'Underperforming subcontractors de-selected','before':'Ad hoc — occasional decisions not to rebid','after':'4 subcontractors formally removed from bid list based on score data','change':'\'Structured deselection now possible',timeframe:'First 10 weeks'},
-    {metric:'Pre-bid subcontractor vetting time','before':'Informal discussions — 1–2 hrs per bid','after':'Score review + discussion — 30 min per bid','change':'\'~60% faster with better quality data',timeframe:'Across 6 bids in 10 weeks'}
+    {metric:'Project delivery performance (milestone adherence)','before':'Baseline 2025: 71% of milestones hit on time','after':'88% in Q1 2026','change':'\'24% improvement, partly attributable to better sub selection','change':'17 point improvement',timeframe:'Q1 2026'},
+    {metric:'Underperforming subcontractors de-selected','before':'Ad hoc, occasional decisions not to rebid','after':'4 subcontractors formally removed from bid list based on score data','change':'\'Structured deselection now possible',timeframe:'First 10 weeks'},
+    {metric:'Pre-bid subcontractor vetting time','before':'Informal discussions, 1–2 hrs per bid','after':'Score review + discussion, 30 min per bid','change':'\'~60% faster with better quality data',timeframe:'Across 6 bids in 10 weeks'}
   ],
   quote:'"We knew some of our subs were not performing. We just could not prove it consistently enough to change the habits. Now we have structured data and the conversation at bid stage is completely different."',
   quoteAuthor:'Contracts Director, Texas civil engineering firm',
-  nuance:'The 24% delivery improvement is not attributable solely to subcontractor scoring — the firm also introduced a revised site induction process in Q1 2026. The contracts director estimates subcontractor selection changes account for roughly half the improvement.',
+  nuance:'The 24% delivery improvement is not attributable solely to subcontractor scoring, the firm also introduced a revised site induction process in Q1 2026. The contracts director estimates subcontractor selection changes account for roughly half the improvement.',
   whatsNext:'The firm is expanding ConstructIQ\'s use to procurement tracking, specifically to address material delivery delays which are the second most common cause of milestone slippage.'
 }
 ];
@@ -3392,7 +3476,7 @@ function renderCaseStudies(){
   return '<section class="page-hero"><div class="ph-orb"></div><div class="page-hero-inner">'
     +'<div class="s-label reveal">Proof That Works</div>'
     +'<h1 class="reveal delay-1">Client Case Studies</h1>'
-    +'<p class="reveal delay-2">Real organisations. Real workflows. Real outcomes — with the context, constraints, and timelines to back them up.</p>'
+    +'<p class="reveal delay-2">Real organisations. Real workflows. Real outcomes, with the context, constraints, and timelines to back them up.</p>'
     +'</div></section>'
     +'<section style="padding:60px 0 120px">'
     +'<div class="wrap">'
@@ -3466,7 +3550,7 @@ function renderCaseStudy(id){
     +'<div class="cs-results-row">'+resHTML+'</div>'
 
     +'<div class="cs-section"><div class="s-label">Client</div>'
-    +'<p class="cs-text"><strong>'+c.client.type+'</strong> — '+c.client.size+', '+c.client.region+'.<br>'+c.client.setup+'.</p></div>'
+    +'<p class="cs-text"><strong>'+c.client.type+'</strong>, '+c.client.size+', '+c.client.region+'.<br>'+c.client.setup+'.</p></div>'
 
     +'<div class="cs-section"><div class="s-label">The Challenge</div>'
     +'<p class="cs-text">'+c.challenge+'</p></div>'
@@ -3485,7 +3569,7 @@ function renderCaseStudy(id){
 
     +'<div class="cs-section"><div class="s-label">In Their Own Words</div>'
     +'<blockquote class="cs-quote" style="border-color:'+c.color+'">'+c.quote
-    +'<cite>— '+c.quoteAuthor+'</cite></blockquote></div>'
+    +'<cite>- '+c.quoteAuthor+'</cite></blockquote></div>'
 
     +'<div class="cs-section cs-nuance"><div style="display:flex;gap:10px;align-items:flex-start">'
     +'<div style="font-size:1.2rem;flex-shrink:0">⚠️</div>'
