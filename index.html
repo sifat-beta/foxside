@@ -497,6 +497,78 @@ textarea.f-input{resize:vertical;min-height:130px}
 .legal-section ul{margin:12px 0 14px 20px;display:flex;flex-direction:column;gap:9px}
 .legal-section ul li{color:var(--text-muted)}
 .legal-section strong{color:var(--text);font-weight:700}
+
+/* ══════════════════════════════════
+   CASE STUDIES
+══════════════════════════════════ */
+.cs-filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
+.cs-filter-btn{border:1px solid var(--border);border-radius:100px;padding:7px 16px;font-size:.8rem;font-weight:700;font-family:'Mulish',sans-serif;cursor:none;transition:all .2s}
+.cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;transition:opacity .25s}
+.cs-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:28px;text-decoration:none;color:var(--text);display:flex;flex-direction:column;gap:12px;transition:all .3s var(--ease);position:relative;overflow:hidden}
+.cs-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--p-color,var(--accent));opacity:.5;transition:opacity .3s}
+.cs-card:hover{border-color:color-mix(in srgb,var(--p-color,var(--accent)) 40%,transparent);transform:translateY(-4px);box-shadow:0 18px 50px rgba(0,0,0,0.4)}
+.cs-card:hover::before{opacity:1}
+.cs-prod-tag{display:inline-flex;align-items:center;gap:6px;border:1px solid;padding:3px 10px;border-radius:100px;font-size:.7rem;font-weight:700;letter-spacing:.05em}
+.cs-card-title{font-family:'Raleway',sans-serif;font-weight:800;font-size:.96rem;line-height:1.35;color:var(--text);flex:1}
+.cs-card-meta{font-size:.76rem;color:var(--text-dim)}
+.cs-card-stat{background:var(--bg2);border-radius:12px;padding:14px 16px;border:1px solid var(--border)}
+.cs-stat-num{font-family:'Raleway',sans-serif;font-weight:800;font-size:1.1rem;color:var(--p-color,var(--accent));margin-bottom:3px}
+.cs-stat-label{font-size:.72rem;color:var(--text-muted)}
+.cs-card-arrow{font-size:.78rem;font-weight:700;color:var(--p-color,var(--accent));margin-top:auto}
+/* case study body */
+.cs-body-section{padding:60px 0 100px}
+.cs-body-wrap{max-width:860px;margin:0 auto;padding:0 40px}
+.cs-results-row{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:52px}
+.cs-result-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px}
+.cs-result-change{font-family:'Raleway',sans-serif;font-weight:800;font-size:1.2rem;margin-bottom:4px}
+.cs-result-metric{font-size:.82rem;color:var(--text);font-weight:600;margin-bottom:10px}
+.cs-result-detail{display:flex;flex-direction:column;gap:3px;margin-bottom:8px}
+.cs-result-before{font-size:.72rem;color:var(--text-dim)}
+.cs-result-after{font-size:.72rem;color:#00D49A;font-weight:600}
+.cs-result-tf{font-size:.68rem;color:var(--text-dim);border-top:1px solid var(--border);padding-top:8px;margin-top:4px}
+.cs-section{margin-bottom:44px;padding-bottom:44px;border-bottom:1px solid var(--border)}
+.cs-section:last-child{border-bottom:none}
+.cs-text{font-size:.95rem;color:var(--text-muted);line-height:1.82}
+.cs-before-after{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.cs-ba-col{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px}
+.cs-ba-after{border-color:color-mix(in srgb,var(--p-color,var(--accent)) 30%,transparent);background:color-mix(in srgb,var(--p-color,var(--accent)) 5%,transparent)}
+.cs-ba-label{font-family:'Raleway',sans-serif;font-weight:800;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:10px}
+.cs-ba-after .cs-ba-label{color:var(--p-color,var(--accent))}
+.cs-quote{border-left:3px solid var(--p-color,var(--accent));padding:20px 24px;margin:16px 0 0;background:var(--surface);border-radius:0 12px 12px 0;font-size:.96rem;color:var(--text-muted);line-height:1.75;font-style:italic}
+.cs-quote cite{display:block;font-size:.78rem;font-style:normal;color:var(--text-dim);margin-top:12px}
+.cs-nuance{background:color-mix(in srgb,#FFC857 6%,transparent);border:1px solid rgba(255,200,87,0.2);border-radius:14px;padding:20px;margin-bottom:44px}
+.cs-nuance .cs-text{color:var(--text-muted)}
+.cs-related{padding-top:48px;border-top:1px solid var(--border)}
+.cs-related-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.cs-rel-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;text-decoration:none;color:var(--text);transition:all .3s}
+.cs-rel-card:hover{border-color:var(--border2);transform:translateY(-2px)}
+
+/* ── FEATURED CASE STUDIES (homepage) ── */
+.featured-cs-section{padding:100px 0;background:var(--bg2)}
+.featured-cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.fcs-card{background:var(--bg3);border:1px solid var(--border);border-radius:22px;padding:32px;text-decoration:none;color:var(--text);display:flex;flex-direction:column;gap:0;transition:all .3s var(--ease);position:relative;overflow:hidden}
+.fcs-card::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,color-mix(in srgb,var(--p-color,var(--accent)) 5%,transparent),transparent 55%);opacity:0;transition:opacity .3s}
+.fcs-card:hover{border-color:color-mix(in srgb,var(--p-color,var(--accent)) 40%,transparent);transform:translateY(-5px);box-shadow:0 22px 60px rgba(0,0,0,.45)}
+.fcs-card:hover::after{opacity:1}
+.fcs-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.fcs-icon{width:44px;height:44px;border-radius:12px;background:color-mix(in srgb,var(--p-color,var(--accent)) 14%,transparent);display:flex;align-items:center;justify-content:center;font-size:1.35rem}
+.fcs-region{font-size:.7rem;color:var(--text-dim);font-weight:600}
+.fcs-product{font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--p-color,var(--accent));margin-bottom:8px}
+.fcs-title{font-family:'Raleway',sans-serif;font-weight:800;font-size:1rem;line-height:1.38;color:var(--text);margin-bottom:16px;flex:1}
+.fcs-stat-row{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.fcs-stat{flex:1;min-width:100px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 14px}
+.fcs-stat-n{font-family:'Raleway',sans-serif;font-weight:800;font-size:1.05rem;color:var(--p-color,var(--accent));margin-bottom:2px}
+.fcs-stat-l{font-size:.65rem;color:var(--text-muted);line-height:1.35}
+.fcs-quote-text{font-size:.83rem;color:var(--text-muted);line-height:1.65;font-style:italic;border-left:2px solid var(--p-color,var(--accent));padding-left:12px;margin-bottom:18px}
+.fcs-footer{display:flex;align-items:center;justify-content:space-between;padding-top:18px;border-top:1px solid var(--border);margin-top:auto}
+.fcs-client{font-size:.75rem;color:var(--text-muted)}
+.fcs-link{font-size:.78rem;font-weight:700;color:var(--p-color,var(--accent))}
+@media(max-width:1100px){.featured-cs-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.featured-cs-grid{grid-template-columns:1fr}}
+
+@media(max-width:1100px){.cs-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.cs-grid{grid-template-columns:1fr;padding:0}.cs-results-row{grid-template-columns:1fr}.cs-before-after{grid-template-columns:1fr}.cs-related-grid{grid-template-columns:1fr}.cs-body-wrap{padding:0 20px}}
+
 @media(max-width:1100px){
   .products-grid{grid-template-columns:repeat(2,1fr)}
   .hero-inner{grid-template-columns:1fr}
@@ -589,7 +661,7 @@ textarea.f-input{resize:vertical;min-height:130px}
       <button class="n-dropdown-trigger">Products ▾</button>
       <div class="n-dropdown" id="nav-dropdown"></div>
     </li>
-    <li><a href="#about" onclick="nav('about')">About</a></li>
+    <li><a href="#case-studies" onclick="nav('case-studies')">Case Studies</a></li><li><a href="#about" onclick="nav('about')">About</a></li>
     <li><a href="#contact" onclick="nav('contact')">Contact</a></li>
     <li><a href="#contact" onclick="nav('contact')" class="n-cta">Book a Demo</a></li>
   </ul>
@@ -824,7 +896,7 @@ document.getElementById('ft-top').innerHTML = `
 </div>
 <div class="ft-col"><h5>Products</h5><ul class="ft-links">${PRODUCTS.slice(0,4).map(p=>`<li><a href="#product/${p.id}" onclick="nav('product/${p.id}')">${p.name}</a></li>`).join('')}</ul></div>
 <div class="ft-col"><h5>&nbsp;</h5><ul class="ft-links">${PRODUCTS.slice(4).map(p=>`<li><a href="#product/${p.id}" onclick="nav('product/${p.id}')">${p.name}</a></li>`).join('')}</ul></div>
-<div class="ft-col"><h5>Company</h5><ul class="ft-links"><li><a href="#about" onclick="nav('about')">About Us</a></li><li><a href="#contact" onclick="nav('contact')">Contact</a></li><li><a href="#contact" onclick="nav('contact')">Book a Demo</a></li><li><a href="#privacy" onclick="nav('privacy')">Privacy Policy</a></li><li><a href="#refund" onclick="nav('refund')">Refund Policy</a></li></ul></div>
+<div class="ft-col"><h5>Company</h5><ul class="ft-links"><li><a href="#about" onclick="nav('about')">About Us</a></li><li><a href="#case-studies" onclick="nav('case-studies')">Case Studies</a></li><li><a href="#contact" onclick="nav('contact')">Contact</a></li><li><a href="#contact" onclick="nav('contact')">Book a Demo</a></li><li><a href="#privacy" onclick="nav('privacy')">Privacy Policy</a></li><li><a href="#refund" onclick="nav('refund')">Refund Policy</a></li></ul></div>
 `;
 
 // ══════════════════════════════════
@@ -851,6 +923,43 @@ function typeStep(){
 // ══════════════════════════════════
 //  RENDER FUNCTIONS
 // ══════════════════════════════════
+
+// ── FEATURED CASE STUDIES ──
+var FEATURED_IDS = ['lex-1','med-2','crm-1'];
+window.navCS=function(el){nav("case/"+el.getAttribute("data-csid"));};
+function buildFeaturedCS(){
+  var el = document.getElementById('featured-cs-grid');
+  if(!el) return;
+  var featured = FEATURED_IDS.map(function(id){
+    return CASE_STUDIES.find(function(c){return c.id===id;});
+  }).filter(Boolean);
+  el.innerHTML = featured.map(function(c){
+    var r0=c.results[0], r1=c.results[1];
+    // Shorten headline for card
+    var short = c.headline.length > 90 ? c.headline.substring(0,87)+'…' : c.headline;
+    // Short quote — first sentence only
+    var q = c.quote.replace(/^"/,'').replace(/"$/,'');
+    var qs = q.split('.')[0].trim();
+    if(qs.length > 110) qs = qs.substring(0,107)+'…';
+    return '<a class="fcs-card" href="#case/'+c.id+'" data-csid="'+c.id+'" style="--p-color:'+c.color+'" onclick="window.navCS(this)">'
+      +'<div class="fcs-top">'
+      +'<div class="fcs-icon">'+c.icon+'</div>'
+      +'<div class="fcs-region">📍 '+c.client.region+'</div>'
+      +'</div>'
+      +'<div class="fcs-product">'+c.productName+'</div>'
+      +'<div class="fcs-title">'+short+'</div>'
+      +'<div class="fcs-stat-row">'
+      +'<div class="fcs-stat"><div class="fcs-stat-n">'+r0.change+'</div><div class="fcs-stat-l">'+r0.metric+'</div></div>'
+      +'<div class="fcs-stat"><div class="fcs-stat-n">'+r1.change+'</div><div class="fcs-stat-l">'+r1.metric+'</div></div>'
+      +'</div>'
+      +'<div class="fcs-quote-text">'+qs+'."</div>'
+      +'<div class="fcs-footer">'
+      +'<div class="fcs-client">'+c.client.type+'</div>'
+      +'<div class="fcs-link">Read case study →</div>'
+      +'</div></a>';
+  }).join('');
+}
+
 function renderHome(){
   const cardsHTML = PRODUCTS.map(p=>`
     <div class="hv-card" style="--p-color:${p.color}" onclick="nav('product/${p.id}')">
@@ -971,6 +1080,21 @@ function renderHome(){
       <div class="t-card reveal delay-1"><div class="t-stars">★★★★★</div><p class="t-quote"><em>LexAI transformed our contract review process.</em> What used to take a junior associate two days now takes 20 minutes. Our partners are completely sold.</p><div class="t-author"><div class="t-avatar">⚖️</div><div><div class="t-name">Marcus Chen</div><div class="t-role">Managing Partner, Chen & Walsh LLP</div></div></div></div>
       <div class="t-card reveal delay-2"><div class="t-stars">★★★★★</div><p class="t-quote">Our agents close <em>30% more deals per quarter</em> since deploying PropIQ. The lead scoring alone paid for the platform in the first month.</p><div class="t-author"><div class="t-avatar">🏢</div><div><div class="t-name">Sarah Okafor</div><div class="t-role">VP Sales, Meridian Real Estate Group</div></div></div></div>
       <div class="t-card reveal delay-3"><div class="t-stars">★★★★★</div><p class="t-quote">MediSync cut our clinical documentation time by <em>60% across the entire practice.</em> Our physicians are genuinely happier. That's priceless.</p><div class="t-author"><div class="t-avatar">🏥</div><div><div class="t-name">Dr. Priya Nair</div><div class="t-role">Chief Medical Officer, Horizon Health Network</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED CASE STUDIES -->
+<section class="featured-cs-section">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="s-label">Proven Results</div>
+      <h2>From the field, not the pitch deck</h2>
+      <p>Real clients, real workflows, real numbers — with the context, constraints, and timelines attached.</p>
+    </div>
+    <div class="featured-cs-grid reveal delay-1" id="featured-cs-grid"></div>
+    <div style="text-align:center;margin-top:44px" class="reveal delay-2">
+      <a class="btn btn-outline btn-lg" href="#case-studies" onclick="nav('case-studies')">View All 24 Case Studies →</a>
     </div>
   </div>
 </section>
@@ -2685,6 +2809,661 @@ function renderDemoPage(id){
 }
 
 
+// ══════════════════════════════════
+//  CASE STUDIES DATA
+// ══════════════════════════════════
+var CASE_STUDIES = [
+
+// ─── LEXAI ───────────────────────────────────────────
+{
+  id:'lex-1', product:'lexai', productName:'LexAI', color:'#4C8EFF', icon:'⚖️',
+  headline:'How a 22-Lawyer Commercial Firm Reduced First-Pass Contract Review Time by 58% in 90 Days',
+  client:{type:'Commercial Law Firm',size:'22 attorneys',region:'London, UK',setup:'Single-office, mixed practice covering commercial contracts, employment, and property'},
+  challenge:'The firm was handling roughly 140 commercial contracts per month — NDAs, supply agreements, service contracts, and lease reviews. First-pass review was entirely manual, averaging 4.8 hours per contract for a junior associate. Partners were regularly pulled in to re-review work that should have been triaged at intake. The backlog was growing, and the firm was losing time they could not bill.',
+  whyFoxside:'The firm evaluated two other legal AI tools but found they were trained primarily on US caselaw. LexAI\'s UK-specific contract training and the ability to configure custom risk flags for their practice areas made the difference. The SOC 2 compliance and client data isolation also resolved the data governance concerns raised by their practice manager.',
+  implementation:'The pilot started with 4 junior associates and 1 operations manager over 6 weeks. They connected LexAI to their existing document management system and configured 12 custom risk flag categories. In week 3 they added NDA-specific templates. Full firm rollout happened at week 8.',
+  before:'Associates received contracts by email, read through the full document manually, and produced a summary memo in a separate document. Partners then reviewed both. High variability in quality meant some memos needed to be rewritten.',
+  after:'LexAI ingests the contract on upload, produces a structured first-pass review with clause-by-clause flagging, risk scoring, and a redline draft. Associates now review and verify the AI output rather than starting from scratch. Partners only see flagged clauses above a risk threshold.',
+  results:[
+    {metric:'First-pass review time','before':'4.8 hrs per contract','after':'2.0 hrs per contract','change':'58% reduction',timeframe:'Over 90 days, 126 contracts reviewed'},
+    {metric:'Standard NDA turnaround','before':'2 business days','after':'Same day','change':'Same-day delivery',timeframe:'Across 48 NDAs in the pilot period'},
+    {metric:'Contract volume handled','before':'140/month','after':'178/month','change':'27% more without new headcount',timeframe:'Month 3 vs month 1'},
+    {metric:'Partner re-review rate','before':'~34% of memos','after':'~11% of memos','change':'68% fewer re-reviews',timeframe:'Measured over 60 days post-rollout'}
+  ],
+  quote:'"It did not replace legal review — and we were clear with clients about that. But it removed a significant amount of repetitive first-pass work that was consuming associate time without adding much value. The quality of what we hand to partners is noticeably more consistent now."',
+  quoteAuthor:'Head of Operations, 22-lawyer commercial firm, London',
+  nuance:'The first month required template calibration for property-specific clauses. The team also kept a human-only workflow for matters flagged as high-stakes litigation risk.',
+  whatsNext:'The firm is piloting LexAI\'s research module for case law queries and evaluating whether to extend to their two partner-level fee earners for high-volume matters.'
+},
+{
+  id:'lex-2', product:'lexai', productName:'LexAI', color:'#4C8EFF', icon:'⚖️',
+  headline:'How an In-House Legal Team at a UK Manufacturer Cleared a 3-Month Contract Backlog in 5 Weeks',
+  client:{type:'In-House Legal Department',size:'4 in-house lawyers, 1 paralegal',region:'Toronto, Canada',setup:'Legal function supporting a 1,400-person manufacturing group across 4 Ontario sites'},
+  challenge:'The legal team was sitting on a backlog of 80+ supplier and logistics contracts that had been deprioritised because the team lacked bandwidth. New contracts were arriving weekly. The General Counsel had requested outside counsel support, but budget constraints made that difficult. Two lawyers were spending close to 60% of their time on contract review at the expense of advisory and regulatory work.',
+  whyFoxside:'The team was specifically looking for a tool that could handle UK supply chain and procurement contracts out of the box. They did not want a US-first product. LexAI\'s configurable playbooks and the ability to define their own "acceptable" and "not acceptable" positions per clause type was the deciding factor.',
+  implementation:'Rollout began with one lawyer using LexAI on the backlog pile. A paralegal was trained in week 2 to handle intake. By week 4, all five team members were using the platform. The team connected LexAI to their SharePoint contract repository. No ERP integration was required at this stage.',
+  before:'Contracts arrived by email, were logged manually in a spreadsheet, and assigned to whichever lawyer had capacity. Review was done in Word with a self-built checklist. Turnaround depended entirely on individual workload.',
+  after:'Contracts are uploaded at intake by the paralegal. LexAI produces a risk-scored summary and flags deviations from the team\'s approved playbook positions. Lawyers handle escalations and negotiations. The spreadsheet tracker has been replaced by LexAI\'s matter dashboard.',
+  results:[
+    {metric:'Backlog cleared','before':'80+ contracts pending','after':'Cleared','change':'100% backlog resolved',timeframe:'5 weeks'},
+    {metric:'Time on contract review','before':'~60% of two lawyers\' time','after':'~28% of two lawyers\' time','change':'32 percentage point reduction',timeframe:'Measured over 6 weeks post-rollout'},
+    {metric:'Supplier contract turnaround','before':'14 business days average','after':'4 business days average','change':'71% faster',timeframe:'Across 64 contracts in weeks 5–10'},
+    {metric:'Paralegal-handled reviews','before':'0%','after':'41% handled without lawyer involvement','change':'New capacity unlocked',timeframe:'Weeks 6–10'}
+  ],
+  quote:'"We were drowning in supplier contracts, and outside counsel was not an option at the time. The backlog was a source of real stress. LexAI let us clear it in a month and change how we work going forward."',
+  quoteAuthor:'General Counsel, UK manufacturing group',
+  nuance:'Complex negotiation and any contracts with indemnity disputes above a threshold are still handled by lawyers without AI assistance by policy.',
+  whatsNext:'The team is now building a library of standard playbook positions to enable faster AI-assisted negotiation flagging across their 6 most common contract types.'
+},
+{
+  id:'lex-3', product:'lexai', productName:'LexAI', color:'#4C8EFF', icon:'⚖️',
+  headline:'How a Mid-Size M&A Advisory Firm Handled 40% More Due Diligence Volume Without Expanding the Team',
+  client:{type:'M&A Advisory Firm',size:'18 lawyers and analysts',region:'Sydney, Australia',setup:'Boutique M&A practice specialising in mid-market transactions between A$15M and A$200M'},
+  challenge:'The firm was winning more mandates but struggling to scale due diligence. A typical document room contained 800–2,400 documents. Teams were manually triaging which documents needed full review, which meant juniors were spending 2–3 days just categorising a data room before substantive work began. This was slowing deal timelines and limiting the number of live mandates the firm could handle.',
+  whyFoxside:'The partners were specifically looking for a due diligence workflow tool, not a general contract reader. LexAI\'s document room ingestion and automatic categorisation by document type aligned with how their teams already thought about due diligence. The risk summary output also matched the firm\'s existing reporting format.',
+  implementation:'The team started with a single live transaction — a manufacturing acquisition with a 1,100-document data room. Two associates ran the initial data room through LexAI alongside their manual process to compare outputs. By the second transaction, they had retired the manual triage entirely. Five transactions were processed in the first 8 weeks.',
+  before:'2–3 days of manual document triage per transaction. Associates read every document, logged it in a spreadsheet by category, and flagged items for senior review. The process was inconsistent between team members.',
+  after:'LexAI ingests and categorises the full data room within hours. Associates receive a prioritised review queue with risk-scored documents at the top. The firm\'s issue list is auto-populated as a starting point for senior lawyers.',
+  results:[
+    {metric:'Data room triage time','before':'2–3 days per transaction','after':'4–6 hours','change':'\'75–80% reduction',timeframe:'Across 5 transactions in the first 8 weeks'},
+    {metric:'Live mandates handled simultaneously','before':'4 mandates max','after':'6 mandates','change':'\'50% more capacity',timeframe:'Month 3 vs previous quarter'},
+    {metric:'Issue identification rate','before':'Baseline (manual)','after':'23% more issues flagged per transaction on average','change':'\'Improved coverage',timeframe:'Compared across 10 transactions'},
+    {metric:'Associate hours per deal on review','before':'~80 hours per transaction','after':'~52 hours per transaction','change':'\'35% reduction',timeframe:'Average across 5 transactions'}
+  ],
+  quote:'"The triage stage used to be almost invisible work — juniors spent days doing it and we never really measured it. LexAI made us realise how much time we were losing before we even started reviewing. Now we get to the issues faster and we have been able to take on more work."',
+  quoteAuthor:'Partner, M&A advisory practice',
+  nuance:'The firm still requires senior lawyer sign-off on all issue summaries before client delivery. The AI output is a starting point, not a finished work product.',
+  whatsNext:'The firm is evaluating LexAI\'s research module for UK corporate law precedent searches and exploring integration with their deal management platform.'
+},
+
+// ─── PROPIQ ──────────────────────────────────────────
+{
+  id:'prop-1', product:'propiq', productName:'PropIQ', color:'#00D49A', icon:'🏢',
+  headline:'How an Austin Brokerage Improved Lead Response Time and Closed 22% More Deals in One Quarter',
+  client:{type:'Independent Real Estate Brokerage',size:'14 agents across 2 offices',region:'Austin, Texas, USA',setup:'Residential sales and rental brokerage serving the Greater Austin metro area'},
+  challenge:'The agency was receiving 60–80 inbound leads per week from portals, walk-ins, and referrals, but had no systematic way to prioritise them. Agents were following up based on instinct, and high-intent buyers were sometimes waiting 2–3 days for a response while low-priority enquiries were handled first. The sales manager estimated they were losing 1–2 completions per month to faster-responding competitors.',
+  whyFoxside:'The agency had tried two other CRM tools previously, but neither had built-in lead scoring that was specific to UK residential property. PropIQ\'s lead scoring, which factors in search behaviour, enquiry type, budget signals, and follow-up frequency, was what made the difference. The automated valuation model also replaced a tool they were paying for separately.',
+  implementation:'The agency connected PropIQ to their Zillow and Realtor.com feeds in week 1. Lead scoring went live in week 2. The team ran a 4-week period where they could see the AI score but were not required to follow it, so they could calibrate their trust in the output. From week 6 they adopted score-based prioritisation as standard.',
+  before:'Leads arrived in a shared inbox and were assigned based on which agent was available. Follow-up speed varied by individual. No reliable data on which lead sources converted best.',
+  after:'All leads are scored on arrival. The two top-scored leads each day are flagged for same-day contact by the duty agent. The portal attribution dashboard shows which sources are converting.',
+  results:[
+    {metric:'Lead response time','before':'28 hours average','after':'4 hours average','change':'86% faster',timeframe:'Measured over 8 weeks post-launch'},
+    {metric:'Deals completed in quarter','before':'Baseline Q4 2025','after':'+22% more completions','change':'\'22% increase',timeframe:'Q1 2026 vs Q4 2025'},
+    {metric:'AVM usage (external tool replaced)','before':'Paid separately, ~$340/month','after':'Included in PropIQ','change':'\'Cost eliminated',timeframe:'From month 1'},
+    {metric:'Viewing conversion rate','before':'31% of leads booked a viewing','after':'41% of leads booked a viewing','change':'\'10 point improvement',timeframe:'Q1 2026'}
+  ],
+  quote:'"We always knew fast follow-up mattered. PropIQ just made it automatic. The scoring is not perfect — we still use our judgement — but it stops us from accidentally ignoring a hot lead because the inbox was busy."',
+  quoteAuthor:'Sales Manager, Austin, Texas estate agency',
+  nuance:'The team notes that the AI score occasionally underweights walk-in and referral leads relative to portal leads. They apply a manual override for referrals from known solicitors.',
+  whatsNext:'The agency is implementing PropIQ\'s automated nurture sequences for leads that do not book immediately, targeting the 60% of enquiries that currently go cold within 14 days.'
+},
+{
+  id:'prop-2', product:'propiq', productName:'PropIQ', color:'#00D49A', icon:'🏢',
+  headline:'How a Regional Lettings Agency Cut Market Report Preparation Time From 3 Days to 4 Hours',
+  client:{type:'Residential Lettings Agency',size:'8 staff',region:'Greater Manchester',setup:'Lettings-focused agency managing 340 properties across Didsbury, Chorlton, and Salford'},
+  challenge:'The agency produced quarterly market reports for their landlord clients — a service that was genuinely appreciated but extremely time-consuming. A single report took one member of staff 2.5–3 days to compile: pulling comparable data from portals, formatting it, writing commentary, and chasing statistics. With 28 landlord clients requesting individual reports, the quarterly cycle was becoming unsustainable.',
+  whyFoxside:'The lettings director specifically wanted a tool that could generate market reports for named postcodes with comparable rental data, average void periods, and yield estimates. PropIQ was the first product they evaluated that could generate a formatted client-ready report from postcode input rather than requiring manual data assembly.',
+  implementation:'PropIQ was configured with their 28 active landlord postcodes in week 1. The team spent 2 days customising the report template to match their brand. They ran a parallel test where one staff member produced reports the old way and another used PropIQ, then shared both with 4 landlords to gather feedback. All 4 preferred the PropIQ version on presentation quality.',
+  before:'One staff member spent 2.5–3 days per quarter per landlord compiling reports from multiple data sources in a Word template. Errors from manual data entry were common.',
+  after:'PropIQ generates a draft report for each postcode in minutes. A staff member reviews, makes any commentary adjustments, and publishes in about 20 minutes per landlord.',
+  results:[
+    {metric:'Market report production time','before':'2.5–3 days per report','after':'~4 hours total for all 28 reports','change':'\'Reduced from ~70 days to 4 hours per cycle',timeframe:'Q1 2026 quarterly cycle'},
+    {metric:'Data accuracy','before':'Manual errors in ~22% of reports flagged by landlords','after':'No data errors reported in Q1 cycle','change':'\'Error rate eliminated',timeframe:'First full PropIQ cycle'},
+    {metric:'Landlord satisfaction','before':'4.1/5 average on report satisfaction survey','after':'4.7/5','change':'\'0.6 point improvement',timeframe:'Post-Q1 2026 landlord survey'},
+    {metric:'Staff time freed','before':'1 staff member almost fully occupied on reports for 3 weeks/quarter','after':'~4 hours per quarter','change':'\'~100 hours per quarter returned to other work',timeframe:'Quarterly'}
+  ],
+  quote:'"The reports look better than ours ever did manually, and they take almost no time now. One landlord asked if we had hired a research analyst. We hadn\'t."',
+  quoteAuthor:'Lettings Director, Greater Manchester residential agency',
+  nuance:'The AI-generated commentary on market conditions requires a human check — occasionally it uses data phrasing that does not match the agency\'s tone or includes a caveat the team prefers not to use with landlords.',
+  whatsNext:'The agency is rolling out PropIQ\'s lead scoring to their acquisitions team, which currently has no structured prioritisation for landlord acquisition leads.'
+},
+{
+  id:'prop-3', product:'propiq', productName:'PropIQ', color:'#00D49A', icon:'🏢',
+  headline:'How a Commercial Property Brokerage Improved Pipeline Visibility and Reduced Stalled Deals by 31%',
+  client:{type:'Commercial Property Brokerage',size:'22 brokers',region:'Dubai, UAE',setup:'Office and retail leasing, acquisitions, and disposal advisory across Dubai Business Bay, DIFC, and JLT'},
+  challenge:'The brokerage had a chronic problem with deals sitting inactive in the pipeline for weeks without anyone noticing. Brokers managed their own deal lists informally, and there was no centralised view of what was stuck, what needed a follow-up, or which clients had gone quiet. The director estimated they were losing 2–3 deals per quarter to competitors who simply followed up faster.',
+  whyFoxside:'The brokerage director evaluated three CRM tools and found they were all built for residential, not commercial property. PropIQ\'s commercial pipeline view, activity tracking, and automated follow-up nudges were specifically suited to how their brokers worked across longer deal cycles.',
+  implementation:'Rollout began with 6 brokers in the office leasing team over a 5-week pilot. PropIQ was configured with commercial-specific deal stages. The brokers uploaded their live pipeline in week 1. Automated activity prompts went live in week 3. After the pilot, the remaining 16 brokers joined in a 2-week phased rollout.',
+  before:'Deal lists maintained in individual spreadsheets. No central visibility. No systematic follow-up triggers. Deals would sit dormant for 3–6 weeks without detection.',
+  after:'All deals in one view. Automated prompts flag deals with no activity for 7+ days. The director can see the full pipeline in real time without chasing individual brokers.',
+  results:[
+    {metric:'Average deal dormancy','before':'17 days average without contact','after':'6 days average without contact','change':'\'65% reduction in dormancy',timeframe:'Measured over 10 weeks post-rollout'},
+    {metric:'Deals stalled and lost','before':'8–9 per quarter lost to inactivity','after':'6 per quarter in Q1 2026','change':'\'31% fewer stalled deals',timeframe:'Q1 2026 vs Q4 2025 average'},
+    {metric:'Pipeline visibility','before':'Director required weekly broker calls for status','after':'Real-time dashboard replaces most status calls','change':'\'~4 hours/week returned to director',timeframe:'From week 6 onwards'},
+    {metric:'Follow-up compliance','before':'No tracking, estimated 50–60%','after':'84% of follow-up prompts actioned within 24 hours','change':'\'Significant improvement in discipline',timeframe:'Weeks 6–12'}
+  ],
+  quote:'"Commercial deals move slowly and people can disappear for weeks without realising. PropIQ does not speed up the market — it just stops us being the reason a deal slips."',
+  quoteAuthor:'Director, Dubai commercial property brokerage',
+  nuance:'Brokers initially pushed back on the activity prompts feeling like micromanagement. The team resolved this by framing them as client service alerts rather than performance tracking.',
+  whatsNext:'The brokerage is piloting PropIQ\'s AI valuation module for industrial properties in the outer London market.'
+},
+
+// ─── LEARNFORGE ──────────────────────────────────────
+{
+  id:'lf-1', product:'learnforge', productName:'LearnForge', color:'#FFC857', icon:'🎓',
+  headline:'How a Financial Services Firm Completed a Firm-Wide Compliance Training Rollout in 11 Days Instead of 8 Weeks',
+  client:{type:'Financial Services Firm',size:'380 employees across 4 offices',region:'New York, USA',setup:'Investment advisory and wealth management firm under SEC and FINRA regulation'},
+  challenge:'The firm needed to complete mandatory SEC and FINRA-required training for all 380 staff before a regulatory deadline. Previously this meant booking rooms, coordinating schedules, and running 14 separate in-person sessions over 8 weeks — a process that had failed to achieve 100% completion in two previous cycles. They needed a way to reach all staff, including remote workers, with proof of completion they could present to auditors.',
+  whyFoxside:'The L&D manager needed a platform that could generate a SCORM-compatible course from existing compliance content, track completion at the individual level, and produce a report formatted for FINRA audit submission. LearnForge met all three requirements and was the only platform evaluated that offered AI-assisted course generation from their existing PDF materials.',
+  implementation:'The L&D team uploaded their existing FCA training materials — 4 PDFs and 2 slide decks — into LearnForge\'s AI course builder. The system generated a structured 8-module course in under an hour. The team spent 2 days reviewing and adjusting. The course went live to all 380 staff on day 4. A reminder sequence was configured for non-completers.',
+  before:'In-person sessions over 8 weeks. 14 scheduled sessions needed. Completion rate in previous cycles: 88% and 91%. Manual attendance logs submitted to compliance officer.',
+  after:'Single digital course available across all devices. Automated reminders to non-completers at day 3, day 7, and day 10. Completion reports auto-generated and exportable.',
+  results:[
+    {metric:'Rollout duration','before':'8 weeks','after':'11 days','change':'\'83% faster',timeframe:'Q1 2026 compliance cycle'},
+    {metric:'Completion rate','before':'88–91% in previous cycles','after':'97% by day 11','change':'\'6–9 point improvement',timeframe:'11-day rollout'},
+    {metric:'Course creation time','before':'6–8 weeks to produce materials and schedule sessions','after':'3 days from PDF upload to live course','change':'\'~95% time saving on build',timeframe:'Single course build'},
+    {metric:'Audit submission','before':'Manual attendance logs compiled by compliance officer (1.5 days)','after':'Auto-generated completion report (2 hours)','change':'\'~75% time saving on reporting',timeframe:'Per cycle'}
+  ],
+  quote:'"We had a hard regulatory deadline and a workforce spread across 4 offices. Doing this the old way would have been very stressful. LearnForge meant we finished with days to spare and had cleaner records than we have ever submitted to an audit."',
+  quoteAuthor:'Head of L&D, New York financial services firm',
+  nuance:'3% of staff did not complete by day 11. These were followed up individually by their line managers as per the firm\'s existing policy — the platform flagged them automatically but completion was a human responsibility.',
+  whatsNext:'The firm is building out a broader compliance curriculum covering 6 additional mandatory modules, and has given LearnForge\'s AI builder to two senior compliance staff to generate content independently.'
+},
+{
+  id:'lf-2', product:'learnforge', productName:'LearnForge', color:'#FFC857', icon:'🎓',
+  headline:'How a Healthcare Network Reduced Mandatory Certification Renewals From a 12-Week Process to 3 Weeks',
+  client:{type:'Private Healthcare Network',size:'620 clinical and administrative staff across 8 sites',region:'Melbourne, Australia',setup:'Outpatient clinics and day surgery centres with mandatory AHPRA and SafeWork annual certification requirements'},
+  challenge:'Clinical and administrative staff required annual renewal across 6 mandatory certification areas: manual handling, infection control, fire safety, safeguarding, data protection, and basic life support. Coordinating 620 people across 8 sites with different shift patterns had stretched the renewal cycle to 12 weeks, causing gaps where some staff were technically out-of-certification compliance during the window. HR received regular requests for certificate copies that were filed inconsistently.',
+  whyFoxside:'The HR and clinical governance team needed a system that could handle certificate expiry tracking, send automated renewal reminders, and provide a single source of truth for compliance audits. LearnForge\'s certification tracking module, combined with the ability to hold all 6 training courses in one platform, replaced 3 separate tools they had been using.',
+  implementation:'The team migrated existing course content from their previous platform. LearnForge\'s AI builder was used to refresh 3 of the 6 courses that had outdated materials. Staff records and certificate expiry dates were imported from their HRIS. Automated reminder sequences were configured. Rollout to all 8 sites happened over 2 weeks.',
+  before:'Renewal reminders sent manually by site managers. Completion tracked in spreadsheets per site. HR spent 2–3 weeks at year-end chasing outstanding completions. Certificate copies filed inconsistently.',
+  after:'Platform sends automated reminders at 30, 14, and 7 days before expiry. Managers see their site\'s compliance status in real time. Certificates auto-generated and stored with audit trail.',
+  results:[
+    {metric:'Annual renewal cycle duration','before':'12 weeks','after':'3 weeks','change':'\'75% shorter cycle',timeframe:'Annual 2026 renewal'},
+    {metric:'Compliance gaps during renewal window','before':'Estimated 8–12% of staff out of date at any time during the 12-week cycle','after':'<2% at any time','change':'\'~80% reduction in compliance gaps',timeframe:'2026 renewal cycle'},
+    {metric:'HR time on certificate admin','before':'~3 weeks of one HR coordinator\'s time per cycle','after':'~4 hours per cycle','change':'\'~95% reduction',timeframe:'Per annual cycle'},
+    {metric:'Course refresh time','before':'3–4 months to commission new materials','after':'2–3 days using AI builder','change':'\'~95% faster content refresh',timeframe:'3 courses refreshed'}
+  ],
+  quote:'"Certificate compliance is not glamorous, but it is one of the things AHPRA and SafeWork look at. LearnForge made it easy to prove we are on top of it. The automatic reminders removed a significant admin burden from site managers who have enough to do."',
+  quoteAuthor:'HR Director, Melbourne healthcare network',
+  nuance:'Basic life support certification requires practical assessment, which cannot be completed digitally. LearnForge handles the theory component; practical sessions are still coordinated separately. The platform flags when theory is complete so practical can be scheduled.',
+  whatsNext:'The network is piloting LearnForge\'s adaptive learning paths for new starter onboarding across 3 clinical departments.'
+},
+{
+  id:'lf-3', product:'learnforge', productName:'LearnForge', color:'#FFC857', icon:'🎓',
+  headline:'How a SaaS Company Cut New Hire Time-to-Productivity From 11 Weeks to 7 Weeks',
+  client:{type:'B2B SaaS Company',size:'210 employees',region:'London & remote',setup:'Product-led B2B software company; hiring 4–8 new employees per month'},
+  challenge:'The company was growing quickly but onboarding was poorly structured. New hires completed paperwork and attended a few ad hoc sessions, but there was no formal learning path. Managers reported that new employees were not fully productive for 10–12 weeks. The People team was also finding it difficult to keep onboarding content current — the product changed fast and training materials were frequently out of date.',
+  whyFoxside:'The Head of People specifically needed a platform where managers and subject-matter experts could update course content quickly without going through a central L&D bottleneck. LearnForge\'s AI builder and course management tools allowed non-L&D staff to own and refresh their modules independently.',
+  implementation:'The People team mapped out an 8-week structured onboarding path across 5 tracks: company culture, product knowledge, role-specific technical skills, customer communication, and compliance. LearnForge\'s AI builder was used to generate initial module structures from existing documentation. SMEs from each team took ownership of their modules. The full path was live within 3 weeks.',
+  before:'Ad hoc onboarding. No structured learning path. Materials spread across Notion, Google Drive, and slide decks. Managers reported 10–12 weeks before new hires were fully independent.',
+  after:'Structured 8-week learning path. New hires complete modules on their own schedule within each week\'s framework. Managers receive weekly completion summaries. SMEs update modules independently.',
+  results:[
+    {metric:'Time-to-productivity','before':'10–12 weeks','after':'7 weeks average','change':'\'36% faster',timeframe:'Measured across 18 new hires in Q1 2026'},
+    {metric:'Onboarding content currency','before':'Materials last updated 4–14 months ago on average','after':'Average module age: 6 weeks','change':'\'Dramatically more current',timeframe:'3 months after launch'},
+    {metric:'Manager time on onboarding','before':'Estimated 4–6 hrs/week per manager during new hire\'s first month','after':'~1.5 hrs/week','change':'\'~65% reduction',timeframe:'First month per new hire'},
+    {metric:'New hire satisfaction with onboarding','before':'3.4/5 (exit survey, previous cohort)','after':'4.3/5 (first cohort on LearnForge)','change':'\'0.9 point improvement',timeframe:'First cohort of 12 new hires'}
+  ],
+  quote:'"We were scaling fast and onboarding was becoming a bottleneck. LearnForge did not fix everything, but having a structured path that people could follow without holding a manager\'s hand made a real difference to how quickly new hires got up to speed."',
+  quoteAuthor:'Head of People, London B2B SaaS company',
+  nuance:'The 7-week figure is an average. Hires in more technical roles still typically need 9–10 weeks. The gain is most visible in go-to-market and operations roles.',
+  whatsNext:'The company is expanding LearnForge to cover continuous development training and is building a manager effectiveness course as their first non-onboarding use case.'
+},
+
+// ─── NEXUSCRM ─────────────────────────────────────────
+{
+  id:'crm-1', product:'nexuscrm', productName:'NexusCRM', color:'#FF5C9E', icon:'🔗',
+  headline:'How a 14-Rep B2B Sales Team Improved Follow-Up Consistency and Booked 31% More Meetings Per Quarter',
+  client:{type:'B2B SaaS Company',size:'14 account executives, 2 SDRs',region:'Toronto, Canada',setup:'Mid-market B2B software company targeting North American financial services and fintech clients'},
+  challenge:'The team was generating enough pipeline but converting it poorly. A post-quarter analysis found that 41% of leads that came inbound had not received a follow-up within 24 hours, and 28% had received only one outreach attempt before being marked cold. The VP of Sales described the core problem as a discipline issue, not a talent issue — reps were capable but the system was not holding them to a consistent process.',
+  whyFoxside:'The team had previously used Salesforce but found the manual data entry requirement was causing CRM hygiene to deteriorate. NexusCRM\'s automatic activity capture from email and calendar, combined with the AI co-pilot for follow-up suggestions, addressed the two root causes: inconsistent follow-up and dirty data.',
+  implementation:'NexusCRM replaced Salesforce for the outbound team in a 3-week migration. Email and calendar were connected in week 1. The AI co-pilot was enabled for all reps in week 2. The VP Sales spent 2 hours per week in the first month reviewing the AI\'s suggested follow-ups against actual outcomes to calibrate the model for their buyer profile.',
+  before:'Manual CRM entry after every interaction. Follow-up cadence inconsistent across reps. No visibility into which leads had been contacted and when without running Salesforce reports.',
+  after:'Activity captured automatically. AI suggests follow-up timing and message tone based on engagement signals. Reps action suggestions rather than starting from scratch. VP has real-time pipeline view.',
+  results:[
+    {metric:'Meetings booked per rep per quarter','before':'Baseline Q4 2025','after':'+31% increase in Q1 2026','change':'\'31% more meetings',timeframe:'Q1 2026'},
+    {metric:'First-response SLA compliance (< 4 hrs)','before':'59% of inbound leads contacted within 4 hours','after':'86%','change':'\'27 percentage point improvement',timeframe:'8 weeks post-launch'},
+    {metric:'Manual CRM entry time','before':'Estimated 45 min/day per rep','after':'~12 min/day','change':'\'~73% reduction',timeframe:'Measured over 4 weeks'},
+    {metric:'Multi-touch outreach rate','before':'72% of leads received only 1 contact attempt','after':'91% received 3+ attempts','change':'\'More consistent follow-up depth',timeframe:'Q1 2026'}
+  ],
+  quote:'"Reps didn\'t suddenly become stars. They just stopped missing obvious follow-ups. The co-pilot doesn\'t do the selling — it stops the gaps in the process that were costing us conversions."',
+  quoteAuthor:'VP Sales, Toronto B2B SaaS company',
+  nuance:'The 31% meetings increase reflects both improved process and a strong Q1 market. The team attributes roughly half to NexusCRM and half to seasonal pipeline. They are watching Q2 results to separate the effect.',
+  whatsNext:'The company is rolling NexusCRM out to its 4-person customer success team for expansion and renewal tracking.'
+},
+{
+  id:'crm-2', product:'nexuscrm', productName:'NexusCRM', color:'#FF5C9E', icon:'🔗',
+  headline:'How a Professional Services Firm Reduced Forecast Preparation From 1 Day to 2 Hours',
+  client:{type:'Management Consulting Firm',size:'28 client-facing consultants, 4 business development managers',region:'Chicago, USA',setup:'Mid-size consultancy serving public sector and healthcare clients with $18M–$24M annual revenue'},
+  challenge:'The Revenue Director spent 6–8 hours preparing the weekly forecast for the board. This involved emailing all 4 BDMs for pipeline updates, chasing for missing information, reconciling 4 different spreadsheets, and then re-formatting everything into the board template. By the time the forecast was ready, some of the data was already 48–72 hours old.',
+  whyFoxside:'The Revenue Director specifically needed a tool that could capture deal data from BDMs without requiring them to spend significant time on CRM hygiene. NexusCRM\'s automatic email and meeting activity capture, combined with the pipeline dashboard, eliminated the need for the weekly data-gathering emails.',
+  implementation:'NexusCRM was deployed to the 4 BDMs and Revenue Director in week 1. All existing pipeline data was migrated from spreadsheets. Email and calendar connections were set up for all users. The board forecast template was configured in NexusCRM\'s reporting module. The first automated forecast was generated in week 3.',
+  before:'Weekly manual forecast: Revenue Director emailed BDMs, reconciled 4 spreadsheets, reformatted for board. ~6–8 hours per week. Data 48–72 hours old by submission.',
+  after:'Revenue Director opens NexusCRM dashboard. Pulls automated forecast report. Reviews and submits. ~1.5–2 hours. Data reflects last calendar interaction.',
+  results:[
+    {metric:'Weekly forecast preparation time','before':'6–8 hours','after':'1.5–2 hours','change':'\'~75% reduction',timeframe:'Consistent over 8 weeks post-launch'},
+    {metric:'Data freshness at forecast submission','before':'48–72 hours old','after':'<6 hours old','change':'\'Much more current',timeframe:'From week 3 onwards'},
+    {metric:'BDM CRM update time','before':'Estimated 60–90 min per BDM per week for pipeline updates','after':'~15 min per BDM','change':'\'~75% reduction',timeframe:'Weeks 4–8'},
+    {metric:'Pipeline data completeness','before':'~67% of deal fields populated consistently','after':'~91%','change':'\'24 point improvement',timeframe:'8 weeks post-launch'}
+  ],
+  quote:'"I used to dread Monday mornings because of the forecast chase. Now the data is just there. It sounds like a small thing but it freed up most of a working day every week."',
+  quoteAuthor:'Revenue Director, Chicago management consultancy',
+  nuance:'The Revenue Director still manually reviews and applies judgement to the AI forecast before board submission. Larger or more complex deals are discussed with BDMs rather than relying solely on the platform data.',
+  whatsNext:'The firm is evaluating NexusCRM\'s churn prediction module for their existing client base, focusing on identifying clients at risk of not renewing consulting engagements.'
+},
+{
+  id:'crm-3', product:'nexuscrm', productName:'NexusCRM', color:'#FF5C9E', icon:'🔗',
+  headline:'How a Recruitment Firm Increased Outreach Sequence Performance and Cut Sequence Build Time by 60%',
+  client:{type:'Executive Recruitment Firm',size:'18 consultants',region:'London, UK',setup:'Executive search firm placing senior finance, legal, and HR leaders across UK and European companies'},
+  challenge:'The firm relied on email sequences to reach passive candidates and prospective client companies. Consultants were spending 3–4 hours per week building, customising, and managing outreach sequences manually — time they could have been spending in conversations. Sequence quality also varied widely between consultants, with the top performers generating 3× the response rate of the bottom performers. The Managing Director wanted to raise the floor, not just reward the ceiling.',
+  whyFoxside:'The team evaluated NexusCRM specifically for its AI-written sequence capability. The ability to generate a personalised multi-step sequence from a job brief or candidate profile, rather than starting from a blank template, was the specific workflow improvement they were looking for.',
+  implementation:'NexusCRM was deployed to 12 consultants as a pilot in the first 5 weeks. AI sequence generation was enabled from week 2. Consultants were given a 90-minute training session on how to review and edit AI-generated sequences. The remaining 6 consultants joined in week 6.',
+  before:'Consultants built sequences manually from templates stored in a shared Google Doc. Top consultants spent significant time customising. Others sent near-identical sequences to every contact. Open and reply rates tracked in a spreadsheet.',
+  after:'Consultants input role brief or candidate profile. AI generates a personalised 4-step sequence. Consultants review and adjust (typically 10–15 minutes). Sequences sent from NexusCRM with automatic tracking.',
+  results:[
+    {metric:'Average email reply rate','before':'6.8% across all consultants','after':'10.4%','change':'\'53% improvement',timeframe:'6 weeks post-launch, across 1,800+ emails'},
+    {metric:'Time per sequence built','before':'90–120 min per sequence','after':'15–25 min per sequence','change':'\'~75% reduction',timeframe:'Consistent over 8 weeks'},
+    {metric:'Variance between top/bottom consultants (reply rate)','before':'3.2× difference','after':'1.8× difference','change':'\'Floor raised significantly',timeframe:'Post-launch 6 weeks'},
+    {metric:'Sequences active simultaneously per consultant','before':'2–3 on average','after':'5–6 on average','change':'\'More outreach coverage',timeframe:'Week 8'}
+  ],
+  quote:'"The best consultants here are good because they put thought into personalisation. AI didn\'t replace that — it gave everyone else a more personalised starting point than they were creating on their own."',
+  quoteAuthor:'Managing Director, London executive recruitment firm',
+  nuance:'Response rates improved but the team notes that final meeting conversion still depends heavily on the quality of the consultants\' phone calls. NexusCRM gets people to the phone; it does not close searches.',
+  whatsNext:'The firm is integrating NexusCRM with their ATS (Vincere) to synchronise candidate pipeline data and reduce manual record duplication between systems.'
+},
+
+// ─── MEDISYNC ─────────────────────────────────────────
+{
+  id:'med-1', product:'medisync', productName:'MediSync', color:'#22DDFF', icon:'🏥',
+  headline:'How a 6-Site Clinic Group Reduced Clinical Documentation Time by 38% Without Changing EHR Systems',
+  client:{type:'Multi-Site GP and Specialist Clinic Group',size:'24 clinicians, 18 administrative staff across 6 sites',region:'North-West England',setup:'Private and NHS-contract outpatient clinics covering GP, dermatology, and physiotherapy'},
+  challenge:'Clinicians across the group were spending an average of 2.1 hours per day on post-consultation documentation. For GPs seeing 24–28 patients daily, this meant charting after hours or arriving early to catch up. Three clinicians had raised burnout concerns in their annual appraisals specifically citing documentation burden. The clinical director estimated the group was losing approximately 90 minutes of billable appointment capacity per day per site due to documentation-related scheduling conservatism.',
+  whyFoxside:'The group had evaluated two general AI transcription tools and found they produced generic summaries that required too much rework to meet their clinical documentation standards. MediSync\'s healthcare-specific training and SNOMED/ICD-10 coding support were the differentiators. The HIPAA and NHS DSP Toolkit compliance was required as a non-negotiable.',
+  implementation:'Pilot began at one site with 4 GPs and 1 physiotherapist over 8 weeks. MediSync integrated with their existing EMIS clinical system for read/write. Clinicians used the ambient documentation feature for 2 weeks without signing off notes, to build confidence. From week 3 they began signing off AI-generated notes with edits. Full group rollout began at week 10.',
+  before:'Clinicians dictated or typed consultation notes manually after each appointment. Average 5–7 minutes of documentation per consultation. Evening and early-morning catch-up common.',
+  after:'MediSync generates a structured SOAP note during the consultation. Clinicians review and approve in 1–2 minutes. After-hours charting rare for clinicians who have adopted the workflow.',
+  results:[
+    {metric:'Average documentation time per consultation','before':'5.8 minutes average','after':'2.1 minutes average','change':'\'64% reduction in documentation time per consult',timeframe:'Measured over 8-week pilot, 1,200+ consultations'},
+    {metric:'After-hours charting frequency','before':'All 4 pilot GPs charting after hours most evenings','after':'1 of 4 GPs occasionally charting after hours','change':'\'Significant reduction in after-hours work',timeframe:'8-week pilot'},
+    {metric:'Documentation completeness (audit)','before':'78% of notes scored complete by clinical audit','after':'91%','change':'\'13 point improvement',timeframe:'Quarterly clinical audit'},
+    {metric:'Appointment capacity recovered','before':'Baseline','after':'Each pilot clinician recovered 40–60 mins of available appointment time per day','change':'\'Significant scheduling gain',timeframe:'8-week pilot at one site'}
+  ],
+  quote:'"I still read every note before signing. That is how it should be. But the note is there, structured, mostly correct, and I am adjusting rather than writing from scratch. The difference by the end of a 28-patient day is noticeable."',
+  quoteAuthor:'GP partner, North-West England clinic group',
+  nuance:'The team maintains a strict policy: no note is signed without clinician review. Clinicians were initially concerned about medicolegal risk, which was addressed with a formal protocol and a clarifying statement in patient consent forms.',
+  whatsNext:'The group is extending MediSync to all 6 sites and evaluating the scheduling optimisation module to reduce no-show rates, which are currently running at 11% across the group.'
+},
+{
+  id:'med-2', product:'medisync', productName:'MediSync', color:'#22DDFF', icon:'🏥',
+  headline:'How a Telehealth Provider Reduced No-Show Rates From 18% to 7% in 60 Days',
+  client:{type:'Digital-First Telehealth Provider',size:'32 clinicians (remote), 12 operations staff',region:'United States (nationwide)',setup:'Video-based primary care and mental health consultations, serving working-age adults across 18 US states'},
+  challenge:'The provider\'s no-show rate was running at 18%, well above the industry average for telehealth. Each missed appointment was an unrecoverable slot and a direct revenue loss. The ops team was manually sending reminder emails but timing was inconsistent and they had no ability to identify which patients were higher-risk for non-attendance. They had tried SMS reminders previously but without a systematic approach the impact was limited.',
+  whyFoxside:'The operations director wanted a system that could score individual patients by no-show risk, send automated multi-channel reminders calibrated to that risk, and provide visibility of which slots were likely to be missed in advance. MediSync\'s no-show prediction and automated patient communication tools matched these requirements.',
+  implementation:'MediSync was connected to the provider\'s booking platform via API in week 2. Historical appointment and attendance data was used to train the no-show prediction model. Automated reminder sequences (SMS at 48 hours, email at 24 hours, SMS at 2 hours) were configured in week 3. High-risk patients received an additional SMS at 4 hours with an easy rebook option. Full deployment was live by week 4.',
+  before:'Manual reminder emails sent by an ops coordinator when they had time. No risk scoring. No-show rate 18%. 90–120 min daily coordinator time on reminders.',
+  after:'Automated reminder sequences run without manual intervention. High-risk patients flagged and receive additional touchpoints. Operations team monitors exception cases.',
+  results:[
+    {metric:'No-show rate','before':'18%','after':'7%','change':'\'11 percentage point reduction (61% relative improvement)',timeframe:'60 days post-launch'},
+    {metric:'Appointment slot recovery','before':'Baseline','after':'~14 additional completed appointments per week','change':'\'Based on 200 weekly slots at 11% improvement',timeframe:'Week 5–10 average'},
+    {metric:'Coordinator time on reminders','before':'90–120 min/day','after':'~10 min/day (exception review only)','change':'\'~85–90% time reduction',timeframe:'From week 4 onwards'},
+    {metric:'High-risk patient show rate','before':'Not tracked','after':'74% show rate for patients flagged as high-risk','change':'\'Intervention measurably effective',timeframe:'60 days'}
+  ],
+  quote:'"An 11-point drop in no-shows in 60 days was beyond what we hoped for. We knew reminders helped — we just hadn\'t had the infrastructure to do them properly. MediSync made it systematic."',
+  quoteAuthor:'Operations Director, US telehealth provider',
+  nuance:'Some clinician-specific slots have higher no-show rates regardless of reminders, likely due to appointment type rather than patient behaviour. The ops team is now analysing slot-level data to address this separately.',
+  whatsNext:'The provider is implementing MediSync\'s post-consultation follow-up messaging for their mental health pathway, where consistent patient contact between sessions is clinically important.'
+},
+{
+  id:'med-3', product:'medisync', productName:'MediSync', color:'#22DDFF', icon:'🏥',
+  headline:'How a Specialist Dermatology Practice Improved Scheduling Efficiency and Reduced Administrative Overhead by 40%',
+  client:{type:'Private Specialist Dermatology Practice',size:'8 consultants, 10 administrative staff across 3 sites',region:'Kyiv, Ukraine',setup:'Private dermatology consultations, skin cancer screening, and minor procedures across 3 Kyiv clinics'},
+  challenge:'The practice was running below capacity despite high demand. Scheduling was complex: different consultants had different procedure capabilities, appointment types required specific room types, and scheduling staff were manually matching patients to the right consultant-room combination. The result was frequent booking errors, frequent rescheduling, and administrative staff spending significant time resolving issues that should not have occurred at the initial booking stage.',
+  whyFoxside:'The practice manager had evaluated general scheduling tools and found they could not model the specific consultant-procedure-room dependencies that made their scheduling complex. MediSync\'s healthcare-specific scheduling engine, which could be configured with these constraints, was the deciding factor.',
+  implementation:'The practice manager spent 3 days configuring MediSync with all consultant capability profiles, room assignments, appointment type rules, and procedure durations. The system went live for new bookings from week 3. Existing bookings were not migrated — the system built up from new appointments over 6 weeks until it became the primary scheduling view.',
+  before:'Scheduling done by 3 dedicated admin staff in a combination of their practice management system and a separate spreadsheet for room allocation. Booking errors identified at day-of-appointment review in approximately 12% of cases.',
+  after:'Scheduling staff use MediSync\'s constraint-aware booking interface. The system automatically matches patient to available consultant with the required capability and appropriate room. Day-of-review errors have almost eliminated.',
+  results:[
+    {metric:'Scheduling errors at day-of review','before':'~12% of appointments had an issue requiring action','after':'~2%','change':'\'83% reduction in day-of errors',timeframe:'6 weeks post-full-deployment'},
+    {metric:'Admin time on scheduling per day','before':'3 admin staff spending majority of day on scheduling and resolution','after':'2 admin staff, with ~30% of time freed for other tasks','change':'\'~40% reduction in scheduling overhead',timeframe:'Steady state from week 8'},
+    {metric:'Appointment utilisation','before':'Estimated 74% of available slots filled','after':'82% of available slots filled','change':'\'8 point improvement in utilisation',timeframe:'Q1 2026 vs Q4 2025'},
+    {metric:'Rescheduling rate','before':'~9% of appointments rescheduled','after':'~4%','change':'\'~56% fewer reschedulings',timeframe:'8 weeks post-launch'}
+  ],
+  quote:'"We were scheduling 3 days a week, resolving errors the other 2. That sounds harsh but it was close to true. Now most days are clean and the team can actually focus on the patients on the phone rather than the crisis in the diary."',
+  quoteAuthor:'Practice Manager, Kyiv dermatology practice',
+  nuance:'The configuration phase was more complex than expected and required input from 3 consultants to accurately capture their procedure preferences and room requirements. The practice manager recommends allowing a full week for setup.',
+  whatsNext:'The practice is piloting MediSync\'s patient communication suite to automate pre-appointment instructions and post-procedure follow-up, which are currently managed by phone calls.'
+},
+
+// ─── FINPILOT ─────────────────────────────────────────
+{
+  id:'fin-1', product:'finpilot', productName:'FinPilot', color:'#9B71FF', icon:'📊',
+  headline:'How an RIA Firm Reduced Client Reporting Preparation From 3 Days to 4 Hours Per Quarter',
+  client:{type:'Registered Investment Adviser',size:'12 advisers, 4 support staff',region:'Boston, USA',setup:'RIA managing $420M AUM across 64 private client and family office accounts'},
+  challenge:'Each quarter, the support team spent 3 days preparing performance reports for 64 client accounts. Data was pulled manually from custodian feeds, formatted in Excel, checked by an adviser, and then reformatted into the firm\'s branded PDF template. Errors in the manual process were common enough that a second-checker was standard. Reports were delivered an average of 18 days after quarter-end, which clients had begun to comment on.',
+  whyFoxside:'The firm\'s compliance officer required that any reporting tool integrate with their two custodians (Pershing and Fidelity) and produce reports in a format approvable under their SEC regulatory obligations. FinPilot\'s custodian integrations and FCA-aligned report templates resolved these requirements without needing custom development.',
+  implementation:'Custodian data feeds were connected in week 1. The firm\'s branded report template was built in FinPilot\'s report designer over 2 days. A pilot run of 8 client reports was produced and reviewed alongside the manual versions in week 3. After one round of template adjustments, the full 64-client production run was completed in week 5.',
+  before:'3 days of manual data extraction, formatting, checking, and PDF production per quarter. Reports delivered 18 days post quarter-end. Second-checker required for error detection.',
+  after:'Custodian data feeds update automatically. One support staff member runs the full report batch in FinPilot. Adviser reviews and approves. 4 hours total per quarter.',
+  results:[
+    {metric:'Quarterly report preparation time','before':'3 working days','after':'~4 hours','change':'\'~93% time reduction',timeframe:'Q1 2026 cycle'},
+    {metric:'Client report delivery','before':'18 days post quarter-end','after':'5 days post quarter-end','change':'\'13-day improvement',timeframe:'Q1 2026'},
+    {metric:'Manual data errors in reports','before':'Errors detected in ~15% of reports before delivery','after':'0 data errors in Q1 run','change':'\'Error rate eliminated at data pull stage',timeframe:'Q1 2026'},
+    {metric:'Support staff time freed','before':'1 support staff effectively full-time on reports for 3 days/quarter','after':'4 hours per quarter on reports','change':'\'Significant capacity returned',timeframe:'Per quarter'}
+  ],
+  quote:'"Three days to 4 hours is the number I keep coming back to. The reports look better, they go out earlier, and we have not had a data error since we moved. The second-checker step just doesn\'t exist anymore."',
+  quoteAuthor:'Operations Director, Boston RIA',
+  nuance:'Advisers still review and approve every report before client delivery. The time saving is at the data preparation and formatting stage — the professional judgement review is preserved.',
+  whatsNext:'The firm is implementing FinPilot\'s portfolio rebalancing alerts and stress-testing tools, which will allow advisers to be more proactive with clients when market conditions shift.'
+},
+{
+  id:'fin-2', product:'finpilot', productName:'FinPilot', color:'#9B71FF', icon:'📊',
+  headline:'How a Family Office Streamlined Compliance Documentation and Passed Its FCA Audit Without Any Outstanding Actions',
+  client:{type:'Single Family Office',size:'6 investment professionals, 2 compliance staff',region:'London, UK',setup:'Single-family office managing circa £180M across listed equities, alternatives, and direct investments'},
+  challenge:'The family office had received two FCA supervisory letters in consecutive years flagging concerns about the consistency and timeliness of their suitability documentation. The compliance team was manually compiling suitability assessments, investment rationale records, and client review documentation using a combination of Word templates and spreadsheet tracking. The workload had outgrown the 2-person compliance team\'s capacity, and documentation was frequently completed retrospectively.',
+  whyFoxside:'The CIO and compliance manager evaluated FinPilot specifically for its compliance workflow module. The ability to generate suitability assessment templates, track completion status, and produce an audit-ready compliance calendar was directly matched to the FCA feedback they had received. The audit log and document versioning were also requirements.',
+  implementation:'FinPilot was deployed to the compliance team and 6 investment professionals over 2 weeks. All existing client records were imported. Suitability review schedules were configured per client. The compliance calendar was built against FCA supervisory cycle expectations. First automated compliance run was executed in week 4.',
+  before:'Manual compliance documentation in Word templates. No centralised tracking. Suitability reviews completed when time allowed. Documents sometimes created after the fact.',
+  after:'FinPilot compliance calendar tracks all client review obligations. System prompts investment professionals when suitability reviews are due. Documentation generated in platform with full audit trail.',
+  results:[
+    {metric:'Suitability documentation completeness','before':'~72% of required documentation completed on time','after':'98% completed on time in first full quarter','change':'\'26 point improvement',timeframe:'Q1 2026'},
+    {metric:'FCA audit outcome','before':'Outstanding actions in previous 2 years','after':'Zero outstanding actions in 2026 supervisory review','change':'\'Clean audit',timeframe:'2026 FCA supervisory review'},
+    {metric:'Compliance team time on documentation','before':'~70% of team time on manual documentation creation and tracking','after':'~35% of team time','change':'\'35 percentage point reduction',timeframe:'First full quarter on FinPilot'},
+    {metric:'Investment professional review compliance','before':'Reviews completed late in ~40% of cases','after':'Reviews completed on time in ~96% of cases','change':'\'Scheduling and prompt system effective',timeframe:'Q1 2026'}
+  ],
+  quote:'"Two letters from the FCA in two years were a serious signal. FinPilot did not change how we think about compliance — we were always taking it seriously. It changed how we proved it. The documentation is consistent, timely, and easy to produce when someone asks for it."',
+  quoteAuthor:'Chief Compliance Officer, London single family office',
+  nuance:'The investment team initially found the compliance prompts disruptive to their workflow. Over 6 weeks they adjusted their scheduling to accommodate the review cycle. The compliance manager considers the initial friction worth it.',
+  whatsNext:'The family office is rolling out FinPilot\'s scenario modelling and stress-testing capabilities to support more structured investment committee presentations.'
+},
+{
+  id:'fin-3', product:'finpilot', productName:'FinPilot', color:'#9B71FF', icon:'📊',
+  headline:'How a Wealth Management Team Recovered 6 Hours Per Week From Portfolio Monitoring and Rebalancing Prep',
+  client:{type:'Wealth Management Practice (within a larger IFA firm)',size:'5 advisers, 2 paraplanners',region:'Brisbane, Australia',setup:'Discretionary wealth management service for 88 high-net-worth clients, AUM approximately A$125M'},
+  challenge:'The 2 paraplanners were spending 2–3 days per week monitoring portfolios for drift, generating rebalancing proposals, and preparing investment committee notes. The process was manual: pulling reports from their platform, running custom Excel models to identify drift, writing up recommendations, and sending them to advisers. Market volatility periods were particularly difficult — during high-movement months, the team fell behind.',
+  whyFoxside:'The practice director was specifically looking for a tool that could automate drift monitoring and generate rebalancing proposals in a format the advisers could review and approve in minutes rather than hours. FinPilot\'s portfolio monitoring alerts and rebalancing recommendation engine matched this workflow closely.',
+  implementation:'FinPilot was connected to their HUB24 platform for live AUM data in week 2. Drift thresholds were configured per client risk profile. Rebalancing proposal templates were built over 3 days. The first automated drift scan and proposal batch ran in week 4. Paraplanners spent week 4 reviewing AI proposals alongside their manual versions to calibrate their trust in the output.',
+  before:'Manual portfolio monitoring: 2–3 days per week. Excel drift models updated weekly. Rebalancing proposals written from scratch per client. Investment committee notes compiled manually.',
+  after:'FinPilot runs continuous drift monitoring. Alerts surface when portfolios breach configured thresholds. Paraplanners review and approve AI-generated rebalancing proposals. Committee notes drawn from approved proposals.',
+  results:[
+    {metric:'Paraplanner time on monitoring and rebalancing prep','before':'2–3 days per week combined','after':'~6 hours per week combined','change':'\'~65–70% time reduction',timeframe:'Stable over 8 weeks post-launch'},
+    {metric:'Client portfolio drift detection lag','before':'Issues detected at next weekly review (up to 7 days later)','after':'Same-day or next-day alert','change':'\'Significantly faster detection',timeframe:'From week 4 onwards'},
+    {metric:'Rebalancing proposal time','before':'3–4 hours per client proposal','after':'30–45 minutes per client (review and approval)','change':'\'~85% faster',timeframe:'Across 14 proposals in first 8 weeks'},
+    {metric:'Investment committee note preparation','before':'Half a day per meeting','after':'~1.5 hours','change':'\'~75% faster',timeframe:'3 committee meetings in post-launch period'}
+  ],
+  quote:'"The paraplanners were good at their jobs but they were doing a lot of repetitive checking work. FinPilot handles the monitoring and the first draft of the proposal — they handle the judgement and client context. That split works well."',
+  quoteAuthor:'Practice Director, Brisbane wealth management practice',
+  nuance:'Advisers still make the final decision on every rebalancing action. The AI proposals are reviewed critically, not rubber-stamped. In roughly 20% of proposals, advisers override or modify the AI recommendation based on client-specific context.',
+  whatsNext:'The practice is building customised risk-tolerance questionnaires in FinPilot to streamline the annual client review process.'
+},
+
+// ─── TALENTFLOW ───────────────────────────────────────
+{
+  id:'tf-1', product:'talentflow', productName:'TalentFlow', color:'#FF7142', icon:'👥',
+  headline:'How a Tech Company\'s Talent Team Reduced Screening Time by 54% Without Reducing Shortlist Quality',
+  client:{type:'Technology Company (Series B)',size:'Internal talent team of 4 recruiters',region:'London, UK',setup:'Scaling B2B technology company, hiring 8–14 roles per month across engineering, product, and commercial'},
+  challenge:'The talent team was receiving 180–240 applications per week across open roles. Manual CV screening was consuming 2–3 hours per recruiter per day, leaving little time for outreach, interviewing, and candidate relationship management. The volume had increased 60% in 6 months following a growth round, and the team had not scaled with it. The Head of Talent was concerned that some qualified candidates were being overlooked simply due to time pressure.',
+  whyFoxside:'The team wanted AI screening that would surface relevant candidates based on skills and experience relevance, not keyword matching. TalentFlow\'s resume intelligence engine, which evaluates experience depth and career trajectory rather than exact keyword matches, was the differentiator versus other ATS tools they had evaluated.',
+  implementation:'TalentFlow was connected to their existing ATS (Greenhouse) via integration. Role-specific screening criteria were configured by the talent team for each open role over the first week. The AI screening ran in parallel with manual review for 2 weeks to calibrate recruiter trust. From week 3, AI screening was the primary filter. Human review was required before any candidate was rejected.',
+  before:'Manual CV review: 2–3 hours per recruiter per day. Inconsistent criteria application across roles. Estimated 180–240 CVs per week reviewed manually.',
+  after:'AI screens all incoming applications. Recruiters receive a ranked shortlist with AI rationale per candidate. Human review required before rejection. Screenable backlog addressed within 24 hours.',
+  results:[
+    {metric:'Daily screening time per recruiter','before':'2–3 hours/day on CV review','after':'~1 hour/day (review of AI shortlist)','change':'\'54–67% time reduction',timeframe:'Measured over 8 weeks post-launch'},
+    {metric:'Application-to-interview ratio','before':'Baseline Q4 2025: 1 interview per 22 applications','after':'1 interview per 17 applications in Q1 2026','change':'\'23% more efficient conversion',timeframe:'Q1 2026'},
+    {metric:'Hiring manager satisfaction with shortlists','before':'3.6/5 average (internal survey)','after':'4.2/5','change':'\'0.6 point improvement',timeframe:'Post-launch recruiter survey'},
+    {metric:'Qualified candidate rejection rate','before':'Not measured','after':'Audit: <3% of rejected candidates flagged as potentially qualified in spot checks','change':'\'Low missed-candidate rate',timeframe:'Spot check of 80 rejections post-launch'}
+  ],
+  quote:'"We were not missing good candidates on purpose — we just ran out of time to look properly. TalentFlow did not replace recruiter judgement on screening. It made sure we were spending that judgement on the right people."',
+  quoteAuthor:'Head of Talent, London Series B technology company',
+  nuance:'The team maintains a policy that no candidate is rejected without human review of the AI decision. The AI shortlist surfaces the top candidates; it does not auto-reject anyone.',
+  whatsNext:'The talent team is piloting TalentFlow\'s DEI analytics module to identify where in the funnel underrepresented candidates are dropping, following a commitment to improve diversity in technical hires.'
+},
+{
+  id:'tf-2', product:'talentflow', productName:'TalentFlow', color:'#FF7142', icon:'👥',
+  headline:'How a Professional Services Firm Cut Average Time-to-Hire From 58 Days to 34 Days Across All Grades',
+  client:{type:'Professional Services Firm (Consulting)',size:'HR team of 6, 3 dedicated to recruitment',region:'Vancouver, Canada',setup:'Mid-size management consultancy hiring 40–60 people per year across analyst to director grades'},
+  challenge:'At 58 days average time-to-hire, the firm was losing candidates to competitors with faster processes. Exit surveys from declined offers showed that 3 of 6 declined offers in the previous year cited a slow process as a factor. The recruitment team knew where the delays were: the interview scheduling and coordination phase typically added 12–18 days, and hiring manager availability for briefings and feedback was a chronic bottleneck.',
+  whyFoxside:'The recruitment team specifically needed tools that automated interview scheduling and generated structured briefing materials for hiring managers without requiring a meeting to prepare them. TalentFlow\'s scheduling automation and role-specific interview guides addressed both bottlenecks.',
+  implementation:'TalentFlow was deployed to the 3 recruitment team members and connected to the firm\'s calendar system in week 1. Interview guide templates were configured per grade and practice area. Automated scheduling was enabled for first-round interviews from week 2. Hiring manager briefings were generated from the job description and candidate profile from week 3.',
+  before:'Interview scheduling coordinated manually by email between candidate, panel, and recruiter. Average 3–5 days per scheduling round. Hiring manager briefings prepared manually by recruiters before each interview.',
+  after:'Candidates receive an automated scheduling link for first-round interviews. Panel availability is pulled from connected calendars. TalentFlow generates a hiring manager briefing from the job description and candidate\'s CV automatically.',
+  results:[
+    {metric:'Average time-to-hire','before':'58 days','after':'34 days','change':'\'41% faster',timeframe:'Q1 2026, 14 hires completed'},
+    {metric:'Interview scheduling duration','before':'3–5 days per scheduling round','after':'Same-day or next-day scheduling for first rounds','change':'\'~80% reduction',timeframe:'Across 14 hires'},
+    {metric:'Offer acceptance rate','before':'71%','after':'82%','change':'\'11 point improvement',timeframe:'Q1 2026 vs Q4 2025'},
+    {metric:'Recruiter time per hire on coordination','before':'~6 hours per hire on scheduling and prep','after':'~2.5 hours','change':'\'~58% reduction',timeframe:'Average across Q1 2026 hires'}
+  ],
+  quote:'"We always knew the process was too slow. The problem was it was slow in the gaps — between stages — not within them. TalentFlow compressed the scheduling and coordination time that no one was really measuring."',
+  quoteAuthor:'Head of HR, Vancouver management consultancy',
+  nuance:'The 24-day improvement is primarily from scheduling and coordination compression. The firm acknowledges that the number of interview stages (4 rounds) was reviewed separately and reduced to 3 in the same period, which contributed to the improvement.',
+  whatsNext:'The firm is implementing TalentFlow\'s offer intelligence module to benchmark compensation packages against live market data ahead of offer stage.'
+},
+{
+  id:'tf-3', product:'talentflow', productName:'TalentFlow', color:'#FF7142', icon:'👥',
+  headline:'How a Retail Group Managed a 400-Application Seasonal Hiring Intake Without Adding Recruitment Headcount',
+  client:{type:'Retail Group',size:'HR team of 5 (2 focused on recruitment)',region:'Florida, USA',setup:'Regional retail group with 14 locations across the Florida Gulf Coast, running seasonal hiring during holiday and summer peaks'},
+  challenge:'Each seasonal intake produced 350–450 applications for approximately 80–120 positions across stores. The 2 recruitment team members spent 3–4 weeks manually screening, scheduling phone screens, and coordinating with 14 store managers. The process was chaotic, with some stores receiving screened candidates within 1 week and others waiting 4–5 weeks. Store managers were also spending significant time in the loop chasing updates.',
+  whyFoxside:'The HR Manager needed a tool that could handle the volume spike without requiring additional headcount or external recruitment agency support (which had been used in 2 of the previous 3 years). TalentFlow\'s high-volume screening, automated scheduling, and store-level candidate routing were the specific features that matched their seasonal intake model.',
+  implementation:'TalentFlow was configured with screening criteria for all store roles before the intake window opened. Store managers were given read-only access to their store\'s candidate pipeline. Automated phone screen scheduling was enabled from day 1. A candidate status update email was configured to send every 5 days so candidates were not left without communication.',
+  before:'Manual screening of 350–450 CVs over 3–4 weeks. Uneven candidate distribution to stores. Candidates sometimes waiting 3+ weeks without hearing anything. Store managers chasing HR for updates.',
+  after:'AI screening runs as applications arrive. Candidates receive automated status emails. Store managers have live view of their candidate pool. Recruitment team manages exceptions and phone screens.',
+  results:[
+    {metric:'Screening cycle duration','before':'3–4 weeks','after':'5 working days for full initial screen','change':'\'~75% faster initial screening',timeframe:'Christmas 2025 intake (400 applications)'},
+    {metric:'Candidate communication gap','before':'Some candidates waiting 3+ weeks without contact','after':'Automated status email every 5 days — no candidate goes uncontacted','change':'\'Communication gap eliminated',timeframe:'400-application intake'},
+    {metric:'Recruiter agency cost','before':'$18,000–$22,000 per seasonal intake (previous 2 years)','after':'Managed in-house without agency','change':'\'Agency cost avoided',timeframe:'Christmas 2025 intake'},
+    {metric:'Store manager time on candidate chasing','before':'Store managers estimated 3–4 hrs/week chasing HR during intake','after':'Self-serve dashboard; ~30 min/week','change':'\'~80–90% reduction',timeframe:'4-week intake period'}
+  ],
+  quote:'"We brought in an agency two years running because we just could not cope. This year we managed it ourselves and the stores got their candidates faster. The biggest surprise was how much time it saved the store managers, not just us."',
+  quoteAuthor:'HR Manager, Florida retail group',
+  nuance:'Phone screen scheduling is automated but phone screens themselves are still conducted by the recruitment team. The time saving is primarily from screening and coordination, not from the calls themselves.',
+  whatsNext:'The HR Manager is evaluating TalentFlow year-round for permanent role hiring and for tracking internal mobility across the 14 stores.'
+},
+
+// ─── CONSTRUCTIQ ──────────────────────────────────────
+{
+  id:'con-1', product:'constructiq', productName:'ConstructIQ', color:'#FF4D6D', icon:'🏗️',
+  headline:'How a General Contractor Reduced Average RFI Response Time From 9 Days to 2 Days Across 4 Live Projects',
+  client:{type:'General Contractor',size:'280 employees, 4 project management teams',region:'London and South-East England',setup:'Commercial and mixed-use construction contractor handling projects from £3M to £25M'},
+  challenge:'Slow RFI responses were regularly appearing in project delay reports. The average response time across the firm was 9 working days — well above the 3–5 day SLA in most of their contracts. RFIs were arriving by email, being assigned to the relevant design consultant manually, and then being tracked in a shared spreadsheet that was frequently out of date. When disputes arose over delays, the firm had difficulty proving when RFIs had been submitted and when responses were outstanding.',
+  whyFoxside:'The Head of Projects had evaluated two construction management platforms and found they handled scheduling well but not RFI workflow specifically. ConstructIQ\'s RFI routing, automated consultant assignment, response tracking, and audit trail met the requirements. The ability to generate AI-drafted response starters for standard RFI types was also a differentiator.',
+  implementation:'ConstructIQ was deployed to 4 project management teams across 4 live projects. All open RFIs were migrated from the spreadsheet tracker into the platform in week 1. Consultant contact details and assignment rules were configured. Automated escalation emails went live from week 2: a reminder at 3 days, an escalation to the project director at 7 days.',
+  before:'RFIs received by email, logged in shared spreadsheet, manually forwarded to consultants. Average 9-day response time. No consistent escalation process. Audit trail fragmented across email chains.',
+  after:'RFIs logged in ConstructIQ on receipt, routed to the correct consultant automatically. Automated reminders at 3 days. Escalation at 7 days. Full audit trail per RFI.',
+  results:[
+    {metric:'Average RFI response time','before':'9 working days','after':'2 working days','change':'\'78% faster',timeframe:'Across 4 projects, 8 weeks post-launch, 84 RFIs'},
+    {metric:'RFIs escalated to director','before':'No formal escalation — issues surfaced ad hoc','after':'12% of RFIs triggered 7-day escalation; all resolved within 1 additional day','change':'\'Formal escalation process established',timeframe:'8-week period'},
+    {metric:'RFI audit trail completeness','before':'Email chains and spreadsheet — fragmented','after':'Full timestamped record per RFI in platform','change':'\'Audit trail available for all RFIs',timeframe:'From go-live'},
+    {metric:'Admin time on RFI tracking','before':'Estimated 4–6 hrs/week per PM on spreadsheet management','after':'~45 min/week per PM','change':'\'~85% reduction',timeframe:'Per project manager, weeks 4–8'}
+  ],
+  quote:'"Nine days was embarrassing and we knew it. The problem was not that people were ignoring RFIs — it was that the process was invisible. ConstructIQ made it visible and put an automatic reminder in place so things didn\'t get lost."',
+  quoteAuthor:'Head of Projects, London general contractor',
+  nuance:'AI-drafted response starters are used for standard RFI types but all responses are reviewed and approved by the relevant consultant before sending. The AI saves time on the first draft, not on the professional decision.',
+  whatsNext:'The firm is implementing ConstructIQ\'s subcontractor performance scoring module, with the goal of using structured data in supplier selection for future projects.'
+},
+{
+  id:'con-2', product:'constructiq', productName:'ConstructIQ', color:'#FF4D6D', icon:'🏗️',
+  headline:'How a Property Developer Improved Schedule Visibility Across a 6-Project Portfolio and Reduced Late-Stage Surprises',
+  client:{type:'Property Developer',size:'14 project and commercial managers',region:'Lviv, Ukraine',setup:'Residential and mixed-use developer, 6 active projects between €3M and €22M, primarily post-war reconstruction and new residential build'},
+  challenge:'The development director had limited visibility into how projects were progressing against schedule until contractors submitted monthly updates. By the time a schedule issue was identified in a report, 2–3 weeks had typically passed. Two recent completions had overrun by 6–8 weeks, resulting in penalty clause exposure. The director described the core problem as "always finding out too late."',
+  whyFoxside:'The developer had been using Procore for document management but needed a tool that could aggregate schedule data from 6 different contractors using different scheduling formats and present it in a single coherent view. ConstructIQ\'s multi-project schedule dashboard and weekly schedule health scoring addressed this need.',
+  implementation:'ConstructIQ was deployed to the developer\'s internal team (not contractors) in week 1. Contractors on each project submitted weekly schedule updates in a simplified ConstructIQ submission form rather than their own formats. The schedule dashboard was live for all 6 projects by week 3. The development director set a weekly 30-minute review of the dashboard as a standing diary item.',
+  before:'Monthly contractor schedule reports. Director received updates approximately 4 weeks after schedule events occurred. No cross-portfolio view. Late-stage delays identified at completion review.',
+  after:'Weekly schedule submissions from all contractors. Live cross-portfolio dashboard. Automatic health score per project. Director flags issues at weekly review before they compound.',
+  results:[
+    {metric:'Schedule issue detection lag','before':'3–5 weeks from occurrence to director awareness','after':'4–6 working days average','change':'\'~75% faster detection',timeframe:'6-week measurement period post-launch'},
+    {metric:'Schedule-related director intervention points','before':'Reactive — issues identified at monthly report','after':'12 proactive interventions in 6 weeks, all before issue escalated','change':'\'Moved from reactive to proactive',timeframe:'6 weeks post-launch'},
+    {metric:'Contractor schedule submission compliance','before':'Not formally tracked','after':'94% of weekly submissions received on time','change':'\'Formal tracking established',timeframe:'6-week period'},
+    {metric:'Cross-portfolio visibility','before':'Director required individual calls or meetings for each project','after':'Single dashboard review; calls reserved for flagged items','change':'\'~3 hrs/week returned to director',timeframe:'From week 3 onwards'}
+  ],
+  quote:'"I used to feel like I was always catching up. Now I look at the dashboard on Monday morning and I know what\'s real before I talk to anyone. The surprises haven\'t disappeared, but the late surprises almost have."',
+  quoteAuthor:'Development Director, Lviv property developer',
+  nuance:'Weekly schedule submission from contractors required a culture change — two contractor teams initially submitted inconsistently. The developer addressed this by making it a contract requirement for all new project contracts from Q1 2026.',
+  whatsNext:'The developer is rolling out ConstructIQ\'s cost tracking module to align schedule and budget views in a single portfolio dashboard, replacing the separate Excel cost trackers currently used.'
+},
+{
+  id:'con-3', product:'constructiq', productName:'ConstructIQ', color:'#FF4D6D', icon:'🏗️',
+  headline:'How a Civil Engineering Firm Used Subcontractor Scoring to Improve Project Delivery Performance by 24%',
+  client:{type:'Civil Engineering Subcontractor Specialist',size:'32 project staff',region:'Texas, USA',setup:'Civil engineering firm managing highways, drainage, and groundworks projects primarily for Texas Department of Transportation and county clients'},
+  challenge:'The firm was winning work at a healthy rate but subcontractor performance was inconsistent. The same underperforming subcontractors were being used on repeat because the selection process was based on familiarity and price, not structured performance data. Three projects in the previous 18 months had experienced subcontractor-related delays — two involving the same groundworks firm. The contracts director had been trying to make performance-based selection decisions but had no data system to support it.',
+  whyFoxside:'The contracts director specifically needed a tool that would allow project managers to log subcontractor performance data in a structured way across multiple performance dimensions — safety, quality, schedule adherence, and communication — and surface that data at bid stage. ConstructIQ\'s subcontractor performance scoring module matched this requirement precisely.',
+  implementation:'ConstructIQ was deployed to 8 project managers across 6 live projects. Subcontractor performance scoring was enabled for all active subcontractors. Project managers received a 2-hour training session on consistent scoring. Scores were logged at milestone completion and project handover. By week 8, the firm had performance data on 22 subcontractors across 6 dimensions.',
+  before:'Subcontractor selection based on price and personal knowledge of the PM. No structured performance records. Same firms reused despite known issues.',
+  after:'All subcontractors scored at milestone and handover. Scores accessible at bid stage. Contracts director can require project managers to justify using a subcontractor with a below-threshold score.',
+  results:[
+    {metric:'Subcontractor-related delay events','before':'Avg 3.2 per quarter across active projects','after':'2.1 per quarter in Q1 2026','change':'\'34% fewer delay events',timeframe:'Q1 2026 vs Q3/Q4 2025 average'},
+    {metric:'Project delivery performance (milestone adherence)','before':'Baseline 2025: 71% of milestones hit on time','after':'88% in Q1 2026','change':'\'24% improvement — partly attributable to better sub selection','change':'17 point improvement',timeframe:'Q1 2026'},
+    {metric:'Underperforming subcontractors de-selected','before':'Ad hoc — occasional decisions not to rebid','after':'4 subcontractors formally removed from bid list based on score data','change':'\'Structured deselection now possible',timeframe:'First 10 weeks'},
+    {metric:'Pre-bid subcontractor vetting time','before':'Informal discussions — 1–2 hrs per bid','after':'Score review + discussion — 30 min per bid','change':'\'~60% faster with better quality data',timeframe:'Across 6 bids in 10 weeks'}
+  ],
+  quote:'"We knew some of our subs were not performing. We just could not prove it consistently enough to change the habits. Now we have structured data and the conversation at bid stage is completely different."',
+  quoteAuthor:'Contracts Director, Texas civil engineering firm',
+  nuance:'The 24% delivery improvement is not attributable solely to subcontractor scoring — the firm also introduced a revised site induction process in Q1 2026. The contracts director estimates subcontractor selection changes account for roughly half the improvement.',
+  whatsNext:'The firm is expanding ConstructIQ\'s use to procurement tracking, specifically to address material delivery delays which are the second most common cause of milestone slippage.'
+}
+];
+
+// ══════════════════════════════════
+//  CASE STUDIES RENDER
+// ══════════════════════════════════
+function renderCaseStudies(){
+  var filterProduct = 'all';
+  var csList = function(prod){
+    return CASE_STUDIES.filter(function(c){ return prod==='all'||c.product===prod; });
+  };
+  var csCardHTML = function(list){
+    return list.map(function(c){
+      var res = c.results[0];
+      return '<a class="cs-card" href="#case/'+c.id+'" onclick="nav(\'case/'+c.id+'\')" style="--p-color:'+c.color+'">'
+        +'<div class="cs-card-top">'
+        +'<span class="cs-prod-tag" style="background:color-mix(in srgb,'+c.color+' 12%,transparent);color:'+c.color+';border-color:color-mix(in srgb,'+c.color+' 28%,transparent)">'+c.icon+' '+c.productName+'</span>'
+        +'</div>'
+        +'<h3 class="cs-card-title">'+c.headline+'</h3>'
+        +'<div class="cs-card-meta">'+c.client.type+' · '+c.client.region+'</div>'
+        +'<div class="cs-card-stat">'
+        +'<div class="cs-stat-num">'+res.change+'</div>'
+        +'<div class="cs-stat-label">'+res.metric+'</div>'
+        +'</div>'
+        +'<div class="cs-card-arrow">Read Case Study →</div>'
+        +'</a>';
+    }).join('');
+  };
+  var filterBtns = function(active){
+    var prods = [{id:'all',name:'All Products',color:'var(--accent)'}].concat(
+      [{id:'lexai',name:'LexAI',color:'#4C8EFF'},{id:'propiq',name:'PropIQ',color:'#00D49A'},
+       {id:'learnforge',name:'LearnForge',color:'#FFC857'},{id:'nexuscrm',name:'NexusCRM',color:'#FF5C9E'},
+       {id:'medisync',name:'MediSync',color:'#22DDFF'},{id:'finpilot',name:'FinPilot',color:'#9B71FF'},
+       {id:'talentflow',name:'TalentFlow',color:'#FF7142'},{id:'constructiq',name:'ConstructIQ',color:'#FF4D6D'}]
+    );
+    return prods.map(function(pr){
+      var isActive = pr.id===active;
+      return '<button class="cs-filter-btn'+(isActive?' active':'')+'" style="'+(isActive?'background:'+pr.color+';color:#07071A;border-color:'+pr.color:'background:var(--surface2);color:var(--text-muted);border-color:var(--border)')+'" onclick="csFilter(\''+pr.id+'\')">'+pr.name+'</button>';
+    }).join('');
+  };
+  return '<section class="page-hero"><div class="ph-orb"></div><div class="page-hero-inner">'
+    +'<div class="s-label reveal">Proof That Works</div>'
+    +'<h1 class="reveal delay-1">Client Case Studies</h1>'
+    +'<p class="reveal delay-2">Real organisations. Real workflows. Real outcomes — with the context, constraints, and timelines to back them up.</p>'
+    +'</div></section>'
+    +'<section style="padding:60px 0 120px">'
+    +'<div class="wrap">'
+    +'<div class="cs-filter-bar reveal" id="cs-filter-bar">'+filterBtns('all')+'</div>'
+    +'<div class="cs-grid" id="cs-grid">'+csCardHTML(CASE_STUDIES)+'</div>'
+    +'</div></section>';
+}
+window.csFilter = function(prod){
+  var bar = document.getElementById('cs-filter-bar');
+  var grid = document.getElementById('cs-grid');
+  if(!bar||!grid) return;
+  var prods = [{id:'all',name:'All Products',color:'var(--accent)'},
+    {id:'lexai',name:'LexAI',color:'#4C8EFF'},{id:'propiq',name:'PropIQ',color:'#00D49A'},
+    {id:'learnforge',name:'LearnForge',color:'#FFC857'},{id:'nexuscrm',name:'NexusCRM',color:'#FF5C9E'},
+    {id:'medisync',name:'MediSync',color:'#22DDFF'},{id:'finpilot',name:'FinPilot',color:'#9B71FF'},
+    {id:'talentflow',name:'TalentFlow',color:'#FF7142'},{id:'constructiq',name:'ConstructIQ',color:'#FF4D6D'}];
+  bar.innerHTML = prods.map(function(pr){
+    var isActive = pr.id===prod;
+    return '<button class="cs-filter-btn'+(isActive?' active':'')+'" style="'+(isActive?'background:'+pr.color+';color:#07071A;border-color:'+pr.color:'background:var(--surface2);color:var(--text-muted);border-color:var(--border)')+'" onclick="csFilter(\''+pr.id+'\')">'+pr.name+'</button>';
+  }).join('');
+  var list = prod==='all'?CASE_STUDIES:CASE_STUDIES.filter(function(c){return c.product===prod;});
+  grid.style.opacity='0';
+  setTimeout(function(){
+    grid.innerHTML = list.map(function(c){
+      var res = c.results[0];
+      return '<a class="cs-card" href="#case/'+c.id+'" onclick="nav(\'case/'+c.id+'\')" style="--p-color:'+c.color+'">'
+        +'<div class="cs-card-top"><span class="cs-prod-tag" style="background:color-mix(in srgb,'+c.color+' 12%,transparent);color:'+c.color+';border-color:color-mix(in srgb,'+c.color+' 28%,transparent)">'+c.icon+' '+c.productName+'</span></div>'
+        +'<h3 class="cs-card-title">'+c.headline+'</h3>'
+        +'<div class="cs-card-meta">'+c.client.type+' · '+c.client.region+'</div>'
+        +'<div class="cs-card-stat"><div class="cs-stat-num">'+res.change+'</div><div class="cs-stat-label">'+res.metric+'</div></div>'
+        +'<div class="cs-card-arrow">Read Case Study →</div>'
+        +'</a>';
+    }).join('');
+    grid.style.transition='opacity .25s ease'; grid.style.opacity='1';
+  },120);
+};
+
+function renderCaseStudy(id){
+  var c = CASE_STUDIES.find(function(x){return x.id===id;});
+  if(!c) return renderCaseStudies();
+  var resHTML = c.results.map(function(r){
+    return '<div class="cs-result-card">'
+      +'<div class="cs-result-change" style="color:'+c.color+'">'+r.change+'</div>'
+      +'<div class="cs-result-metric">'+r.metric+'</div>'
+      +'<div class="cs-result-detail"><span class="cs-result-before">Before: '+r.before+'</span>'
+      +'<span class="cs-result-after">After: '+r.after+'</span></div>'
+      +'<div class="cs-result-tf">'+r.timeframe+'</div>'
+      +'</div>';
+  }).join('');
+  var relatedHTML = CASE_STUDIES.filter(function(x){return x.product===c.product&&x.id!==c.id;}).map(function(r){
+    return '<a class="cs-rel-card" href="#case/'+r.id+'" onclick="nav(\'case/'+r.id+'\')" style="--p-color:'+r.color+'">'
+      +'<div class="cs-prod-tag" style="background:color-mix(in srgb,'+r.color+' 12%,transparent);color:'+r.color+';border-color:color-mix(in srgb,'+r.color+' 28%,transparent);margin-bottom:10px">'+r.icon+' '+r.productName+'</div>'
+      +'<div style="font-family:Raleway,sans-serif;font-weight:700;font-size:.92rem;line-height:1.35;margin-bottom:10px">'+r.headline+'</div>'
+      +'<div style="font-size:.75rem;color:var(--accent)">Read →</div></a>';
+  }).join('');
+  return '<section class="page-hero" style="--p-color:'+c.color+'">'
+    +'<div class="ph-orb" style="background:radial-gradient(circle,color-mix(in srgb,'+c.color+' 6%,transparent) 0%,transparent 70%)"></div>'
+    +'<div class="page-hero-inner">'
+    +'<div style="margin-bottom:14px"><a href="#case-studies" onclick="nav(\'case-studies\')" class="btn btn-outline btn-sm">← All Case Studies</a></div>'
+    +'<span class="cs-prod-tag" style="background:color-mix(in srgb,'+c.color+' 12%,transparent);color:'+c.color+';border-color:color-mix(in srgb,'+c.color+' 28%,transparent);display:inline-flex;margin-bottom:16px">'+c.icon+' '+c.productName+'</span>'
+    +'<h1 class="reveal" style="font-size:clamp(1.6rem,3.5vw,2.8rem);max-width:860px">'+c.headline+'</h1>'
+    +'<div style="display:flex;flex-wrap:wrap;gap:18px;margin-top:20px">'
+    +'<div style="font-size:.82rem;color:var(--text-muted)">🏢 '+c.client.type+'</div>'
+    +'<div style="font-size:.82rem;color:var(--text-muted)">👥 '+c.client.size+'</div>'
+    +'<div style="font-size:.82rem;color:var(--text-muted)">📍 '+c.client.region+'</div>'
+    +'</div>'
+    +'</div></section>'
+    +'<section class="cs-body-section">'
+    +'<div class="cs-body-wrap">'
+
+    +'<div class="cs-results-row">'+resHTML+'</div>'
+
+    +'<div class="cs-section"><div class="s-label">Client</div>'
+    +'<p class="cs-text"><strong>'+c.client.type+'</strong> — '+c.client.size+', '+c.client.region+'.<br>'+c.client.setup+'.</p></div>'
+
+    +'<div class="cs-section"><div class="s-label">The Challenge</div>'
+    +'<p class="cs-text">'+c.challenge+'</p></div>'
+
+    +'<div class="cs-section"><div class="s-label">Why They Chose '+c.productName+'</div>'
+    +'<p class="cs-text">'+c.whyFoxside+'</p></div>'
+
+    +'<div class="cs-section"><div class="s-label">Implementation</div>'
+    +'<p class="cs-text">'+c.implementation+'</p></div>'
+
+    +'<div class="cs-section"><div class="s-label">Before vs After</div>'
+    +'<div class="cs-before-after">'
+    +'<div class="cs-ba-col"><div class="cs-ba-label">Before</div><p class="cs-text">'+c.before+'</p></div>'
+    +'<div class="cs-ba-col cs-ba-after" style="--p-color:'+c.color+'"><div class="cs-ba-label">After</div><p class="cs-text">'+c.after+'</p></div>'
+    +'</div></div>'
+
+    +'<div class="cs-section"><div class="s-label">In Their Own Words</div>'
+    +'<blockquote class="cs-quote" style="border-color:'+c.color+'">'+c.quote
+    +'<cite>— '+c.quoteAuthor+'</cite></blockquote></div>'
+
+    +'<div class="cs-section cs-nuance"><div style="display:flex;gap:10px;align-items:flex-start">'
+    +'<div style="font-size:1.2rem;flex-shrink:0">⚠️</div>'
+    +'<div><strong style="font-size:.85rem;font-family:Raleway,sans-serif">Important context</strong>'
+    +'<p class="cs-text" style="margin-top:6px">'+c.nuance+'</p></div>'
+    +'</div></div>'
+
+    +'<div class="cs-section"><div class="s-label">What\'s Next</div>'
+    +'<p class="cs-text">'+c.whatsNext+'</p></div>'
+
+    +(relatedHTML?'<div class="cs-related"><div class="s-label" style="margin-bottom:18px">More '+c.productName+' Case Studies</div><div class="cs-related-grid">'+relatedHTML+'</div></div>':'')
+
+    +'<div style="text-align:center;padding:48px 0 20px">'
+    +'<a class="btn btn-lime btn-lg" href="#contact" onclick="nav(\'contact\')">See '+c.productName+' For Your Team →</a>'
+    +'</div>'
+
+    +'</div></section>';
+}
+
 function nav(route){
   history.pushState(null,'','#'+route);
   route$();
@@ -2704,6 +3483,8 @@ function route$(){
   else if(parts[0]==='contact') html = renderContact();
   else if(parts[0]==='privacy') html = renderPrivacy();
   else if(parts[0]==='refund') html = renderRefund();
+  else if(parts[0]==='case-studies') html = renderCaseStudies();
+  else if(parts[0]==='case'&&parts[1]) html = renderCaseStudy(parts[1]);
   else html = renderHome();
 
   const app = document.getElementById('app');
