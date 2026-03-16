@@ -363,8 +363,130 @@ textarea.f-input{resize:vertical;min-height:130px}
 .pricing-note{font-size:.78rem;color:var(--text-dim);margin-top:14px}
 
 /* ══════════════════════════════════
-   RESPONSIVE
+   DEMO DASHBOARDS
 ══════════════════════════════════ */
+.demo-page{min-height:100vh;display:flex;flex-direction:column;background:var(--bg)}
+.demo-banner{background:linear-gradient(90deg,color-mix(in srgb,var(--p-color,var(--accent)) 15%,transparent),color-mix(in srgb,var(--p-color,var(--accent)) 8%,transparent));border-bottom:1px solid color-mix(in srgb,var(--p-color,var(--accent)) 25%,transparent);padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.demo-banner-left{display:flex;align-items:center;gap:10px;font-size:.82rem;font-weight:700}
+.demo-tag{background:color-mix(in srgb,var(--p-color,var(--accent)) 20%,transparent);border:1px solid color-mix(in srgb,var(--p-color,var(--accent)) 40%,transparent);color:var(--p-color,var(--accent));padding:3px 10px;border-radius:100px;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase}
+.demo-banner-right{display:flex;gap:8px;align-items:center}
+.demo-shell{display:flex;flex:1;height:calc(100vh - 44px - 92px);overflow:hidden}
+.demo-sidebar{width:210px;flex-shrink:0;background:var(--bg2);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow-y:auto}
+.ds-logo{padding:18px 16px 14px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border)}
+.ds-logo-icon{width:28px;height:28px;border-radius:8px;background:color-mix(in srgb,var(--p-color,var(--accent)) 20%,transparent);display:flex;align-items:center;justify-content:center;font-size:.95rem}
+.ds-logo-name{font-family:'Raleway',sans-serif;font-weight:800;font-size:.92rem;color:var(--p-color,var(--accent))}
+.ds-nav{padding:10px 8px;flex:1}
+.ds-section{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);padding:10px 8px 6px;margin-top:6px}
+.ds-item{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:8px;font-size:.82rem;color:var(--text-muted);cursor:none;transition:all .18s;margin-bottom:2px;font-weight:500}
+.ds-item:hover{background:rgba(255,255,255,0.04);color:var(--text)}
+.ds-item.active{background:color-mix(in srgb,var(--p-color,var(--accent)) 14%,transparent);color:var(--p-color,var(--accent));font-weight:700}
+.ds-item-icon{font-size:.95rem;flex-shrink:0;width:18px;text-align:center}
+.ds-badge{margin-left:auto;background:var(--p-color,var(--accent));color:#07071A;font-size:.6rem;font-weight:800;padding:1px 6px;border-radius:100px}
+.ds-avatar{padding:14px 12px;border-top:1px solid var(--border);display:flex;align-items:center;gap:9px}
+.ds-av-circle{width:30px;height:30px;border-radius:50%;background:color-mix(in srgb,var(--p-color,var(--accent)) 22%,transparent);display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0}
+.ds-av-name{font-size:.78rem;font-weight:700;line-height:1.2}
+.ds-av-role{font-size:.65rem;color:var(--text-muted)}
+.demo-main{flex:1;display:flex;flex-direction:column;overflow:hidden}
+.demo-topbar{padding:12px 22px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--bg2);flex-shrink:0}
+.dt-title{font-family:'Raleway',sans-serif;font-weight:800;font-size:1rem}
+.dt-right{display:flex;align-items:center;gap:8px}
+.dt-btn{background:var(--surface2);border:1px solid var(--border);color:var(--text-muted);font-size:.76rem;padding:6px 12px;border-radius:8px;cursor:none;font-family:'Mulish',sans-serif;font-weight:600;transition:all .2s}
+.dt-btn:hover{background:var(--surface);color:var(--text)}
+.dt-btn.primary{background:color-mix(in srgb,var(--p-color,var(--accent)) 18%,transparent);border-color:color-mix(in srgb,var(--p-color,var(--accent)) 35%,transparent);color:var(--p-color,var(--accent))}
+.demo-content{flex:1;overflow-y:auto;padding:20px 22px}
+/* KPI row */
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.kpi-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px;transition:border-color .2s}
+.kpi-card:hover{border-color:var(--border2)}
+.kpi-card.highlight{border-color:color-mix(in srgb,var(--p-color,var(--accent)) 35%,transparent);background:color-mix(in srgb,var(--p-color,var(--accent)) 6%,transparent)}
+.kpi-label{font-size:.68rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px}
+.kpi-value{font-family:'Raleway',sans-serif;font-weight:800;font-size:1.7rem;line-height:1;color:var(--text);margin-bottom:6px}
+.kpi-card.highlight .kpi-value{color:var(--p-color,var(--accent))}
+.kpi-delta{font-size:.72rem;font-weight:700}
+.kpi-delta.up{color:#00D49A}.kpi-delta.down{color:#FF5C9E}.kpi-delta.neutral{color:var(--text-muted)}
+/* Grid areas */
+.demo-grid{display:grid;gap:14px}
+.demo-grid-2{grid-template-columns:1.4fr 1fr}
+.demo-grid-3{grid-template-columns:2fr 1fr 1fr}
+.demo-grid-full{grid-template-columns:1fr}
+.d-panel{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.d-panel-head{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.d-panel-title{font-family:'Raleway',sans-serif;font-weight:700;font-size:.88rem}
+.d-panel-sub{font-size:.72rem;color:var(--text-muted)}
+.d-panel-body{padding:16px 18px}
+/* Charts */
+.bar-chart{display:flex;align-items:flex-end;gap:6px;height:120px;padding-top:8px}
+.bc-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px}
+.bc-bar{width:100%;border-radius:4px 4px 0 0;background:color-mix(in srgb,var(--p-color,var(--accent)) 28%,transparent);border-top:2px solid var(--p-color,var(--accent));min-height:4px;transition:height .4s ease}
+.bc-bar.highlight{background:color-mix(in srgb,var(--p-color,var(--accent)) 55%,transparent)}
+.bc-label{font-size:.6rem;color:var(--text-dim);text-align:center}
+/* Progress bars */
+.prog-row{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.prog-label{font-size:.75rem;color:var(--text-muted);width:110px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.prog-track{flex:1;height:6px;background:var(--surface2);border-radius:3px;overflow:hidden}
+.prog-fill{height:100%;border-radius:3px;background:var(--p-color,var(--accent));transition:width .6s ease}
+.prog-val{font-size:.72rem;font-weight:700;color:var(--text-muted);width:36px;text-align:right;flex-shrink:0}
+/* Table */
+.d-table{width:100%;border-collapse:collapse;font-size:.78rem}
+.d-table th{text-align:left;padding:8px 12px;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim);border-bottom:1px solid var(--border)}
+.d-table td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,0.04);color:var(--text-muted);vertical-align:middle}
+.d-table tr:last-child td{border-bottom:none}
+.d-table tr:hover td{background:rgba(255,255,255,0.02);color:var(--text)}
+.d-tag{display:inline-flex;align-items:center;padding:2px 8px;border-radius:100px;font-size:.65rem;font-weight:700;white-space:nowrap}
+.d-tag.green{background:rgba(0,212,154,0.12);color:#00D49A;border:1px solid rgba(0,212,154,0.25)}
+.d-tag.yellow{background:rgba(255,200,87,0.12);color:#FFC857;border:1px solid rgba(255,200,87,0.25)}
+.d-tag.red{background:rgba(255,92,158,0.12);color:#FF5C9E;border:1px solid rgba(255,92,158,0.25)}
+.d-tag.blue{background:rgba(76,142,255,0.12);color:#4C8EFF;border:1px solid rgba(76,142,255,0.25)}
+.d-tag.purple{background:rgba(155,113,255,0.12);color:#9B71FF;border:1px solid rgba(155,113,255,0.25)}
+.d-tag.cyan{background:rgba(34,221,255,0.12);color:#22DDFF;border:1px solid rgba(34,221,255,0.25)}
+.d-tag.p{background:color-mix(in srgb,var(--p-color,var(--accent)) 12%,transparent);color:var(--p-color,var(--accent));border:1px solid color-mix(in srgb,var(--p-color,var(--accent)) 28%,transparent)}
+/* Score ring */
+.score-ring{position:relative;width:80px;height:80px;flex-shrink:0}
+.score-ring svg{transform:rotate(-90deg)}
+.score-ring-val{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Raleway',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text)}
+/* Activity feed */
+.activity-item{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+.activity-item:last-child{border-bottom:none}
+.act-dot{width:8px;height:8px;border-radius:50%;background:var(--p-color,var(--accent));flex-shrink:0;margin-top:5px}
+.act-text{font-size:.77rem;color:var(--text-muted);line-height:1.45}
+.act-text strong{color:var(--text);font-weight:600}
+.act-time{font-size:.65rem;color:var(--text-dim);margin-top:2px}
+/* Pipeline stages */
+.pipeline-stages{display:flex;gap:0;margin-bottom:10px}
+.ps-stage{flex:1;padding:10px 8px;text-align:center;background:var(--surface2);border-right:1px solid var(--border);position:relative}
+.ps-stage:first-child{border-radius:8px 0 0 8px}
+.ps-stage:last-child{border-right:none;border-radius:0 8px 8px 0}
+.ps-stage.active{background:color-mix(in srgb,var(--p-color,var(--accent)) 14%,transparent)}
+.ps-num{font-family:'Raleway',sans-serif;font-weight:800;font-size:1.2rem;color:var(--p-color,var(--accent))}
+.ps-label{font-size:.62rem;color:var(--text-muted);margin-top:2px}
+/* Gantt */
+.gantt-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.gantt-label{width:120px;font-size:.74rem;color:var(--text-muted);flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gantt-track{flex:1;height:18px;background:var(--surface2);border-radius:4px;position:relative;overflow:hidden}
+.gantt-bar{height:100%;border-radius:4px;position:absolute;display:flex;align-items:center;padding:0 6px;font-size:.6rem;font-weight:700;color:#07071A;white-space:nowrap;overflow:hidden}
+/* SVG line chart */
+.line-chart-wrap{position:relative;height:130px}
+.line-chart-wrap svg{width:100%;height:100%}
+/* Tabs */
+.d-tabs{display:flex;gap:4px;padding:0 18px;border-bottom:1px solid var(--border);background:var(--bg2)}
+.d-tab{padding:10px 14px;font-size:.78rem;font-weight:600;color:var(--text-muted);cursor:none;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap}
+.d-tab.active{color:var(--p-color,var(--accent));border-bottom-color:var(--p-color,var(--accent))}
+.d-tab:hover{color:var(--text)}
+.d-tab-content{display:none}.d-tab-content.active{display:block}
+/* Calendar grid */
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.cal-day{padding:4px;border-radius:6px;min-height:44px;background:var(--surface2);font-size:.65rem;color:var(--text-dim)}
+.cal-day-num{font-weight:700;margin-bottom:3px}
+.cal-event{background:color-mix(in srgb,var(--p-color,var(--accent)) 18%,transparent);border-left:2px solid var(--p-color,var(--accent));padding:1px 4px;border-radius:0 2px 2px 0;font-size:.58rem;color:var(--text-muted);margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* Responsive demo */
+@media(max-width:768px){
+  .demo-sidebar{display:none}
+  .kpi-row{grid-template-columns:repeat(2,1fr)}
+  .demo-grid-2,.demo-grid-3{grid-template-columns:1fr}
+  .demo-content{padding:14px}
+  .demo-topbar{padding:10px 14px}
+}
+
 /* ── LEGAL PAGES ── */
 .legal-body{font-size:.95rem;line-height:1.82;color:var(--text-muted)}
 .legal-section{margin-bottom:44px;padding-bottom:44px;border-bottom:1px solid var(--border)}
@@ -1080,8 +1202,8 @@ function renderProduct(p){
       <div style="font-size:1.4rem;font-family:'Raleway',sans-serif;font-weight:700;color:var(--text-muted);margin-bottom:16px;letter-spacing:-.01em" class="reveal delay-1">${p.tagline}</div>
       <p class="prod-tagline reveal delay-2">${p.heroDesc}</p>
       <div class="prod-hero-actions reveal delay-3">
-        <a class="btn btn-product btn-lg" style="--p-color:${p.color}" href="#contact" onclick="nav('contact')">Book a Demo →</a>
-        <a class="btn btn-outline btn-lg" href="#contact" onclick="nav('contact')">View Pricing</a>
+        <a class="btn btn-product btn-lg" style="--p-color:${p.color}" href="#demo/${p.id}" onclick="nav('demo/${p.id}')">⚡ Try Live Demo</a>
+        <a class="btn btn-outline btn-lg" href="#contact" onclick="nav('contact')">Book a Demo</a>
       </div>
       <div class="prod-price-tag reveal delay-4">
         <span class="price-num" style="--p-color:${p.color}">$${p.price.toLocaleString()}</span>
@@ -1384,6 +1506,1185 @@ function renderRefund(){
 }
 
 
+
+
+// ══════════════════════════════════
+//  DEMO DASHBOARDS
+// ══════════════════════════════════
+
+// Global panel store - keyed by "productid_panelid"
+window.DEMO_PANELS = {};
+
+window.dsDemoNav = function(el) {
+  // Update sidebar active state
+  document.querySelectorAll('.ds-item').forEach(function(i){ i.classList.remove('active'); });
+  el.classList.add('active');
+  // Swap content panel
+  var panelId = el.getAttribute('data-panel');
+  var title   = el.getAttribute('data-title') || 'Dashboard';
+  var prodId  = el.getAttribute('data-prod');
+  var key     = prodId + '_' + panelId;
+  var html    = window.DEMO_PANELS[key];
+  if (!html) return;
+  var content = document.querySelector('.demo-content');
+  var topbar  = document.querySelector('.dt-title');
+  if (content) {
+    content.style.opacity = '0';
+    content.style.transform = 'translateY(6px)';
+    setTimeout(function(){
+      content.innerHTML = html;
+      content.style.transition = 'opacity .22s ease, transform .22s ease';
+      content.style.opacity = '1';
+      content.style.transform = 'none';
+    }, 100);
+  }
+  if (topbar) topbar.textContent = title;
+};
+
+// ── Helpers ──
+function demoBanner(p) {
+  return '<div class="demo-banner" style="--p-color:' + p.color + '">'
+    + '<div class="demo-banner-left">'
+    + '<span class="demo-tag">⚡ Demo Mode</span>'
+    + '<span style="color:var(--text-muted)">Interactive demo with simulated data — <strong style="color:var(--text)">no active API or real data</strong> is connected.</span>'
+    + '</div>'
+    + '<div class="demo-banner-right">'
+    + '<a class="btn btn-outline btn-sm" href="#product/' + p.id + '" onclick="nav(\'product/' + p.id + '\')">← Back to ' + p.name + '</a>'
+    + '<a class="btn btn-sm" style="background:' + p.color + ';color:#07071A;font-weight:700" href="#contact" onclick="nav(\'contact\')">Get Full Access</a>'
+    + '</div></div>';
+}
+
+function demoSidebar(p, groups) {
+  var navHTML = '';
+  for (var gi = 0; gi < groups.length; gi++) {
+    var g = groups[gi];
+    if (g.label) navHTML += '<div class="ds-section">' + g.label + '</div>';
+    for (var ii = 0; ii < g.items.length; ii++) {
+      var it = g.items[ii];
+      var active = (gi === 0 && ii === 0) ? ' active' : '';
+      var badge  = it.badge ? '<span class="ds-badge">' + it.badge + '</span>' : '';
+      navHTML += '<div class="ds-item' + active + '" data-panel="' + it.panel + '" data-title="' + it.name + '" data-prod="' + p.id + '" onclick="dsDemoNav(this)">'
+        + '<span class="ds-item-icon">' + (it.icon || '·') + '</span>' + it.name + badge
+        + '</div>';
+    }
+  }
+  return '<div class="demo-sidebar" style="--p-color:' + p.color + '">'
+    + '<div class="ds-logo"><div class="ds-logo-icon">' + p.icon + '</div><div class="ds-logo-name">' + p.name + '</div></div>'
+    + '<div class="ds-nav">' + navHTML + '</div>'
+    + '<div class="ds-avatar"><div class="ds-av-circle">' + p._user.av + '</div><div>'
+    + '<div class="ds-av-name">' + p._user.name + '</div><div class="ds-av-role">' + p._user.role + '</div>'
+    + '</div></div></div>';
+}
+
+function lineSVG(pts, color) {
+  var w=300,h=90,pad=6;
+  var xs=pts.map(function(_,i){return pad+i*(w-2*pad)/(pts.length-1);});
+  var mn=Math.min.apply(null,pts), mx=Math.max.apply(null,pts);
+  var ys=pts.map(function(v){return h-pad-(v-mn)/(mx-mn||1)*(h-2*pad);});
+  var path='M'+xs.map(function(x,i){return x+','+ys[i];}).join('L');
+  var area='M'+xs[0]+','+h+'L'+xs.map(function(x,i){return x+','+ys[i];}).join('L')+'L'+xs[xs.length-1]+','+h+'Z';
+  var id='lg'+color.replace('#','');
+  return '<svg viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none" style="width:100%;height:100%">'
+    +'<defs><linearGradient id="'+id+'" x1="0" y1="0" x2="0" y2="1">'
+    +'<stop offset="0%" stop-color="'+color+'" stop-opacity=".3"/>'
+    +'<stop offset="100%" stop-color="'+color+'" stop-opacity="0"/>'
+    +'</linearGradient></defs>'
+    +'<path d="'+area+'" fill="url(#'+id+')" />'
+    +'<path d="'+path+'" fill="none" stroke="'+color+'" stroke-width="2" stroke-linejoin="round"/>'
+    +xs.map(function(x,i){return '<circle cx="'+x+'" cy="'+ys[i]+'" r="2.5" fill="'+color+'"/>';}).join('')
+    +'</svg>';
+}
+
+function scoreRing(val,max,color,size) {
+  size = size||72;
+  var r=26, circ=2*Math.PI*r, dash=(val/max)*circ;
+  return '<div class="score-ring" style="width:'+size+'px;height:'+size+'px">'
+    +'<svg width="'+size+'" height="'+size+'" viewBox="0 0 '+size+' '+size+'" style="transform:rotate(-90deg)">'
+    +'<circle cx="'+(size/2)+'" cy="'+(size/2)+'" r="'+r+'" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="5"/>'
+    +'<circle cx="'+(size/2)+'" cy="'+(size/2)+'" r="'+r+'" fill="none" stroke="'+color+'" stroke-width="5" stroke-dasharray="'+dash+' '+circ+'" stroke-linecap="round"/>'
+    +'</svg><div class="score-ring-val">'+val+'</div></div>';
+}
+
+function progRow(label,pct,colorOverride) {
+  var fill = colorOverride ? 'background:'+colorOverride : '';
+  return '<div class="prog-row"><span class="prog-label">'+label+'</span>'
+    +'<div class="prog-track"><div class="prog-fill" style="width:'+pct+';'+fill+'"></div></div>'
+    +'<span class="prog-val">'+pct+'</span></div>';
+}
+
+function kpiCard(label,value,delta,deltaClass,highlight) {
+  return '<div class="kpi-card'+(highlight?' highlight':'')+'"><div class="kpi-label">'+label+'</div>'
+    +'<div class="kpi-value">'+value+'</div>'
+    +'<div class="kpi-delta '+deltaClass+'">'+delta+'</div></div>';
+}
+
+function actItem(icon,title,desc,time) {
+  return '<div class="activity-item">'
+    +'<div style="font-size:.95rem;width:20px;flex-shrink:0">'+icon+'</div>'
+    +'<div class="act-text"><strong>'+title+'</strong> — '+desc
+    +'<div class="act-time">'+time+'</div></div></div>';
+}
+
+function tablePanel(headCols, rows) {
+  var th = headCols.map(function(c){return '<th>'+c+'</th>';}).join('');
+  var tbody = rows.map(function(r){
+    return '<tr>'+r.map(function(c){return '<td>'+c+'</td>';}).join('')+'</tr>';
+  }).join('');
+  return '<table class="d-table"><thead><tr>'+th+'</tr></thead><tbody>'+tbody+'</tbody></table>';
+}
+
+function tag(label, cls) {
+  return '<span class="d-tag '+cls+'">'+label+'</span>';
+}
+
+function emptyPanel(icon, title, msg) {
+  return '<div style="text-align:center;padding:60px 20px">'
+    +'<div style="font-size:3rem;margin-bottom:16px">'+icon+'</div>'
+    +'<h3 style="font-family:Raleway,sans-serif;font-weight:800;font-size:1.2rem;margin-bottom:10px">'+title+'</h3>'
+    +'<p style="font-size:.88rem;color:var(--text-muted);max-width:360px;margin:0 auto;line-height:1.7">'+msg+'</p>'
+    +'<div style="margin-top:24px;display:inline-flex;align-items:center;gap:8px;background:var(--accent-dim);border:1px solid rgba(200,255,60,0.18);padding:8px 18px;border-radius:8px;font-size:.8rem;color:var(--accent)">⚡ Demo Mode — connect your real data to see live content</div>'
+    +'</div>';
+}
+
+function buildDemo(p, groups, panels, topbarTitle, topbarRight) {
+  // Register all panels
+  for (var k in panels) {
+    window.DEMO_PANELS[p.id + '_' + k] = panels[k];
+  }
+  return '<div class="demo-page" style="--p-color:' + p.color + '">'
+    + demoBanner(p)
+    + '<div class="demo-shell">'
+    + demoSidebar(p, groups)
+    + '<div class="demo-main">'
+    + '<div class="demo-topbar">'
+    + '<div class="dt-title">' + topbarTitle + '</div>'
+    + '<div class="dt-right">' + topbarRight + '</div>'
+    + '</div>'
+    + '<div class="demo-content">' + (panels[groups[0].items[0].panel] || '') + '</div>'
+    + '</div>'
+    + '</div></div>';
+}
+
+// ════════════════════════════════════
+//  1. LEXAI
+// ════════════════════════════════════
+function demoLexAI(p) {
+  p._user = {av:'JM',name:'James Mitchell',role:'Managing Partner'};
+  var groups = [
+    {label:'',items:[
+      {icon:'◼',name:'Dashboard',panel:'dashboard'},
+      {icon:'📁',name:'Matters',panel:'matters',badge:'12'},
+      {icon:'📋',name:'Contracts',panel:'contracts'},
+      {icon:'🔍',name:'Research',panel:'research'},
+      {icon:'📅',name:'Calendar',panel:'calendar'},
+      {icon:'⚠️',name:'Risk Flags',panel:'risks',badge:'3'}
+    ]},
+    {label:'Admin',items:[
+      {icon:'👥',name:'Clients',panel:'clients'},
+      {icon:'💰',name:'Billing',panel:'billing'},
+      {icon:'⚙️',name:'Settings',panel:'settings'}
+    ]}
+  ];
+
+  var dashPanel =
+    '<div class="kpi-row">'
+    +kpiCard('Active Matters','47','↑ 8 this month','up',true)
+    +kpiCard('Contracts Reviewed','312','↑ 23% vs last Q','up')
+    +kpiCard('Avg Review Time','18 min','↓ from 2.1 hrs','up')
+    +kpiCard('Risk Flags','34','3 unresolved','neutral')
+    +'</div>'
+    +'<div class="demo-grid demo-grid-2" style="margin-bottom:14px">'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Contract Review Volume</span><span class="d-panel-sub">Jan–Dec 2026</span></div>'
+    +'<div class="d-panel-body"><div class="bar-chart">'
+    +[42,58,71,64,88,95,80,103,91,112,98,118].map(function(v,i){
+      return '<div class="bc-col"><div class="bc-bar'+(i===11?' highlight':'')+'" style="height:'+(v/1.25)+'%"></div>'
+        +'<div class="bc-label">'+'JFMAMJJASOND'[i]+'</div></div>';
+    }).join('')
+    +'</div></div></div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Risk Distribution</span></div>'
+    +'<div class="d-panel-body">'
+    +progRow('Liability Clauses','82%')+progRow('IP Indemnity','67%')+progRow('Payment Terms','91%')
+    +progRow('Force Majeure','45%')+progRow('Jurisdiction','78%')
+    +'</div></div></div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Active Matters</span></div>'
+    +tablePanel(['Matter','Client','Attorney','Status','Deadline','Risk'],[
+      ['<strong style="color:var(--text)">Nexus Corp Acquisition</strong>','Nexus Corp Ltd','J. Mitchell',tag('In Review','p'),'Apr 18',tag('High','red')],
+      ['<strong style="color:var(--text)">SaaS Licence Agreement</strong>','TechVentures PLC','S. Okafor',tag('Completed','green'),'Mar 30',tag('Low','green')],
+      ['<strong style="color:var(--text)">Employment Contract Review</strong>','Meridian HR','P. Walsh',tag('Pending','yellow'),'Apr 22',tag('Medium','yellow')],
+      ['<strong style="color:var(--text)">IP Assignment — Series B</strong>','FounderLab Ltd','J. Mitchell',tag('In Review','p'),'Apr 25',tag('Medium','yellow')],
+      ['<strong style="color:var(--text)">Commercial Lease Renewal</strong>','PropGroup UK','A. Chen',tag('Draft','blue'),'May 3',tag('Low','green')]
+    ])+'</div>';
+
+  var mattersPanel = tablePanel(['Matter Ref','Client','Type','Attorney','Opened','Status','Risk'],[
+    ['M-2026-047','Nexus Corp Ltd','M&A Due Diligence','J. Mitchell','Jan 14',tag('Active','p'),tag('High','red')],
+    ['M-2026-046','TechVentures PLC','Commercial Contract','S. Okafor','Jan 9',tag('Completed','green'),tag('Low','green')],
+    ['M-2026-045','Meridian HR','Employment Law','P. Walsh','Dec 28',tag('Pending','yellow'),tag('Medium','yellow')],
+    ['M-2026-044','FounderLab Ltd','IP & Technology','J. Mitchell','Dec 21',tag('Active','p'),tag('Medium','yellow')],
+    ['M-2026-043','PropGroup UK','Property Law','A. Chen','Dec 18',tag('Draft','blue'),tag('Low','green')],
+    ['M-2026-042','Altis Capital','Finance & Banking','J. Mitchell','Dec 10',tag('Completed','green'),tag('Low','green')],
+    ['M-2026-041','Starling VC','Corporate','S. Okafor','Dec 5',tag('Active','p'),tag('Medium','yellow')],
+    ['M-2026-040','GreenPath Env.','Regulatory','P. Walsh','Nov 30',tag('On Hold','yellow'),tag('Low','green')]
+  ]);
+
+  var contractsPanel =
+    '<div class="demo-grid demo-grid-2" style="margin-bottom:14px">'
+    +kpiCard('Pending Review','14','Avg 6 hrs each','neutral',true)
+    +kpiCard('Completed Today','8','↑ 3 vs yesterday','up')
+    +'</div>'
+    +tablePanel(['Contract','Counterparty','Type','Risk Score','AI Status','Assigned To'],[
+      ['<strong style="color:var(--text)">MSA — Nexus Corp</strong>','Nexus Corp Ltd','Master Services',tag('High','red'),tag('Flagged','red'),'J. Mitchell'],
+      ['<strong style="color:var(--text)">NDA — BlueSky Ltd</strong>','BlueSky Ltd','Non-Disclosure',tag('Low','green'),tag('Approved','green'),'S. Okafor'],
+      ['<strong style="color:var(--text)">SaaS Subscription Agreement</strong>','CloudBase Inc','Technology',tag('Medium','yellow'),tag('In Review','p'),'P. Walsh'],
+      ['<strong style="color:var(--text)">Supply Chain Agreement</strong>','LogiPro Ltd','Supply Chain',tag('Medium','yellow'),tag('Pending','yellow'),'A. Chen'],
+      ['<strong style="color:var(--text)">Lease — 12 Fleet St</strong>','Greystone Props','Real Estate',tag('Low','green'),tag('Approved','green'),'J. Mitchell']
+    ]);
+
+  var researchPanel =
+    '<div class="d-panel" style="margin-bottom:14px"><div class="d-panel-head"><span class="d-panel-title">Recent Research Queries</span></div>'
+    +'<div class="d-panel-body">'
+    +actItem('🔍','Force Majeure Precedents','17 relevant cases found across UK Commercial Court 2019–2026','2 hr ago')
+    +actItem('🔍','IP Ownership in Employment Contracts','AI surfaced 9 landmark cases; 3 flagged as directly relevant','Yesterday')
+    +actItem('🔍','Directors Duty of Care — Section 172','Full summary with 12 citations generated','2 days ago')
+    +actItem('🔍','GDPR Compliance — Data Processor Contracts','Regulatory guidance + 5 ICO enforcement decisions','3 days ago')
+    +'</div></div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Saved Research</span></div>'
+    +tablePanel(['Query','Cases Found','Saved By','Date'],[
+      ['Force Majeure COVID-19 Impact','17',tag('J. Mitchell','p'),'Apr 12'],
+      ['IP Assignment — Employee Inventions','9',tag('P. Walsh','p'),'Apr 10'],
+      ['Minority Shareholder Protections','14',tag('S. Okafor','p'),'Apr 8'],
+      ['Commercial Lease Break Clauses','7',tag('A. Chen','p'),'Apr 5']
+    ])+'</div>';
+
+  var calendarPanel =
+    '<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Upcoming Deadlines — April 2026</span></div>'
+    +'<div class="d-panel-body">'
+    +actItem('🔴','Apr 18','Nexus Corp Acquisition — Contract review final deadline','5 days')
+    +actItem('🟡','Apr 22','Employment Contract Review — Client feedback due','9 days')
+    +actItem('🟡','Apr 25','IP Assignment (FounderLab) — Filing deadline','12 days')
+    +actItem('🟢','May 3','Commercial Lease Renewal — Negotiation kick-off','20 days')
+    +actItem('🟢','May 10','TechVentures Annual Review — Scheduled','27 days')
+    +'</div></div>';
+
+  var risksPanel = tablePanel(['Contract','Risk Type','Severity','AI Recommendation','Status'],[
+    ['Nexus Corp MSA','Uncapped Liability',tag('High','red'),'Negotiate liability cap at 2× contract value',tag('Open','red')],
+    ['CloudBase SaaS Agreement','IP Ownership Ambiguity',tag('High','red'),'Clarify ownership clause — Section 8.2',tag('Open','red')],
+    ['LogiPro Supply Chain','Automatic Renewal',tag('Medium','yellow'),'Add 30-day notice period for non-renewal',tag('Open','red')],
+    ['12 Fleet St Lease','Break Clause Missing',tag('Medium','yellow'),'Insert mutual break right at 18 months',tag('Resolved','green')],
+    ['NDA — BlueSky Ltd','Jurisdiction Mismatch',tag('Low','green'),'Consider English law clause for consistency',tag('Resolved','green')]
+  ]);
+
+  var clientsPanel = tablePanel(['Client','Type','Active Matters','Total Billed','Since','Relationship Manager'],[
+    ['<strong style="color:var(--text)">Nexus Corp Ltd</strong>','Corporate',tag('3','p'),'£48,200','2021','J. Mitchell'],
+    ['<strong style="color:var(--text)">TechVentures PLC</strong>','Technology',tag('1','p'),'£22,500','2022','S. Okafor'],
+    ['<strong style="color:var(--text)">Meridian HR</strong>','HR & Consulting',tag('2','p'),'£14,800','2023','P. Walsh'],
+    ['<strong style="color:var(--text)">FounderLab Ltd</strong>','Startup','1','£9,200','2024','J. Mitchell'],
+    ['<strong style="color:var(--text)">PropGroup UK</strong>','Real Estate','1','£7,500','2023','A. Chen']
+  ]);
+
+  var billingPanel =
+    '<div class="kpi-row">'
+    +kpiCard('Billed YTD','£182,400','↑ 18% vs last year','up',true)
+    +kpiCard('Outstanding','£34,200','Due within 30 days','neutral')
+    +kpiCard('Recovered','£148,200','82% collection rate','up')
+    +kpiCard('Avg Matter Value','£3,880','↑ £420 vs last Q','up')
+    +'</div>'
+    +tablePanel(['Client','Invoice','Amount','Date','Due Date','Status'],[
+      ['Nexus Corp Ltd','INV-2026-089','£12,400','Apr 1',tag('Apr 30',''),'<span style="color:#FFC857;font-weight:700">Pending</span>'],
+      ['TechVentures PLC','INV-2026-088','£8,200','Apr 1',tag('Apr 30',''),'<span style="color:#FFC857;font-weight:700">Pending</span>'],
+      ['Meridian HR','INV-2026-087','£5,600','Mar 15',tag('Apr 14',''),'<span style="color:#00D49A;font-weight:700">Paid</span>'],
+      ['FounderLab Ltd','INV-2026-086','£3,200','Mar 10',tag('Apr 9',''),'<span style="color:#00D49A;font-weight:700">Paid</span>'],
+      ['PropGroup UK','INV-2026-085','£2,800','Mar 5',tag('Apr 4',''),'<span style="color:#00D49A;font-weight:700">Paid</span>']
+    ]);
+
+  var settingsPanel = emptyPanel('⚙️','Settings','Configure your LexAI workspace, integrations, user permissions, and notification preferences. Connect to Westlaw, Clio, or DocuSign from this panel.');
+
+  return buildDemo(p, groups, {
+    dashboard: dashPanel, matters: mattersPanel, contracts: contractsPanel,
+    research: researchPanel, calendar: calendarPanel, risks: risksPanel,
+    clients: clientsPanel, billing: billingPanel, settings: settingsPanel
+  }, 'Dashboard — Q1 2026',
+  '<button class="dt-btn">This Quarter ▾</button><button class="dt-btn primary">+ New Matter</button>');
+}
+
+// ════════════════════════════════════
+//  2. PROPIQ
+// ════════════════════════════════════
+function demoPropIQ(p) {
+  p._user = {av:'SO',name:'Sarah Okafor',role:'VP Sales'};
+  var groups = [
+    {label:'',items:[
+      {icon:'◼',name:'Dashboard',panel:'dashboard'},
+      {icon:'🏠',name:'Listings',panel:'listings',badge:'24'},
+      {icon:'🎯',name:'Leads',panel:'leads',badge:'18'},
+      {icon:'📊',name:'Market Reports',panel:'market'},
+      {icon:'🗺️',name:'Pipeline',panel:'pipeline'},
+      {icon:'📈',name:'Analytics',panel:'analytics'}
+    ]},
+    {label:'Tools',items:[
+      {icon:'💡',name:'AVM Tool',panel:'avm'},
+      {icon:'📱',name:'Campaigns',panel:'campaigns'},
+      {icon:'⚙️',name:'Settings',panel:'settings'}
+    ]}
+  ];
+
+  var dashPanel =
+    '<div class="kpi-row">'
+    +kpiCard('Active Listings','24','↑ 4 this week','up',true)
+    +kpiCard('Leads This Month','143','↑ 31% MoM','up')
+    +kpiCard('AVM Accuracy','96.2%','↑ 1.4%','up')
+    +kpiCard('Deals Closing','£4.1M','7 properties','up')
+    +'</div>'
+    +'<div class="demo-grid demo-grid-2" style="margin-bottom:14px">'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Lead Pipeline by Stage</span></div>'
+    +'<div class="d-panel-body">'
+    +'<div class="pipeline-stages" style="--p-color:'+p.color+';margin-bottom:14px">'
+    +[['New','38'],['Qualified','24'],['Viewing','17'],['Offer','9'],['Closing','5']].map(function(s){
+      return '<div class="ps-stage"><div class="ps-num">'+s[1]+'</div><div class="ps-label">'+s[0]+'</div></div>';
+    }).join('')
+    +'</div>'
+    +'<div class="bar-chart" style="height:90px">'
+    +[22,31,28,35,41,38,44,52,48,55,61,58].map(function(v,i){
+      return '<div class="bc-col"><div class="bc-bar'+(i===11?' highlight':'')+'" style="height:'+(v/0.62)+'%"></div>'
+        +'<div class="bc-label">'+'JFMAMJJASOND'[i]+'</div></div>';
+    }).join('')+'</div></div></div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Top Agents — This Quarter</span></div>'
+    +'<div class="d-panel-body">'
+    +actItem('🏅','Sarah Okafor','£1.8M · 12 deals','#1 agent')
+    +actItem('🥈','James Trent','£1.2M · 9 deals','#2 agent')
+    +actItem('🥉','Priya Mehta','£980K · 7 deals','#3 agent')
+    +actItem('4️⃣','Luke Barnes','£760K · 6 deals','#4 agent')
+    +actItem('5️⃣','Nina Ross','£640K · 5 deals','#5 agent')
+    +'</div></div></div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Active Listings</span></div>'
+    +tablePanel(['Property','Location','List Price','AVM','Status','Days Live','Agent'],[
+      ['<strong style="color:var(--text)">14 Harwood Rd</strong>','Chelsea, SW10','£1,450,000','£1,412,000',tag('Active','p'),'8','S. Okafor'],
+      ['<strong style="color:var(--text)">Apt 3B Canary Wharf</strong>','E14','£625,000','£638,500',tag('Offer In','yellow'),'14','J. Trent'],
+      ['<strong style="color:var(--text)">22 Elm Street</strong>','Notting Hill, W11','£2,100,000','£2,088,000',tag('Under Offer','green'),'21','P. Mehta'],
+      ['<strong style="color:var(--text)">The Granary</strong>','Bermondsey, SE1','£850,000','£842,000',tag('Active','p'),'5','L. Barnes'],
+      ['<strong style="color:var(--text)">8 Mayfair Close</strong>','Mayfair, W1K','£3,200,000','£3,150,000',tag('Prep','blue'),'—','S. Okafor']
+    ])+'</div>';
+
+  var listingsPanel = tablePanel(['Ref','Address','Bedrooms','List Price','AVM Est.','Type','Status','Agent'],[
+    ['P-1042','14 Harwood Rd, SW10','4 bed','£1,450,000','£1,412,000',tag('House','blue'),tag('Active','p'),'S. Okafor'],
+    ['P-1041','Apt 3B, Canary Wharf','2 bed','£625,000','£638,500',tag('Flat','cyan'),tag('Offer In','yellow'),'J. Trent'],
+    ['P-1040','22 Elm Street, W11','5 bed','£2,100,000','£2,088,000',tag('House','blue'),tag('Under Offer','green'),'P. Mehta'],
+    ['P-1039','The Granary, SE1','3 bed','£850,000','£842,000',tag('Flat','cyan'),tag('Active','p'),'L. Barnes'],
+    ['P-1038','8 Mayfair Close, W1K','6 bed','£3,200,000','£3,150,000',tag('House','blue'),tag('Prep','blue'),'S. Okafor'],
+    ['P-1037','Flat 12, Islington N1','1 bed','£480,000','£472,000',tag('Flat','cyan'),tag('Completed','green'),'N. Ross'],
+    ['P-1036','Victoria Terrace, SW1','4 bed','£1,900,000','£1,880,000',tag('Terrace','purple'),tag('Active','p'),'J. Trent']
+  ]);
+
+  var leadsPanel = tablePanel(['Lead','Source','Property Interest','Budget','Score','Last Contact','Status'],[
+    ['<strong style="color:var(--text)">Oliver Chen</strong>','Rightmove','3+ bed, Chelsea','£1.2M–£1.6M','<span style="color:#00D49A;font-weight:700">92</span>','Today',tag('Hot','red')],
+    ['<strong style="color:var(--text)">Priya & Raj Sharma</strong>','Zoopla','Family home, Notting Hill','£1.8M–£2.2M','<span style="color:#00D49A;font-weight:700">88</span>','Yesterday',tag('Hot','red')],
+    ['<strong style="color:var(--text)">Marcus Webb</strong>','Referral','Investment flat, E14','£500K–£700K','<span style="color:#FFC857;font-weight:700">74</span>','2 days ago',tag('Warm','yellow')],
+    ['<strong style="color:var(--text)">Danielle Forte</strong>','Portal Ad','Studio, SE1','£400K–£550K','<span style="color:#FFC857;font-weight:700">61</span>','3 days ago',tag('Warm','yellow')],
+    ['<strong style="color:var(--text)">Thomas Adeyemi</strong>','Website','Mayfair, 5+ bed','£3M+','<span style="color:#4C8EFF;font-weight:700">48</span>','1 week ago',tag('Cold','blue')]
+  ]);
+
+  var marketPanel =
+    '<div class="d-panel" style="margin-bottom:14px"><div class="d-panel-head"><span class="d-panel-title">Market Trends — Prime London Q1 2026</span></div>'
+    +'<div class="d-panel-body">'
+    +'<div class="line-chart-wrap">'+lineSVG([820,835,828,842,858,851,866,874,869,882,891,904],p.color)+'</div>'
+    +'<div style="display:flex;justify-content:space-between;margin-top:6px">'
+    +['Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar'].map(function(m){
+      return '<span style="font-size:.58rem;color:var(--text-dim)">'+m+'</span>';
+    }).join('')+'</div>'
+    +'<div style="margin-top:14px;font-size:.76rem;color:var(--text-muted)">Average £ per sq ft — Prime London postcodes</div>'
+    +'</div></div>'
+    +tablePanel(['Postcode','Avg Price','Vol (Q1)','YoY Change','Days on Market'],[
+      ['SW10 Chelsea','£1,420/sqft','48 sales','<span style="color:#00D49A">+4.2%</span>','18 days'],
+      ['W11 Notting Hill','£1,380/sqft','36 sales','<span style="color:#00D49A">+3.8%</span>','22 days'],
+      ['W1K Mayfair','£2,100/sqft','14 sales','<span style="color:#00D49A">+5.1%</span>','34 days'],
+      ['SE1 Bermondsey','£820/sqft','61 sales','<span style="color:#FFC857">+1.9%</span>','27 days'],
+      ['E14 Canary Wharf','£740/sqft','78 sales','<span style="color:#FF5C9E">-0.8%</span>','31 days']
+    ]);
+
+  var pipelinePanel =
+    '<div class="d-panel" style="margin-bottom:14px"><div class="d-panel-head"><span class="d-panel-title">Sales Pipeline — April 2026</span></div>'
+    +'<div class="d-panel-body">'
+    +'<div class="pipeline-stages" style="--p-color:'+p.color+'">'+[['New Leads','38'],['Viewing Booked','24'],['Offer Made','9'],['Under Offer','5'],['Exchanged','3']].map(function(s){
+      return '<div class="ps-stage"><div class="ps-num">'+s[1]+'</div><div class="ps-label">'+s[0]+'</div></div>';
+    }).join('')+'</div>'
+    +'</div></div>'
+    +tablePanel(['Property','Buyer','Offer','Stage','Target Close','Agent'],[
+      ['22 Elm Street, W11','O. & M. Chen','£2,050,000',tag('Solicitors','blue'),'Apr 30','P. Mehta'],
+      ['Apt 3B, Canary Wharf','M. Webb','£610,000',tag('Survey Done','p'),'May 7','J. Trent'],
+      ['14 Harwood Rd, SW10','Sharma Family','£1,410,000',tag('Offer Accepted','green'),'May 14','S. Okafor'],
+      ['The Granary, SE1','D. Forte','£830,000',tag('Negotiation','yellow'),'TBC','L. Barnes']
+    ]);
+
+  var analyticsPanel =
+    '<div class="kpi-row">'
+    +kpiCard('Conversion Rate','12.4%','↑ 2.1% vs last Q','up',true)
+    +kpiCard('Avg Days to Sale','21 days','↓ 8 days','up')
+    +kpiCard('Price Achieved','98.6%','of asking price','up')
+    +kpiCard('Repeat Clients','34%','↑ 7%','up')
+    +'</div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Lead Sources</span></div>'
+    +'<div class="d-panel-body">'
+    +progRow('Rightmove','44%')+progRow('Zoopla','28%')+progRow('Client Referral','16%')
+    +progRow('Direct Website','8%')+progRow('Other Portals','4%')
+    +'</div></div>';
+
+  var avmPanel = emptyPanel('💡','AI Valuation Tool','Enter any UK postcode and property details to generate an instant AVM estimate, comparable sales analysis, and 12-month price forecast powered by PropIQ\'s AI.');
+  var campaignsPanel = emptyPanel('📱','Campaign Manager','Create and manage automated drip campaigns, property alert emails, and client newsletters. Connect your CRM to launch AI-personalised sequences.');
+  var settingsPanel = emptyPanel('⚙️','Settings','Configure PropIQ integrations with Rightmove, Zoopla, your CRM, and calendar tools. Manage team permissions and notification preferences.');
+
+  return buildDemo(p, groups, {
+    dashboard:dashPanel, listings:listingsPanel, leads:leadsPanel,
+    market:marketPanel, pipeline:pipelinePanel, analytics:analyticsPanel,
+    avm:avmPanel, campaigns:campaignsPanel, settings:settingsPanel
+  }, 'PropIQ Dashboard',
+  '<button class="dt-btn">April 2026 ▾</button><button class="dt-btn primary">+ New Listing</button>');
+}
+
+// ════════════════════════════════════
+//  3. LEARNFORGE
+// ════════════════════════════════════
+function demoLearnForge(p) {
+  p._user = {av:'AL',name:'Alicia Lam',role:'Head of L&D'};
+  var groups = [
+    {label:'',items:[
+      {icon:'◼',name:'Dashboard',panel:'dashboard'},
+      {icon:'🎓',name:'Courses',panel:'courses',badge:'28'},
+      {icon:'👥',name:'Learners',panel:'learners'},
+      {icon:'📈',name:'Analytics',panel:'analytics'},
+      {icon:'🏆',name:'Certifications',panel:'certs'},
+      {icon:'🎮',name:'Gamification',panel:'game'}
+    ]},
+    {label:'Admin',items:[
+      {icon:'🤖',name:'AI Builder',panel:'aibuilder'},
+      {icon:'📋',name:'Compliance',panel:'compliance'},
+      {icon:'⚙️',name:'Settings',panel:'settings'}
+    ]}
+  ];
+
+  var dashPanel =
+    '<div class="kpi-row">'
+    +kpiCard('Active Learners','1,847','↑ 12% this month','up',true)
+    +kpiCard('Courses Published','28','3 new this week','up')
+    +kpiCard('Avg Completion','74%','↑ 9% after AI','up')
+    +kpiCard('Certs Issued YTD','412','↑ 38 this month','up')
+    +'</div>'
+    +'<div class="demo-grid demo-grid-2" style="margin-bottom:14px">'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Completion by Department</span></div>'
+    +'<div class="d-panel-body">'
+    +progRow('Engineering','88%')+progRow('Sales','72%')+progRow('Customer Success','81%')
+    +progRow('Finance','65%')+progRow('HR & People','79%')+progRow('Operations','70%')
+    +'</div></div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">🏆 Leaderboard — This Month</span></div>'
+    +'<div class="d-panel-body">'
+    +actItem('🥇','Tom Bradley','Engineering · 9 courses','3,840 pts')
+    +actItem('🥈','Priya Nair','Sales · 8 courses','3,410 pts')
+    +actItem('🥉','Alex Wu','CS · 7 courses','3,120 pts')
+    +actItem('4️⃣','Maria Chen','Finance · 7 courses','2,980 pts')
+    +actItem('5️⃣','Sam Osei','HR · 6 courses','2,760 pts')
+    +'</div></div></div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Course Library</span></div>'
+    +tablePanel(['Course','Dept','Enrolled','Completed','Rating','Status'],[
+      ['<strong style="color:var(--text)">AI Fundamentals for Business</strong>','All','847','72%','⭐ 4.8',tag('Live','green')],
+      ['<strong style="color:var(--text)">Data-Driven Sales</strong>','Sales','312','68%','⭐ 4.6',tag('Live','green')],
+      ['<strong style="color:var(--text)">GDPR & Data Compliance</strong>','All','1,204','91%','⭐ 4.4',tag('Required','p')],
+      ['<strong style="color:var(--text)">Leadership Essentials</strong>','Mgmt','98','55%','⭐ 4.7',tag('Live','green')],
+      ['<strong style="color:var(--text)">Advanced Python for Analysts</strong>','Engineering','145','48%','⭐ 4.9',tag('In Progress','yellow')]
+    ])+'</div>';
+
+  var coursesPanel = tablePanel(['Course Title','Category','Lessons','Duration','Enrolled','Completion','AI Generated','Status'],[
+    ['AI Fundamentals for Business','Technology','12','3.5 hrs','847','72%',tag('Yes','p'),tag('Live','green')],
+    ['GDPR & Data Compliance','Compliance','8','2 hrs','1,204','91%',tag('Yes','p'),tag('Required','p')],
+    ['Data-Driven Sales Techniques','Sales','10','2.8 hrs','312','68%',tag('Yes','p'),tag('Live','green')],
+    ['Leadership Essentials','Management','15','4.2 hrs','98','55%',tag('No','blue'),tag('Live','green')],
+    ['Advanced Python for Analysts','Technology','20','6 hrs','145','48%',tag('Yes','p'),tag('In Progress','yellow')],
+    ['Customer Success Playbook','Operations','9','2.5 hrs','224','77%',tag('Yes','p'),tag('Live','green')],
+    ['Financial Modelling Basics','Finance','14','4 hrs','88','61%',tag('No','blue'),tag('Live','green')]
+  ]);
+
+  var learnersPanel = tablePanel(['Learner','Department','Enrolled','Completed','Streak','Last Active','Status'],[
+    ['<strong style="color:var(--text)">Tom Bradley</strong>','Engineering','9','9','🔥 21 days','Today',tag('Active','green')],
+    ['<strong style="color:var(--text)">Priya Nair</strong>','Sales','8','8','🔥 18 days','Today',tag('Active','green')],
+    ['<strong style="color:var(--text)">Alex Wu</strong>','CS','7','7','🔥 14 days','Yesterday',tag('Active','green')],
+    ['<strong style="color:var(--text)">Maria Chen</strong>','Finance','7','6','5 days','2 days ago',tag('Active','green')],
+    ['<strong style="color:var(--text)">Sam Osei</strong>','HR','6','5','3 days','3 days ago',tag('Active','green')],
+    ['<strong style="color:var(--text)">Diana Ross</strong>','Marketing','4','2','0 days','1 week ago',tag('Inactive','yellow')]
+  ]);
+
+  var analyticsPanel =
+    '<div class="kpi-row">'
+    +kpiCard('Avg Engagement','8.4 min','per lesson session','neutral',true)
+    +kpiCard('Drop-off Rate','26%','↓ 9% vs pre-AI','up')
+    +kpiCard('Quiz Pass Rate','81%','↑ 12%','up')
+    +kpiCard('Mobile Usage','44%','↑ 8%','up')
+    +'</div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Monthly Active Learners</span></div>'
+    +'<div class="d-panel-body"><div class="line-chart-wrap">'+lineSVG([980,1100,1050,1200,1340,1280,1420,1560,1490,1640,1720,1847],p.color)+'</div>'
+    +'<div style="display:flex;justify-content:space-between;margin-top:6px">'
+    +['Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar'].map(function(m){
+      return '<span style="font-size:.58rem;color:var(--text-dim)">'+m+'</span>';
+    }).join('')+'</div></div></div>';
+
+  var certsPanel = tablePanel(['Learner','Certificate','Issue Date','Expiry','Status'],[
+    ['Tom Bradley','AI Fundamentals','Apr 10, 2026','Apr 10, 2027',tag('Valid','green')],
+    ['Priya Nair','Data-Driven Sales','Apr 8, 2026','Apr 8, 2026',tag('Valid','green')],
+    ['Maria Chen','GDPR Compliance','Mar 22, 2026','Mar 22, 2026',tag('Valid','green')],
+    ['Sam Osei','Leadership Essentials','Mar 15, 2026','Mar 15, 2027',tag('Valid','green')],
+    ['Diana Ross','GDPR Compliance','Oct 12, 2023','Oct 12, 2024',tag('Expired','red')]
+  ]);
+
+  var gamePanel =
+    '<div class="kpi-row">'
+    +kpiCard('Total Points Awarded','284,200','this month','up',true)
+    +kpiCard('Badges Earned','1,042','this month','up')
+    +kpiCard('Active Streaks','312 learners','avg 9 days','up')
+    +kpiCard('Challenges Active','8','3 ending soon','neutral')
+    +'</div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Active Challenges</span></div>'
+    +'<div class="d-panel-body">'
+    +actItem('⚔️','April Sprint','Complete 3 courses this month — 284 participants','Ends Apr 30')
+    +actItem('🧠','AI Mastery Path','Finish AI Fundamentals + Advanced Python — 98 participants','Ends May 15')
+    +actItem('🏃','Daily Habit Streak','Log in 10 days in a row — 512 participants','Ongoing')
+    +'</div></div>';
+
+  var aiBuilderPanel = emptyPanel('🤖','AI Course Builder','Enter a topic, paste a PDF, or describe your training goals — LearnForge AI generates a full structured course with modules, quizzes, and SCORM-ready content in minutes.');
+  var compliancePanel = tablePanel(['Regulation','Required Courses','Enrolled','Compliant','Last Audit','Status'],[
+    ['GDPR','GDPR & Data Compliance','1,204','94%','Apr 1',tag('Compliant','green')],
+    ['Health & Safety','H&S Essentials','1,847','88%','Mar 15',tag('Compliant','green')],
+    ['FCA (Finance Team)','FCA Fundamentals','88','72%','Feb 28',tag('Review Needed','yellow')],
+    ['ISO 27001','Information Security','320','91%','Jan 31',tag('Compliant','green')]
+  ]);
+  var settingsPanel = emptyPanel('⚙️','Settings','Configure SSO, LDAP, SCORM settings, email notifications, and integrations with your HRIS and calendar systems.');
+
+  return buildDemo(p, groups, {
+    dashboard:dashPanel, courses:coursesPanel, learners:learnersPanel,
+    analytics:analyticsPanel, certs:certsPanel, game:gamePanel,
+    aibuilder:aiBuilderPanel, compliance:compliancePanel, settings:settingsPanel
+  }, 'Learning Dashboard',
+  '<button class="dt-btn">All Departments ▾</button><button class="dt-btn primary">+ Create Course</button>');
+}
+
+// ════════════════════════════════════
+//  4. NEXUSCRM
+// ════════════════════════════════════
+function demoNexusCRM(p) {
+  p._user = {av:'RK',name:'Rachel Kim',role:'Head of RevOps'};
+  var groups = [
+    {label:'',items:[
+      {icon:'◼',name:'Dashboard',panel:'dashboard'},
+      {icon:'💼',name:'Deals',panel:'deals',badge:'34'},
+      {icon:'👤',name:'Contacts',panel:'contacts'},
+      {icon:'✉️',name:'Sequences',panel:'sequences'},
+      {icon:'📉',name:'Churn Risk',panel:'churn',badge:'5'},
+      {icon:'📊',name:'Forecasting',panel:'forecast'}
+    ]},
+    {label:'Tools',items:[
+      {icon:'🤖',name:'AI Co-Pilot',panel:'copilot'},
+      {icon:'🔌',name:'Integrations',panel:'integrations'},
+      {icon:'⚙️',name:'Settings',panel:'settings'}
+    ]}
+  ];
+
+  var dashPanel =
+    '<div class="kpi-row">'
+    +kpiCard('Pipeline Value','$2.4M','↑ $340K this week','up',true)
+    +kpiCard('Open Deals','34','8 closing this mo.','up')
+    +kpiCard('Win Rate','38%','↑ 6% vs last Q','up')
+    +kpiCard('Avg Deal Size','$71K','↑ $8K','up')
+    +'</div>'
+    +'<div class="demo-grid demo-grid-2" style="margin-bottom:14px">'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Revenue Trend</span><span class="d-panel-sub">Last 8 months ($K)</span></div>'
+    +'<div class="d-panel-body"><div class="line-chart-wrap">'+lineSVG([120,145,138,162,178,195,188,241],p.color)+'</div>'
+    +'<div style="display:flex;justify-content:space-between;margin-top:6px">'
+    +['Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr'].map(function(m){
+      return '<span style="font-size:.62rem;color:var(--text-dim)">'+m+'</span>';
+    }).join('')+'</div></div></div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Pipeline Stages</span></div>'
+    +'<div class="d-panel-body">'
+    +'<div class="pipeline-stages" style="--p-color:'+p.color+';margin-bottom:14px">'
+    +[['Prospect','12'],['Qualified','9'],['Proposal','7'],['Negotiation','4'],['Closing','2']].map(function(s){
+      return '<div class="ps-stage"><div class="ps-num">'+s[1]+'</div><div class="ps-label">'+s[0]+'</div></div>';
+    }).join('')+'</div>'
+    +progRow('Prospect','$420K')+progRow('Qualified','$618K')+progRow('Proposal','$540K')
+    +progRow('Negotiation','$520K')+progRow('Closing','$302K')
+    +'</div></div></div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Top Deals</span></div>'
+    +tablePanel(['Company','Deal','Value','Stage','Close Date','AI Score','Owner'],[
+      ['<strong style="color:var(--text)">Pinnacle Group</strong>','Enterprise Suite','$240,000',tag('Negotiation','p'),'Apr 30','<span style="color:#00D49A;font-weight:700">92%</span>','R. Kim'],
+      ['<strong style="color:var(--text)">BlueStar Finance</strong>','CRM Platform','$180,000',tag('Proposal','yellow'),'May 10','<span style="color:#FFC857;font-weight:700">74%</span>','M. Torres'],
+      ['<strong style="color:var(--text)">Vertex Health</strong>','Annual Licence','$95,000',tag('Closing','green'),'Apr 22','<span style="color:#00D49A;font-weight:700">88%</span>','R. Kim'],
+      ['<strong style="color:var(--text)">ClearPath Legal</strong>','3-Year Contract','$315,000',tag('Qualified','blue'),'Jun 15','<span style="color:#4C8EFF;font-weight:700">61%</span>','S. Park'],
+      ['<strong style="color:var(--text)">Nova Logistics</strong>','Starter Plan','$48,000',tag('Stalled','red'),'—','<span style="color:#FF5C9E;font-weight:700">22%</span>','M. Torres']
+    ])+'</div>';
+
+  var dealsPanel = tablePanel(['Company','Contact','Value','Stage','Created','Last Activity','Owner','AI Score'],[
+    ['<strong style="color:var(--text)">Pinnacle Group</strong>','D. Harrison','$240K',tag('Negotiation','p'),'Jan 8','Today','R. Kim','<span style="color:#00D49A">92%</span>'],
+    ['<strong style="color:var(--text)">BlueStar Finance</strong>','L. Park','$180K',tag('Proposal','yellow'),'Feb 2','Yesterday','M. Torres','<span style="color:#FFC857">74%</span>'],
+    ['<strong style="color:var(--text)">Vertex Health</strong>','P. Gupta','$95K',tag('Closing','green'),'Mar 11','Today','R. Kim','<span style="color:#00D49A">88%</span>'],
+    ['<strong style="color:var(--text)">ClearPath Legal</strong>','J. Ward','$315K',tag('Qualified','blue'),'Mar 22','3 days ago','S. Park','<span style="color:#4C8EFF">61%</span>'],
+    ['<strong style="color:var(--text)">Nova Logistics</strong>','K. Obi','$48K',tag('Stalled','red'),'Apr 1','2 weeks ago','M. Torres','<span style="color:#FF5C9E">22%</span>'],
+    ['<strong style="color:var(--text)">Alpine Corp</strong>','T. Walsh','$120K',tag('Prospect','blue'),'Apr 10','Yesterday','R. Kim','<span style="color:#FFC857">58%</span>']
+  ]);
+
+  var contactsPanel = tablePanel(['Name','Company','Title','Email','Last Contact','Deals','Source'],[
+    ['<strong style="color:var(--text)">Daniel Harrison</strong>','Pinnacle Group','CFO','d.h@pinnacle.com','Today',tag('1 active','p'),'LinkedIn'],
+    ['<strong style="color:var(--text)">Laura Park</strong>','BlueStar Finance','VP Ops','l.park@bluestar.com','Yesterday',tag('1 active','p'),'Outreach'],
+    ['<strong style="color:var(--text)">Priya Gupta</strong>','Vertex Health','COO','p.gupta@vertex.com','Today',tag('1 closing','green'),'Referral'],
+    ['<strong style="color:var(--text)">James Ward</strong>','ClearPath Legal','CEO','j.ward@clearpath.com','3 days','1','Website'],
+    ['<strong style="color:var(--text)">Kofi Obi</strong>','Nova Logistics','Director','k.obi@nova.com','2 wks','1','Cold Email']
+  ]);
+
+  var sequencesPanel = tablePanel(['Sequence Name','Contacts','Step','Opened','Replied','Meetings Booked','Status'],[
+    ['Q2 Enterprise Outbound','142','Step 3/6','48%','12%','18',tag('Active','green')],
+    ['Legal Sector Campaign','88','Step 2/5','52%','9%','11',tag('Active','green')],
+    ['Re-engagement — Stalled Deals','34','Step 1/4','61%','18%','6',tag('Active','green')],
+    ['Finance Sector Nurture','214','Step 4/7','39%','7%','22',tag('Active','green')],
+    ['Churned Account Win-Back','51','Step 2/4','44%','14%','8',tag('Paused','yellow')]
+  ]);
+
+  var churnPanel =
+    '<div class="kpi-row">'
+    +kpiCard('At-Risk Accounts','5','2 new this week','down',true)
+    +kpiCard('Revenue at Risk','$284K','across 5 accounts','neutral')
+    +kpiCard('Avg Risk Score','72/100','high urgency','neutral')
+    +kpiCard('Saved This Quarter','3','$180K retained','up')
+    +'</div>'
+    +tablePanel(['Account','MRR','Risk Score','Trigger','Days Since Login','Owner','Action'],[
+      ['<strong style="color:var(--text)">Nova Logistics</strong>','$4,000','<span style="color:#FF5C9E;font-weight:700">88</span>','No logins','14 days','M. Torres',tag('Urgent','red')],
+      ['<strong style="color:var(--text)">Greyfield Inc</strong>','$6,200','<span style="color:#FF5C9E;font-weight:700">81</span>','Support tickets up','8 days','R. Kim',tag('Urgent','red')],
+      ['<strong style="color:var(--text)">Mercer & Sons</strong>','$3,400','<span style="color:#FFC857;font-weight:700">64</span>','Usage drop','5 days','S. Park',tag('Monitor','yellow')],
+      ['<strong style="color:var(--text)">Alpine Corp</strong>','$2,800','<span style="color:#FFC857;font-weight:700">58</span>','Contract renewal','30 days','R. Kim',tag('Monitor','yellow')],
+      ['<strong style="color:var(--text)">Patel Group</strong>','$5,100','<span style="color:#FFC857;font-weight:700">52</span>','Champion left','12 days','M. Torres',tag('Watch','blue')]
+    ]);
+
+  var forecastPanel =
+    '<div class="kpi-row">'
+    +kpiCard('Forecast (Q2)','$1.84M','AI confidence: 82%','up',true)
+    +kpiCard('Best Case','$2.2M','if 3 stalled deals close','up')
+    +kpiCard('Worst Case','$1.4M','3 deals slip to Q3','down')
+    +kpiCard('Quota Attainment','94%','on current trajectory','up')
+    +'</div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Monthly Forecast vs Actual</span></div>'
+    +'<div class="d-panel-body"><div class="line-chart-wrap">'+lineSVG([380,420,395,460,510,485,540,590],p.color)+'</div>'
+    +'<div style="display:flex;justify-content:space-between;margin-top:6px">'
+    +['Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr'].map(function(m){
+      return '<span style="font-size:.62rem;color:var(--text-dim)">'+m+'</span>';
+    }).join('')+'</div></div></div>';
+
+  var copilotPanel = emptyPanel('🤖','AI Sales Co-Pilot','The AI Co-Pilot listens to your calls, reads emails, and surfaces real-time recommendations — what to say next, objections to expect, and which deals need attention today.');
+  var integrationsPanel = tablePanel(['Integration','Type','Status','Last Sync'],[
+    ['Salesforce','CRM Sync',tag('Connected','green'),'2 min ago'],
+    ['HubSpot','Marketing Sync',tag('Connected','green'),'15 min ago'],
+    ['Gong','Call Intelligence',tag('Connected','green'),'1 hr ago'],
+    ['Slack','Notifications',tag('Connected','green'),'Live'],
+    ['LinkedIn Sales Nav','Prospecting',tag('Connected','green'),'4 hr ago'],
+    ['Outreach','Sequences',tag('Pending','yellow'),'—']
+  ]);
+  var settingsPanel = emptyPanel('⚙️','Settings','Manage team seats, pipeline stages, field customisation, and notification preferences for NexusCRM.');
+
+  return buildDemo(p, groups, {
+    dashboard:dashPanel, deals:dealsPanel, contacts:contactsPanel,
+    sequences:sequencesPanel, churn:churnPanel, forecast:forecastPanel,
+    copilot:copilotPanel, integrations:integrationsPanel, settings:settingsPanel
+  }, 'Revenue Dashboard',
+  '<button class="dt-btn">Q1 2026 ▾</button><button class="dt-btn primary">+ Add Deal</button>');
+}
+
+// ════════════════════════════════════
+//  5. MEDISYNC
+// ════════════════════════════════════
+function demoMediSync(p) {
+  p._user = {av:'PN',name:'Dr. Priya Nair',role:'Chief Medical Officer'};
+  var groups = [
+    {label:'',items:[
+      {icon:'◼',name:'Dashboard',panel:'dashboard'},
+      {icon:'📅',name:'Schedule',panel:'schedule',badge:'14'},
+      {icon:'👤',name:'Patients',panel:'patients'},
+      {icon:'📋',name:'Clinical Notes',panel:'notes'},
+      {icon:'💊',name:'Medications',panel:'meds'},
+      {icon:'📊',name:'Analytics',panel:'analytics'}
+    ]},
+    {label:'Compliance',items:[
+      {icon:'🔐',name:'HIPAA Audit Log',panel:'hipaa'},
+      {icon:'📜',name:'Reports',panel:'reports'},
+      {icon:'⚙️',name:'Settings',panel:'settings'}
+    ]}
+  ];
+
+  var dashPanel =
+    '<div class="kpi-row">'
+    +kpiCard("Today's Appointments",'14','3 completed','up',true)
+    +kpiCard('Notes Generated','847','↓ 61% time saved','up')
+    +kpiCard('No-Show Rate','4.2%','↓ from 11.8%','up')
+    +kpiCard('Avg Wait Time','8 min','↓ from 24 min','up')
+    +'</div>'
+    +'<div class="demo-grid demo-grid-2" style="margin-bottom:14px">'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Weekly Appointments</span></div>'
+    +'<div class="d-panel-body">'
+    +'<div class="bar-chart">'
+    +[['Mon',12],['Tue',14],['Wed',11],['Thu',15],['Fri',9]].map(function(d,i){
+      return '<div class="bc-col"><div class="bc-bar'+(i===1?' highlight':'')+'" style="height:'+(d[1]/15*100)+'%"></div>'
+        +'<div class="bc-label">'+d[0]+'</div></div>';
+    }).join('')+'</div>'
+    +'<div style="margin-top:14px">'+progRow('In-Person','68%')+progRow('Telehealth','32%')+'</div>'
+    +'</div></div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">AI Alerts — Today</span></div>'
+    +'<div class="d-panel-body">'
+    +actItem('⚠️','Drug Interaction','J. Morris: Warfarin + Ibuprofen flag','2 min ago')
+    +actItem('✅','Note Ready','AI note for Sarah Blake — ready to review','8 min ago')
+    +actItem('📅','No-Show Risk','M. Trent (12:30) — 72% risk','15 min ago')
+    +actItem('💊','Refill Due','A. Chen: Metformin overdue 3 days','1 hr ago')
+    +'</div></div></div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Today\'s Schedule</span></div>'
+    +tablePanel(['Time','Patient','Type','Provider','Status','AI Note'],[
+      ['09:00','<strong style="color:var(--text)">Sarah Blake</strong>','Annual Physical','Dr. Nair',tag('Completed','green'),tag('Ready','p')],
+      ['09:45','<strong style="color:var(--text)">James Morris</strong>','Follow-Up','Dr. Nair',tag('Completed','green'),tag('Ready','p')],
+      ['10:30','<strong style="color:var(--text)">Leila Rashid</strong>','Telehealth','Dr. Nair',tag('In Progress','yellow'),tag('Generating','yellow')],
+      ['11:15','<strong style="color:var(--text)">Tom Hargreaves</strong>','Cardiology','Dr. Shah',tag('Upcoming','blue'),'<span style="color:var(--text-dim)">Pending</span>'],
+      ['12:30','<strong style="color:var(--text)">Michael Trent</strong>','Diabetes Check','Dr. Nair',tag('At Risk','red'),'<span style="color:var(--text-dim)">Pending</span>']
+    ])+'</div>';
+
+  var schedulePanel = tablePanel(['Time','Patient','DOB','Type','Duration','Provider','Room','Status'],[
+    ['09:00','Sarah Blake','14 Mar 1985','Annual Physical','30 min','Dr. Nair','Room 4',tag('Completed','green')],
+    ['09:45','James Morris','22 Jul 1962','Follow-Up','20 min','Dr. Nair','Room 4',tag('Completed','green')],
+    ['10:30','Leila Rashid','5 Nov 1990','Telehealth','20 min','Dr. Nair','Virtual',tag('In Progress','yellow')],
+    ['11:15','Tom Hargreaves','18 Feb 1958','Cardiology','30 min','Dr. Shah','Room 6',tag('Upcoming','blue')],
+    ['12:30','Michael Trent','30 Oct 1975','Diabetes Check','20 min','Dr. Nair','Room 4',tag('At Risk','red')],
+    ['13:30','—','—','Lunch Break','—','—','—','<span style="color:var(--text-dim)">Break</span>'],
+    ['14:00','Anna Chen','12 Jun 1988','Routine Check','20 min','Dr. Nair','Room 4',tag('Upcoming','blue')],
+    ['14:30','Robert Walsh','8 Sep 1945','Geriatric Review','40 min','Dr. Patel','Room 2',tag('Upcoming','blue')]
+  ]);
+
+  var patientsPanel = tablePanel(['Patient','DOB','GP','Last Visit','Next Appt','Conditions','Status'],[
+    ['<strong style="color:var(--text)">Sarah Blake</strong>','14 Mar 1985','Dr. Nair','Today','Jun 15',tag('None','green'),tag('Active','green')],
+    ['<strong style="color:var(--text)">James Morris</strong>','22 Jul 1962','Dr. Nair','Today','May 20',tag('Hypertension','yellow'),tag('Active','green')],
+    ['<strong style="color:var(--text)">Michael Trent</strong>','30 Oct 1975','Dr. Nair','Today','Apr 29','<span style="color:#FF5C9E">Diabetes T2</span>',tag('At Risk','red')],
+    ['<strong style="color:var(--text)">Anna Chen</strong>','12 Jun 1988','Dr. Nair','Feb 18','Today',tag('None','green'),tag('Active','green')],
+    ['<strong style="color:var(--text)">Robert Walsh</strong>','8 Sep 1945','Dr. Patel','Mar 10','Today','<span style="color:#FFC857">CHD, Diabetes</span>',tag('Complex','yellow')]
+  ]);
+
+  var notesPanel = tablePanel(['Patient','Appointment','Note Type','AI Draft','Reviewed By','Status'],[
+    ['Sarah Blake','Today 09:00','Annual Physical',tag('AI Generated','p'),'Dr. Nair',tag('Finalised','green')],
+    ['James Morris','Today 09:45','Follow-Up',tag('AI Generated','p'),'Dr. Nair',tag('Finalised','green')],
+    ['Leila Rashid','Today 10:30','Telehealth',tag('Generating','yellow'),'Pending',tag('Draft','yellow')],
+    ['Tom Hargreaves','Yesterday','Cardiology',tag('AI Generated','p'),'Dr. Shah',tag('Finalised','green')],
+    ['Anna Chen','Feb 18','Routine Check',tag('AI Generated','p'),'Dr. Nair',tag('Finalised','green')]
+  ]);
+
+  var medsPanel = tablePanel(['Patient','Medication','Dose','Frequency','Prescribed By','Refill Due','Flag'],[
+    ['James Morris','Amlodipine 5mg','5mg','Once daily','Dr. Nair','Jun 1','—'],
+    ['James Morris','Warfarin 3mg','3mg','Once daily','Dr. Nair','May 15',tag('⚠️ Interaction','red')],
+    ['Michael Trent','Metformin 500mg','500mg','Twice daily','Dr. Nair','<span style="color:#FF5C9E">3 days ago</span>',tag('Overdue','red')],
+    ['Robert Walsh','Atorvastatin 20mg','20mg','Once daily','Dr. Patel','May 30','—'],
+    ['Robert Walsh','Aspirin 75mg','75mg','Once daily','Dr. Patel','May 30','—'],
+    ['Anna Chen','Levothyroxine 50mcg','50mcg','Once daily','Dr. Nair','Jul 10','—']
+  ]);
+
+  var analyticsPanel =
+    '<div class="kpi-row">'
+    +kpiCard('Readmission Rate','3.2%','↓ 2.1% vs last Q','up',true)
+    +kpiCard('Patient Satisfaction','4.7/5','↑ 0.4 pts','up')
+    +kpiCard('Avg Consult Length','19 min','↓ 6 min','up')
+    +kpiCard('DNA Rate','4.2%','↓ 7.6%','up')
+    +'</div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Monthly Appointment Volume</span></div>'
+    +'<div class="d-panel-body"><div class="line-chart-wrap">'+lineSVG([280,310,295,325,340,318,355,370,348,382,395,410],p.color)+'</div>'
+    +'<div style="display:flex;justify-content:space-between;margin-top:6px">'
+    +['Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar'].map(function(m){
+      return '<span style="font-size:.58rem;color:var(--text-dim)">'+m+'</span>';
+    }).join('')+'</div></div></div>';
+
+  var hipaaPanel = tablePanel(['Timestamp','User','Action','Patient Record','IP Address','Result'],[
+    ['2026-04-15 09:04','Dr. Nair','View Record','Sarah Blake (P-1042)','192.168.1.20',tag('Allowed','green')],
+    ['2026-04-15 09:48','Dr. Nair','Edit Note','James Morris (P-0883)','192.168.1.20',tag('Allowed','green')],
+    ['2026-04-15 10:12','Dr. Shah','View Record','Tom Hargreaves (P-0724)','192.168.1.34',tag('Allowed','green')],
+    ['2026-04-14 16:30','Admin','Export Report','Aggregate Data','192.168.1.5',tag('Allowed','green')],
+    ['2026-04-14 11:20','Unknown','Login Attempt','—','84.22.141.9',tag('Blocked','red')]
+  ]);
+
+  var reportsPanel = emptyPanel('📜','Clinical Reports','Generate HEDIS, CMS, and population health reports. Export as PDF or submit directly to your regulatory authority. All reports are HIPAA-compliant and audit-ready.');
+  var settingsPanel = emptyPanel('⚙️','Settings','Configure MediSync integrations with Epic, Cerner, or Allscripts. Manage provider accounts, room assignments, and notification preferences.');
+
+  return buildDemo(p, groups, {
+    dashboard:dashPanel, schedule:schedulePanel, patients:patientsPanel,
+    notes:notesPanel, meds:medsPanel, analytics:analyticsPanel,
+    hipaa:hipaaPanel, reports:reportsPanel, settings:settingsPanel
+  }, 'Clinical Dashboard — Tue Apr 15',
+  '<button class="dt-btn">Dr. P. Nair ▾</button><button class="dt-btn primary">+ Appointment</button>');
+}
+
+// ════════════════════════════════════
+//  6. FINPILOT
+// ════════════════════════════════════
+function demoFinPilot(p) {
+  p._user = {av:'DW',name:'David Walsh',role:'Senior Portfolio Mgr'};
+  var groups = [
+    {label:'',items:[
+      {icon:'◼',name:'Dashboard',panel:'dashboard'},
+      {icon:'💼',name:'Portfolios',panel:'portfolios'},
+      {icon:'👤',name:'Clients',panel:'clients'},
+      {icon:'📋',name:'Compliance',panel:'compliance'},
+      {icon:'📊',name:'Reports',panel:'reports'},
+      {icon:'🔔',name:'Alerts',panel:'alerts',badge:'4'}
+    ]},
+    {label:'Tools',items:[
+      {icon:'🔮',name:'Scenario Models',panel:'scenarios'},
+      {icon:'📈',name:'Benchmarking',panel:'benchmark'},
+      {icon:'⚙️',name:'Settings',panel:'settings'}
+    ]}
+  ];
+
+  var dashPanel =
+    '<div class="kpi-row">'
+    +kpiCard('Total AUM','$148M','↑ $4.2M YTD','up',true)
+    +kpiCard('Portfolio Return','+11.4%','↑ 3.2% vs benchmark','up')
+    +kpiCard('At-Risk Accounts','3','2 new flags','down')
+    +kpiCard('Compliance Score','98/100','All filings current','up')
+    +'</div>'
+    +'<div class="demo-grid demo-grid-2" style="margin-bottom:14px">'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Portfolio Performance vs Benchmark</span></div>'
+    +'<div class="d-panel-body"><div class="line-chart-wrap">'+lineSVG([100,103,101,107,111,108,115,119,117,122,126,128],p.color)+'</div>'
+    +'<div style="display:flex;justify-content:space-between;margin-top:6px">'
+    +['Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar'].map(function(m){
+      return '<span style="font-size:.58rem;color:var(--text-dim)">'+m+'</span>';
+    }).join('')+'</div></div></div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Asset Allocation</span></div>'
+    +'<div class="d-panel-body">'
+    +progRow('Equities','54%')+progRow('Fixed Income','22%')+progRow('Alternatives','12%')
+    +progRow('Cash & Equiv.','8%')+progRow('Real Assets','4%')
+    +'<div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border)">'
+    +'<div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="font-size:.72rem;color:var(--text-muted)">Portfolio Beta</span><span style="font-size:.78rem;font-weight:700">0.84</span></div>'
+    +'<div style="display:flex;justify-content:space-between"><span style="font-size:.72rem;color:var(--text-muted)">Sharpe Ratio</span><span style="font-size:.78rem;font-weight:700;color:#00D49A">1.42</span></div>'
+    +'</div></div></div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Client Portfolios</span></div>'
+    +tablePanel(['Client','AUM','YTD Return','Risk','Compliance','Last Review','Status'],[
+      ['<strong style="color:var(--text)">Harrington Family Office</strong>','$42M','<span style="color:#00D49A">+13.2%</span>',tag('Moderate','yellow'),tag('✓ Current','green'),'Mar 28',tag('Healthy','green')],
+      ['<strong style="color:var(--text)">Bellview Capital</strong>','$28M','<span style="color:#00D49A">+9.8%</span>',tag('Conservative','green'),tag('✓ Current','green'),'Apr 2',tag('Healthy','green')],
+      ['<strong style="color:var(--text)">Chen Endowment</strong>','$19M','<span style="color:#FF5C9E">-1.2%</span>',tag('Aggressive','red'),tag('⚠ Review','yellow'),'Feb 14',tag('At Risk','red')],
+      ['<strong style="color:var(--text)">Mercer Pension Fund</strong>','$35M','<span style="color:#00D49A">+11.1%</span>',tag('Moderate','yellow'),tag('✓ Current','green'),'Apr 10',tag('Healthy','green')],
+      ['<strong style="color:var(--text)">Nova Ventures LP</strong>','$24M','<span style="color:#FFC857">+4.4%</span>',tag('Aggressive','red'),tag('✓ Current','green'),'Mar 19',tag('Monitor','yellow')]
+    ])+'</div>';
+
+  var portfoliosPanel = tablePanel(['Portfolio','Client','AUM','Return YTD','Beta','Sharpe','Drawdown','Status'],[
+    ['Harrington Growth','Harrington Family','$42M','<span style="color:#00D49A">+13.2%</span>','0.92','1.58','-4.1%',tag('Healthy','green')],
+    ['Bellview Conservative','Bellview Capital','$28M','<span style="color:#00D49A">+9.8%</span>','0.61','1.82','-2.2%',tag('Healthy','green')],
+    ['Chen Aggressive','Chen Endowment','$19M','<span style="color:#FF5C9E">-1.2%</span>','1.34','0.48','-14.8%',tag('At Risk','red')],
+    ['Mercer Balanced','Mercer Pension','$35M','<span style="color:#00D49A">+11.1%</span>','0.78','1.41','-3.6%',tag('Healthy','green')],
+    ['Nova Growth','Nova Ventures LP','$24M','<span style="color:#FFC857">+4.4%</span>','1.12','0.88','-9.2%',tag('Monitor','yellow')]
+  ]);
+
+  var clientsPanel = tablePanel(['Client','Type','AUM','Relationship Since','Advisor','Next Review','Status'],[
+    ['<strong style="color:var(--text)">Harrington Family Office</strong>','Family Office','$42M','2018','D. Walsh','Jun 2026',tag('Healthy','green')],
+    ['<strong style="color:var(--text)">Bellview Capital</strong>','Institutional','$28M','2020','D. Walsh','May 2026',tag('Healthy','green')],
+    ['<strong style="color:var(--text)">Chen Endowment</strong>','Endowment','$19M','2019','S. Patel','Apr 2026',tag('At Risk','red')],
+    ['<strong style="color:var(--text)">Mercer Pension Fund</strong>','Pension Fund','$35M','2016','D. Walsh','Jul 2026',tag('Healthy','green')],
+    ['<strong style="color:var(--text)">Nova Ventures LP</strong>','VC / LP','$24M','2022','D. Walsh','May 2026',tag('Monitor','yellow')]
+  ]);
+
+  var compliancePanel = tablePanel(['Requirement','Client','Due Date','Filed By','Status'],[
+    ['Form ADV Annual Update','All Clients','Mar 31, 2026','D. Walsh',tag('Filed','green')],
+    ['13F Quarterly Filing','Institutional Accounts','May 15, 2026','Compliance Team',tag('Pending','yellow')],
+    ['Suitability Review — Chen','Chen Endowment','Apr 30, 2026','S. Patel',tag('Overdue','red')],
+    ['KYC Renewal — Harrington','Harrington Family','Jun 30, 2026','D. Walsh',tag('On Track','green')],
+    ['FATCA Reporting','All Clients','Jun 30, 2026','Compliance Team',tag('On Track','green')]
+  ]);
+
+  var reportsPanel = emptyPanel('📊','Client Reports','Generate branded performance reports, portfolio summaries, and risk assessments for any client. Schedule automatic monthly or quarterly delivery via the client portal.');
+
+  var alertsPanel =
+    '<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Active Alerts</span></div>'
+    +'<div class="d-panel-body">'
+    +actItem('🔴','Suitability Risk — Chen Endowment','Portfolio drift exceeds aggressive mandate by 8%. Review required within 30 days.','2 days ago')
+    +actItem('🟡','Rebalancing Due — Harrington','Equity allocation now 61% vs 54% target. AI recommends trimming tech positions.','Today')
+    +actItem('🟡','Compliance Deadline Approaching','Chen Endowment suitability review due Apr 30 — 15 days remaining.','Ongoing')
+    +actItem('🟢','Tax Loss Opportunity — Nova','3 positions showing -8%+ loss. AI flagged for potential tax-loss harvesting.','Yesterday')
+    +'</div></div>';
+
+  var scenariosPanel = emptyPanel('🔮','Scenario Modelling','Run Monte Carlo simulations, stress tests, and retirement projections. Model rate hike scenarios, market crashes, and inflation impacts across any client portfolio.');
+  var benchmarkPanel = emptyPanel('📈','Benchmarking','Compare any portfolio against S&P 500, FTSE 100, MSCI World, and custom benchmark indices. View rolling alpha, beta, and information ratio over any time period.');
+  var settingsPanel = emptyPanel('⚙️','Settings','Configure custodian data feeds (Schwab, Fidelity, TD Ameritrade), user permissions, billing, and notification preferences.');
+
+  return buildDemo(p, groups, {
+    dashboard:dashPanel, portfolios:portfoliosPanel, clients:clientsPanel,
+    compliance:compliancePanel, reports:reportsPanel, alerts:alertsPanel,
+    scenarios:scenariosPanel, benchmark:benchmarkPanel, settings:settingsPanel
+  }, 'Portfolio Overview',
+  '<button class="dt-btn">YTD ▾</button><button class="dt-btn primary">Generate Report</button>');
+}
+
+// ════════════════════════════════════
+//  7. TALENTFLOW
+// ════════════════════════════════════
+function demoTalentFlow(p) {
+  p._user = {av:'TB',name:'Tina Brooks',role:'Head of Talent'};
+  var groups = [
+    {label:'',items:[
+      {icon:'◼',name:'Dashboard',panel:'dashboard'},
+      {icon:'📝',name:'Open Roles',panel:'roles',badge:'11'},
+      {icon:'👥',name:'Candidates',panel:'candidates'},
+      {icon:'🎙️',name:'Interviews',panel:'interviews',badge:'6'},
+      {icon:'📊',name:'DEI Analytics',panel:'dei'},
+      {icon:'💰',name:'Offer Intel',panel:'offers'}
+    ]},
+    {label:'Tools',items:[
+      {icon:'🔍',name:'Sourcing AI',panel:'sourcing'},
+      {icon:'📈',name:'Workforce Plan',panel:'workforce'},
+      {icon:'⚙️',name:'Settings',panel:'settings'}
+    ]}
+  ];
+
+  var dashPanel =
+    '<div class="kpi-row">'
+    +kpiCard('Open Roles','11','247 applicants','up',true)
+    +kpiCard('Active Pipeline','84','18 AI-sourced','up')
+    +kpiCard('Time to Hire','19 days','↓ from 42 days','up')
+    +kpiCard('Offer Acceptance','84%','↑ 18%','up')
+    +'</div>'
+    +'<div class="demo-grid demo-grid-2" style="margin-bottom:14px">'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Hiring Funnel</span></div>'
+    +'<div class="d-panel-body">'
+    +'<div class="pipeline-stages" style="--p-color:'+p.color+';margin-bottom:14px">'
+    +[['Applied','247'],['Screened','84'],['Interview','31'],['Final','12'],['Offer','4']].map(function(s){
+      return '<div class="ps-stage"><div class="ps-num">'+s[1]+'</div><div class="ps-label">'+s[0]+'</div></div>';
+    }).join('')+'</div>'
+    +progRow('Applied','100%')+progRow('AI Screened','34%')+progRow('Interviewed','13%')
+    +progRow('Final Round','5%')+progRow('Offer Extended','2%')
+    +'</div></div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">DEI Snapshot</span></div>'
+    +'<div class="d-panel-body">'
+    +'<div style="display:flex;gap:14px;margin-bottom:16px;align-items:center">'
+    +scoreRing(74,100,p.color,68)
+    +'<div><div style="font-family:Raleway,sans-serif;font-weight:800">DEI Score: 74/100</div>'
+    +'<div style="font-size:.72rem;color:#00D49A;font-weight:700;margin-top:4px">↑ 12 points this year</div></div></div>'
+    +progRow('Gender Balance','68%')+progRow('Ethnicity Mix','71%')
+    +progRow('Seniority Spread','62%')+progRow('Blind Screening','95%')
+    +'</div></div></div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Open Roles</span></div>'
+    +tablePanel(['Role','Dept','Applicants','AI Shortlist','Interviews','Priority','Status'],[
+      ['<strong style="color:var(--text)">Senior Backend Engineer</strong>','Engineering','48','8','4',tag('Urgent','red'),tag('Active','p')],
+      ['<strong style="color:var(--text)">Product Manager</strong>','Product','72','12','6',tag('Urgent','red'),tag('Active','p')],
+      ['<strong style="color:var(--text)">Account Executive</strong>','Sales','91','14','8',tag('High','yellow'),tag('Active','p')],
+      ['<strong style="color:var(--text)">Data Analyst</strong>','Analytics','36','6','3',tag('Normal','blue'),tag('Active','p')],
+      ['<strong style="color:var(--text)">UX Designer</strong>','Design','—','—','—',tag('Normal','blue'),tag('Drafting','yellow')]
+    ])+'</div>';
+
+  var rolesPanel = tablePanel(['Role','Department','Level','Location','Salary Range','Applicants','Posted','Status'],[
+    ['<strong style="color:var(--text)">Senior Backend Engineer</strong>','Engineering','Senior','London / Remote','£80–95K','48','Apr 1',tag('Active','p')],
+    ['<strong style="color:var(--text)">Product Manager</strong>','Product','Mid','London','£65–80K','72','Apr 1',tag('Active','p')],
+    ['<strong style="color:var(--text)">Account Executive</strong>','Sales','Mid','London','£45–60K + OTE','91','Mar 28',tag('Active','p')],
+    ['<strong style="color:var(--text)">Data Analyst</strong>','Analytics','Junior','London / Hybrid','£35–45K','36','Apr 5',tag('Active','p')],
+    ['<strong style="color:var(--text)">UX Designer</strong>','Design','Mid','Remote','£55–70K','—','—',tag('Drafting','yellow')],
+    ['<strong style="color:var(--text)">DevOps Engineer</strong>','Engineering','Senior','London','£75–90K','—','—',tag('Approval','yellow')],
+    ['<strong style="color:var(--text)">Customer Success Mgr</strong>','CS','Mid','London','£40–55K','24','Apr 8',tag('Active','p')]
+  ]);
+
+  var candidatesPanel = tablePanel(['Candidate','Role','Source','AI Score','Stage','Applied','Last Activity'],[
+    ['<strong style="color:var(--text)">Rahul Sharma</strong>','Senior Backend Eng.','LinkedIn','<span style="color:#00D49A;font-weight:700">94</span>',tag('Final Round','p'),'Apr 2','Today'],
+    ['<strong style="color:var(--text)">Mei Lin</strong>','Product Manager','Referral','<span style="color:#00D49A;font-weight:700">91</span>',tag('Final Round','p'),'Apr 1','Yesterday'],
+    ['<strong style="color:var(--text)">Daniel Osei</strong>','Account Executive','Job Board','<span style="color:#FFC857;font-weight:700">78</span>',tag('Interview','yellow'),'Mar 30','2 days ago'],
+    ['<strong style="color:var(--text)">Sophie Turner</strong>','Data Analyst','Website','<span style="color:#FFC857;font-weight:700">72</span>',tag('Interview','yellow'),'Apr 5','Today'],
+    ['<strong style="color:var(--text)">James Okoye</strong>','Senior Backend Eng.','GitHub','<span style="color:#4C8EFF;font-weight:700">65</span>',tag('Screened','blue'),'Apr 3','3 days ago']
+  ]);
+
+  var interviewsPanel = tablePanel(['Candidate','Role','Interview Type','Interviewer','Date & Time','Status','AI Note'],[
+    ['Rahul Sharma','Backend Eng.','Final — Technical','CTO + VP Eng','Apr 16, 14:00',tag('Confirmed','green'),'Prep sent'],
+    ['Mei Lin','Product Manager','Final — Culture','CEO + Head of Product','Apr 17, 10:00',tag('Confirmed','green'),'Prep sent'],
+    ['Daniel Osei','Account Executive','Round 2 — Skills','VP Sales','Apr 18, 11:30',tag('Pending','yellow'),'—'],
+    ['Sophie Turner','Data Analyst','Round 1 — Screening','People Team','Apr 19, 15:00',tag('Confirmed','green'),'—'],
+    ['James Okoye','Backend Eng.','Round 1 — Technical','Eng Lead','Apr 22, 09:00',tag('Tentative','yellow'),'—'],
+    ['Amara Diallo','Account Executive','Round 1 — Screening','People Team','Apr 23, 14:00',tag('Confirmed','green'),'—']
+  ]);
+
+  var deiPanel =
+    '<div class="kpi-row">'
+    +kpiCard('DEI Score','74/100','↑ 12 pts this year','up',true)
+    +kpiCard('Blind Screening Rate','95%','↑ 18%','up')
+    +kpiCard('Gender Balance','48/52','female/male ratio','neutral')
+    +kpiCard('Diverse Hires (Q1)','58%','of all Q1 hires','up')
+    +'</div>'
+    +'<div class="demo-grid demo-grid-2">'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Funnel by Gender</span></div>'
+    +'<div class="d-panel-body">'
+    +progRow('Applied — Female','41%')+progRow('Screened — Female','44%')
+    +progRow('Interviewed — Female','46%')+progRow('Offers — Female','48%')
+    +progRow('Accepted — Female','51%')
+    +'</div></div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Funnel by Ethnicity</span></div>'
+    +'<div class="d-panel-body">'
+    +progRow('White','48%')+progRow('Asian / Asian British','22%')
+    +progRow('Black / Black British','14%')+progRow('Mixed / Other','10%')
+    +progRow('Prefer not to say','6%')
+    +'</div></div></div>';
+
+  var offersPanel = tablePanel(['Candidate','Role','Offer Amount','Market Median','vs Market','Accept Prob.','Status'],[
+    ['Rahul Sharma','Sr Backend Eng.','£88,000','£84,000','<span style="color:#00D49A">+4.8%</span>','<span style="color:#00D49A;font-weight:700">91%</span>',tag('Pending','yellow')],
+    ['Mei Lin','Product Manager','£74,000','£72,000','<span style="color:#00D49A">+2.8%</span>','<span style="color:#00D49A;font-weight:700">88%</span>',tag('Pending','yellow')],
+    ['Laura Katz','Account Executive','£50,000 + OTE','£48,000','+4.2%','<span style="color:#FFC857;font-weight:700">74%</span>',tag('Verbal Yes','green')],
+    ['Tom Bradley','Data Analyst','£41,000','£40,500','+1.2%','<span style="color:#FFC857;font-weight:700">68%</span>',tag('Drafting','blue')]
+  ]);
+
+  var sourcingPanel = emptyPanel('🔍','AI Candidate Sourcing','Enter a job description or paste a role spec — TalentFlow AI searches 500M+ profiles across LinkedIn, GitHub, Behance, and 40+ job boards to build a ranked shortlist in minutes.');
+  var workforcePanel = emptyPanel('📈','Workforce Planning','Model headcount scenarios, predict attrition risk, and build succession pipelines across your organisation. Connect your HRIS for live workforce intelligence.');
+  var settingsPanel = emptyPanel('⚙️','Settings','Configure ATS integrations (Greenhouse, Lever, Workday), job board syndication, interview scheduling tools, and DEI data collection settings.');
+
+  return buildDemo(p, groups, {
+    dashboard:dashPanel, roles:rolesPanel, candidates:candidatesPanel,
+    interviews:interviewsPanel, dei:deiPanel, offers:offersPanel,
+    sourcing:sourcingPanel, workforce:workforcePanel, settings:settingsPanel
+  }, 'Talent Acquisition',
+  '<button class="dt-btn">All Depts ▾</button><button class="dt-btn primary">+ Post Role</button>');
+}
+
+// ════════════════════════════════════
+//  8. CONSTRUCTIQ
+// ════════════════════════════════════
+function demoConstructIQ(p) {
+  p._user = {av:'MP',name:'Mark Peterson',role:'Senior Project Mgr'};
+  var groups = [
+    {label:'',items:[
+      {icon:'◼',name:'Dashboard',panel:'dashboard'},
+      {icon:'🏗️',name:'Projects',panel:'projects',badge:'6'},
+      {icon:'📅',name:'Schedule',panel:'schedule'},
+      {icon:'💰',name:'Cost Tracking',panel:'costs'},
+      {icon:'⚠️',name:'Safety',panel:'safety',badge:'2'},
+      {icon:'📦',name:'Procurement',panel:'procurement'}
+    ]},
+    {label:'Management',items:[
+      {icon:'🤝',name:'Subcontractors',panel:'subs'},
+      {icon:'📋',name:'RFIs & Submittals',panel:'rfis'},
+      {icon:'⚙️',name:'Settings',panel:'settings'}
+    ]}
+  ];
+
+  var dashPanel =
+    '<div class="kpi-row">'
+    +kpiCard('Active Projects','6','£48M total value','up',true)
+    +kpiCard('On Schedule','83%','5 of 6 on track','up')
+    +kpiCard('Budget Variance','−2.1%','Under budget','up')
+    +kpiCard('Safety Score','96/100','2 open flags','down')
+    +'</div>'
+    +'<div class="d-panel" style="margin-bottom:14px"><div class="d-panel-head"><span class="d-panel-title">Project Timeline</span><span class="d-panel-sub">Gantt — Q1/Q2 2026</span></div>'
+    +'<div class="d-panel-body">'
+    +'<div style="display:flex;justify-content:space-between;margin-bottom:8px;padding-left:128px">'
+    +['Jan','Feb','Mar','Apr','May','Jun'].map(function(m){
+      return '<span style="font-size:.62rem;color:var(--text-dim);flex:1;text-align:center">'+m+'</span>';
+    }).join('')+'</div>'
+    +[['Canary Wharf Tower',p.color,8,52],['SE1 Residential',p.color,0,35],['M25 Bridge Repair','#FF7142',20,30],
+      ['Heathrow T3 Reno','#9B71FF',15,65],["King's Cross Dev.",p.color,30,40],['Battersea Retrofit','#22DDFF',5,28]
+    ].map(function(r){
+      var nm=r[0],col=r[1],left=r[2],width=r[3];
+      return '<div class="gantt-row"><div class="gantt-label">'+nm+'</div>'
+        +'<div class="gantt-track"><div class="gantt-bar" style="background:'+col+';left:'+left+'%;width:'+width+'%">'
+        +(width>18?nm:'')+'</div></div></div>';
+    }).join('')+'</div></div>'
+    +'<div class="demo-grid demo-grid-2">'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Budget Tracker</span></div>'
+    +'<div class="d-panel-body">'
+    +[['Canary Wharf','£18.2M','98%',false],['SE1 Residential','£8.4M','94%',false],
+      ['M25 Bridge','£5.1M','104%',true],['Heathrow T3','£9.8M','94%',false],['Battersea','£6.5M','91%',false]
+    ].map(function(r){
+      return progRow(r[0],r[2],r[3]?'#FF5C9E':undefined);
+    }).join('')+'</div></div>'
+    +'<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">⚠️ Safety Alerts</span></div>'
+    +'<div class="d-panel-body">'
+    +actItem('🔴','PPE Violation','Canary Wharf Zone 3 — hard hat not detected','12 min ago')
+    +actItem('🟡','Access Alert','M25 Bridge — unauthorised vehicle detected','1 hr ago')
+    +actItem('✅','Inspection Passed','SE1 Residential — daily check complete','3 hrs ago')
+    +actItem('✅','Induction Done','Heathrow T3 — 12 new workers inducted','5 hrs ago')
+    +'</div></div></div>';
+
+  var projectsPanel = tablePanel(['Project','Client','Value','Start','End','PM','On Schedule','Budget Used','Status'],[
+    ['<strong style="color:var(--text)">Canary Wharf Tower</strong>','BNP Paribas RE','£18.2M','Jan 2026','Dec 2026','M. Peterson',tag('On Track','green'),'98%',tag('Active','p')],
+    ['<strong style="color:var(--text)">SE1 Residential</strong>','Southwark Council','£8.4M','Jan 2026','Sep 2026','A. Nguyen',tag('On Track','green'),'94%',tag('Active','p')],
+    ['<strong style="color:var(--text)">M25 Bridge Repair</strong>','National Highways','£5.1M','Mar 2026','Jun 2026','M. Peterson',tag('Delayed','red'),'104%',tag('At Risk','red')],
+    ['<strong style="color:var(--text)">Heathrow T3 Reno</strong>','Heathrow Airport','£9.8M','Feb 2026','Aug 2026','C. Walsh',tag('On Track','green'),'94%',tag('Active','p')],
+    ["<strong style=\"color:var(--text)\">King's Cross Dev.</strong>",'Network Rail','£4.4M','Apr 2026','Sep 2026','A. Nguyen',tag('On Track','green'),'12%',tag('Active','p')],
+    ['<strong style="color:var(--text)">Battersea Retrofit</strong>','Wandsworth Council','£6.5M','Jan 2026','Jul 2026','M. Peterson',tag('On Track','green'),'91%',tag('Active','p')]
+  ]);
+
+  var schedulePanel =
+    '<div class="d-panel"><div class="d-panel-head"><span class="d-panel-title">Schedule Overview — Week 15</span></div>'
+    +'<div class="d-panel-body">'
+    +tablePanel(['Task','Project','Assigned To','Start','Finish','Duration','Status'],[
+      ['Foundation pour — Sector B','Canary Wharf Tower','M. Peterson','Apr 14','Apr 18','5 days',tag('In Progress','yellow')],
+      ['Steelwork Level 4','Canary Wharf Tower','Steelco Ltd','Apr 16','Apr 25','10 days',tag('Scheduled','blue')],
+      ['Waterproofing — Phase 2','SE1 Residential','BuildRight','Apr 15','Apr 20','6 days',tag('In Progress','yellow')],
+      ['Asphalt Resurfacing — Km 12–18','M25 Bridge','RoadFix Ltd','Apr 17','May 2','16 days',tag('Delayed','red')],
+      ['Terminal Ceiling Installation','Heathrow T3','InteriorPro','Apr 16','Apr 22','7 days',tag('In Progress','yellow')],
+      ['Ground Works','Kings Cross Dev.','GeoTech Ltd','Apr 14','Apr 28','15 days',tag('In Progress','yellow')]
+    ])+'</div></div>';
+
+  var costsPanel =
+    '<div class="kpi-row">'
+    +kpiCard('Total Budget','£52.4M','All projects combined','neutral',true)
+    +kpiCard('Spent to Date','£31.8M','61% of total budget','neutral')
+    +kpiCard('Forecast at Completion','£51.3M','−2.1% variance','up')
+    +kpiCard('Cost Warnings','1','M25 Bridge over budget','down')
+    +'</div>'
+    +tablePanel(['Project','Budget','Spent','Committed','Forecast EAC','Variance','Status'],[
+      ['Canary Wharf Tower','£18.2M','£17.8M','£0.2M','£18.0M','<span style="color:#00D49A">−1.1%</span>',tag('Under','green')],
+      ['SE1 Residential','£8.4M','£7.9M','£0.3M','£8.2M','<span style="color:#00D49A">−2.4%</span>',tag('Under','green')],
+      ['M25 Bridge Repair','£5.1M','£5.3M','£0.1M','£5.42M','<span style="color:#FF5C9E">+6.3%</span>',tag('Over','red')],
+      ['Heathrow T3 Reno','£9.8M','£9.2M','£0.4M','£9.6M','<span style="color:#00D49A">−2.0%</span>',tag('Under','green')],
+      ["King's Cross Dev.",'£4.4M','£0.5M','£1.1M','£4.2M','<span style="color:#00D49A">−4.5%</span>',tag('Under','green')],
+      ['Battersea Retrofit','£6.5M','£5.9M','£0.3M','£6.2M','<span style="color:#00D49A">−4.6%</span>',tag('Under','green')]
+    ]);
+
+  var safetyPanel =
+    '<div class="kpi-row">'
+    +kpiCard('Safety Score','96/100','2 open incidents','neutral',true)
+    +kpiCard('Days Without Incident','18 days','Last: Apr 2','neutral')
+    +kpiCard('Inspections Completed','42','this month','up')
+    +kpiCard('Workers Inducted','284','this month','up')
+    +'</div>'
+    +tablePanel(['Date','Project','Type','Severity','Description','Raised By','Status'],[
+      ['Apr 15, 09:12','Canary Wharf Tower','PPE Violation',tag('High','red'),'Hard hat not detected on Camera 4 Zone 3','AI Camera','<span style="color:#FF5C9E">Open</span>'],
+      ['Apr 15, 11:40','M25 Bridge Repair','Access Breach',tag('Medium','yellow'),'Unauthorised vehicle in restricted zone','AI Camera','<span style="color:#FF5C9E">Open</span>'],
+      ['Apr 14','SE1 Residential','Daily Inspection',tag('Low','green'),'All areas clear — full compliance','A. Nguyen','<span style="color:#00D49A">Closed</span>'],
+      ['Apr 14','Heathrow T3 Reno','Worker Induction',tag('Low','green'),'12 new workers inducted and briefed','C. Walsh','<span style="color:#00D49A">Closed</span>'],
+      ['Apr 13','Canary Wharf Tower','Near Miss',tag('Medium','yellow'),'Unsecured materials on Level 6 scaffold','M. Peterson','<span style="color:#00D49A">Closed</span>']
+    ]);
+
+  var procurementPanel = tablePanel(['Item','Project','Supplier','Qty','Unit Cost','Total','Order Date','ETA','Status'],[
+    ['Structural Steel — Grade S355','Canary Wharf','Steelco Ltd','240T','£820/T','£196,800','Apr 1','Apr 18',tag('In Transit','yellow')],
+    ['Concrete Mix C40','M25 Bridge','Readymix UK','180m³','£92/m³','£16,560','Apr 8','Apr 16',tag('Delayed','red')],
+    ['Ceiling Tiles — T-Grid','Heathrow T3','InteriorPro','4,200 m²','£22/m²','£92,400','Mar 28','Apr 14',tag('Delivered','green')],
+    ['Waterproof Membrane','SE1 Residential','BuildRight','820 m²','£18/m²','£14,760','Apr 5','Apr 17',tag('In Transit','yellow')],
+    ['Groundwork Plant Hire','Kings Cross Dev.','GeoTech Ltd','3 units','£480/day','£21,600','Apr 12','Apr 14',tag('Active','p')]
+  ]);
+
+  var subsPanel = tablePanel(['Subcontractor','Speciality','Projects','Safety Score','Schedule Score','Quality Score','Status'],[
+    ['Steelco Ltd','Structural Steel','Canary Wharf','<span style="color:#00D49A">94</span>','<span style="color:#00D49A">91</span>','<span style="color:#00D49A">96</span>',tag('Approved','green')],
+    ['BuildRight','Waterproofing','SE1 Residential','<span style="color:#00D49A">88</span>','<span style="color:#FFC857">82</span>','<span style="color:#00D49A">90</span>',tag('Approved','green')],
+    ['RoadFix Ltd','Civil Engineering','M25 Bridge','<span style="color:#FFC857">72</span>','<span style="color:#FF5C9E">61</span>','<span style="color:#FFC857">78</span>',tag('Review','red')],
+    ['InteriorPro','Interior Fit-Out','Heathrow T3','<span style="color:#00D49A">92</span>','<span style="color:#00D49A">95</span>','<span style="color:#00D49A">91</span>',tag('Approved','green')],
+    ['GeoTech Ltd','Ground Engineering','Kings Cross','<span style="color:#00D49A">90</span>','<span style="color:#00D49A">88</span>','<span style="color:#FFC857">84</span>',tag('Approved','green')]
+  ]);
+
+  var rfisPanel = tablePanel(['RFI Ref','Project','Subject','Submitted By','Submitted','Assigned To','Due','Status'],[
+    ['RFI-1042','Canary Wharf Tower','Rebar spacing — Level 7 slab','Steelco Ltd','Apr 14','M. Peterson','Apr 17',tag('Open','red')],
+    ['RFI-1041','M25 Bridge Repair','Drainage spec change — Km 15','RoadFix Ltd','Apr 13','C. Walsh','Apr 16',tag('Overdue','red')],
+    ['RFI-1040','Heathrow T3 Reno','Fire door certification','InteriorPro','Apr 12','C. Walsh','Apr 19',tag('In Review','yellow')],
+    ['RFI-1039','SE1 Residential','Structural slab load revision','BuildRight','Apr 10','A. Nguyen','Apr 17',tag('Closed','green')],
+    ['RFI-1038','Battersea Retrofit','Heritage facade retention spec','Southwark Council','Apr 8','M. Peterson','Apr 15',tag('Closed','green')]
+  ]);
+
+  var settingsPanel = emptyPanel('⚙️','Settings','Configure ConstructIQ integrations with Procore, Autodesk BIM 360, and your finance system. Manage project templates, camera feeds, and user permissions.');
+
+  return buildDemo(p, groups, {
+    dashboard:dashPanel, projects:projectsPanel, schedule:schedulePanel,
+    costs:costsPanel, safety:safetyPanel, procurement:procurementPanel,
+    subs:subsPanel, rfis:rfisPanel, settings:settingsPanel
+  }, 'Project Portfolio',
+  '<button class="dt-btn">All Projects ▾</button><button class="dt-btn primary">+ New Project</button>');
+}
+
+function renderDemoPage(id){
+  var p=PRODUCTS.find(function(x){return x.id===id;});
+  if(!p) return renderHome();
+  var map={lexai:demoLexAI,propiq:demoPropIQ,learnforge:demoLearnForge,nexuscrm:demoNexusCRM,medisync:demoMediSync,finpilot:demoFinPilot,talentflow:demoTalentFlow,constructiq:demoConstructIQ};
+  return map[id]?map[id](p):renderHome();
+}
+
+
 function nav(route){
   history.pushState(null,'','#'+route);
   route$();
@@ -1398,14 +2699,24 @@ function route$(){
     const p = PRODUCTS.find(x=>x.id===parts[1]);
     if(p) html = renderProduct(p);
     else html = renderHome();
-  } else if(parts[0]==='about') html = renderAbout();
+  } else if(parts[0]==='demo'&&parts[1]) html = renderDemoPage(parts[1]);
+  else if(parts[0]==='about') html = renderAbout();
   else if(parts[0]==='contact') html = renderContact();
   else if(parts[0]==='privacy') html = renderPrivacy();
   else if(parts[0]==='refund') html = renderRefund();
   else html = renderHome();
 
   const app = document.getElementById('app');
-  app.style.opacity='0';
+  // Demo pages get full-height treatment
+  if(parts[0]==='demo') {
+    app.style.transition='none';
+    app.style.opacity='1';
+    app.style.transform='none';
+    app.innerHTML = html;
+    window.scrollTo({top:0,behavior:'instant'});
+    initReveal();
+    return;
+  }
   app.style.transform='translateY(12px)';
   setTimeout(()=>{
     app.innerHTML = html;
