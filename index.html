@@ -18,9 +18,26 @@
 <div id="cur-dot"></div>
 <div id="cur-ring"></div>
 
+<!-- ── MOBILE DRAWER ── -->
+<div class="m-drawer-backdrop" id="m-drawer-backdrop"></div>
+<div class="m-drawer" id="m-drawer">
+  <div class="m-drawer-head">
+    <a class="n-logo" href="#home" onclick="event.preventDefault();nav('home');closeDrawer()">
+      <div class="n-logo-mark"></div>
+      FOXSIDE
+    </a>
+    <button class="n-burger n-burger-close" id="n-burger-close" aria-label="Close menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <div class="m-drawer-body" id="m-drawer-body"></div>
+</div>
+
+<div id="page-wrap">
+
 <!-- ── NAV ── -->
 <nav id="navbar">
-  <a class="n-logo" href="#home" onclick="nav('home')">
+  <a class="n-logo" href="#home" onclick="event.preventDefault();nav('home')">
     <div class="n-logo-mark"></div>
     FOXSIDE
   </a>
@@ -29,10 +46,13 @@
       <button class="n-dropdown-trigger">Products ▾</button>
       <div class="n-dropdown" id="nav-dropdown"></div>
     </li>
-    <li><a href="#case-studies" onclick="nav('case-studies')">Case Studies</a></li><li><a href="#about" onclick="nav('about')">About</a></li>
-    <li><a href="#contact" onclick="nav('contact')">Contact</a></li>
-    <li><a href="#contact" onclick="nav('contact')" class="n-cta">Book a Demo</a></li>
+    <li><a href="#case-studies" onclick="event.preventDefault();nav('case-studies')">Case Studies</a></li><li><a href="#about" onclick="event.preventDefault();nav('about')">About</a></li>
+    <li><a href="#contact" onclick="event.preventDefault();nav('contact')">Contact</a></li>
+    <li><a href="#contact" onclick="event.preventDefault();nav('contact')" class="n-cta">Book a Demo</a></li>
   </ul>
+  <button class="n-burger" id="n-burger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- ── APP ── -->
@@ -47,10 +67,12 @@
     <div class="ft-bottom">
       <span>© 2026 Foxside Technologies Ltd. All rights reserved.</span>
       <div class="ft-badge">All systems operational</div>
-      <span><a href="#privacy" onclick="nav('privacy')" style="color:var(--text-dim);text-decoration:none;margin-right:16px">Privacy Policy</a><a href="#refund" onclick="nav('refund')" style="color:var(--text-dim);text-decoration:none">Refund Policy</a></span>
+      <span><a href="#privacy" onclick="event.preventDefault();nav('privacy')" style="color:var(--text-dim);text-decoration:none;margin-right:16px">Privacy Policy</a><a href="#refund" onclick="event.preventDefault();nav('refund')" style="color:var(--text-dim);text-decoration:none">Refund Policy</a></span>
     </div>
   </div>
 </footer>
+
+</div><!-- /#page-wrap -->
 
 <script src="/app.min.js"></script>
 </body>
